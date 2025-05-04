@@ -6,10 +6,11 @@ import * as origins from "aws-cdk-lib/aws-cloudfront-origins";
 import * as certificatemanager from "aws-cdk-lib/aws-certificatemanager";
 import * as iam from "aws-cdk-lib/aws-iam"; // Import IAM
 import * as s3deploy from "aws-cdk-lib/aws-s3-deployment";
+import * as path from "node:path";
 
 export interface SiteStackProps extends cdk.StackProps {
   /**
-   * The custom domain name for the site (e.g., [www.example.com](https://www.example.com)).
+   * The custom domain name for the site.
    * This domain must be managed in your external DNS provider (e.g., Cloudflare).
    */
   readonly domainName: string;
@@ -19,31 +20,25 @@ export class SiteStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props: SiteStackProps) {
     super(scope, id, props);
 
-    // --- S3 Bucket for Website Content ---
-    // Secure, private bucket for website content. Access is restricted to CloudFront.
+    //  S3 Bucket for Website Content
     const siteBucket = new s3.Bucket(this, "SiteBucket", {
-      // bucketName: props.domainName, // Bucket names must be globally unique. Using CDK-generated name is safer.
-      encryption: s3.BucketEncryption.S3_MANAGED, // SSE-S3 encryption
-      blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL, // Block all public access
-      versioned: true, // Enable versioning for rollback capabilities
+      encryption: s3.BucketEncryption.S3_MANAGED,
+      blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
+      versioned: true,
       objectOwnership: s3.ObjectOwnership.BUCKET_OWNER_ENFORCED,
-      enforceSSL: true, // Require SSL connections to the bucket
-      removalPolicy: cdk.RemovalPolicy.RETAIN, // Keep the bucket even if the stack is deleted (safer for production)
-      // autoDeleteObjects: true, // Uncomment for non-production stacks for easier cleanup (requires removalPolicy: DESTROY)
+      enforceSSL: true,
+      removalPolicy: cdk.RemovalPolicy.RETAIN,
     });
 
-    // --- S3 Bucket for CloudFront Access Logs ---
-    // Separate bucket recommended for storing CloudFront access logs.
+    //  S3 Bucket for CloudFront Access Logs
     const logBucket = new s3.Bucket(this, "LogBucket", {
       encryption: s3.BucketEncryption.S3_MANAGED,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
-      removalPolicy: cdk.RemovalPolicy.RETAIN, // Or DESTROY with autoDeleteObjects: true for non-prod
-      // autoDeleteObjects: true, // Enable for non-prod cleanup
-      accessControl: s3.BucketAccessControl.LOG_DELIVERY_WRITE, // Grant CloudFront Log Delivery service permissions
+      removalPolicy: cdk.RemovalPolicy.RETAIN,
+      accessControl: s3.BucketAccessControl.LOG_DELIVERY_WRITE,
     });
 
-    // --- ACM Certificate ---
-    // Request a certificate using DNS validation (preferred for automated renewals with Cloudflare DNS).
+    //  ACM Certificate
     const certificate = new certificatemanager.Certificate(
       this,
       "SiteCertificate",
@@ -54,25 +49,7 @@ export class SiteStack extends cdk.Stack {
       }
     );
 
-    // --- CloudFront Origin Access Control (OAC) ---
-    // Modern way to grant CloudFront secure access to the S3 bucket.
-    const cfnOriginAccessControl = new cloudfront.CfnOriginAccessControl(
-      this,
-      "SiteOriginAccessControl",
-      {
-        originAccessControlConfig: {
-          // Generate a unique name for the OAC
-          name: `oac-${cdk.Aws.STACK_NAME}-${cdk.Aws.REGION}-${props.domainName}`,
-          originAccessControlOriginType: "s3",
-          signingBehavior: "always",
-          signingProtocol: "sigv4",
-          description: `Origin Access Control for ${props.domainName}`,
-        },
-      }
-    );
-
-    // --- CloudFront Response Headers Policy ---
-    // Defines security headers added to responses from CloudFront.
+    //  CloudFront Response Headers Policy
     const responseHeadersPolicy = new cloudfront.ResponseHeadersPolicy(
       this,
       "SecurityHeadersPolicy",
@@ -80,38 +57,44 @@ export class SiteStack extends cdk.Stack {
         responseHeadersPolicyName: `SecurityHeaders-${cdk.Aws.REGION}-${id}`,
         comment: "Security headers policy for the static site",
         securityHeadersBehavior: {
-          contentSecurityPolicy: {
-            contentSecurityPolicy: "default-src 'self';", // Adjust as needed for your site
+          //   contentSecurityPolicy: {
+          // contentSecurityPolicy:
+          //   "default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com", // Default policy for loading content such as JavaScript, Images, CSS, Fonts, AJAX requests, Frames, HTML5 Media
+          //       + "script-src 'self'; " + // Defines valid sources for JavaScript
+          //       "style-src 'self' https://fonts.googleapis.com; " + // Defines valid sources for stylesheets (CSS) - Added Google Fonts
+          //       "font-src 'self' https://fonts.gstatic.com; " + // Defines valid sources for fonts loaded using @font-face - Added Google Fonts static content
+          //       "img-src 'self' data:; " + // Defines valid sources of images and favicons (data: allows inline base64 images)
+          //       "connect-src 'self'; " + // Applies to XMLHttpRequest (AJAX), WebSocket or EventSource. If you connect to other APIs, add their domains here.
+          //       "object-src 'none'; " + // Defines valid sources for the <object>, <embed>, and <applet> elements (set to 'none' for safety)
+          //       "frame-ancestors 'none'; " + // Specifies valid parents that may embed a page using <frame>, <iframe>, <object>, <embed>, or <applet>. Replaces X-Frame-Options. 'none' is equivalent to DENY.
+          //       "base-uri 'self'; " + // Restricts the URLs which can be used in a document's <base> element.
+          //       "form-action 'self';", // Restricts the URLs which can be used as the target of form submissions from a given context.
+          // override: true,
+          //   },
+          contentTypeOptions: { override: true },
+          frameOptions: {
+            frameOption: cloudfront.HeadersFrameOption.DENY,
+            override: true,
+          },
+          referrerPolicy: {
+            referrerPolicy: cloudfront.HeadersReferrerPolicy.NO_REFERRER,
             override: true,
           },
           strictTransportSecurity: {
-            accessControlMaxAge: cdk.Duration.seconds(63072000), // 2 years
+            accessControlMaxAge: cdk.Duration.seconds(600),
             includeSubdomains: true,
-            preload: true,
             override: true,
           },
           xssProtection: {
             protection: true,
-            modeBlock: true,
-            override: true,
-          },
-          contentTypeOptions: {
-            override: true,
-          },
-          referrerPolicy: {
-            referrerPolicy:
-              cloudfront.HeadersReferrerPolicy.STRICT_ORIGIN_WHEN_CROSS_ORIGIN,
-            override: true,
-          },
-          frameOptions: {
-            frameOption: cloudfront.HeadersFrameOption.DENY,
+            modeBlock: false,
             override: true,
           },
         },
       }
     );
 
-    // --- CloudFront Distribution ---
+    //  CloudFront Distribution
     const distribution = new cloudfront.Distribution(this, "SiteDistribution", {
       comment: `CloudFront distribution for ${props.domainName}`,
       defaultRootObject: "index.html",
@@ -123,9 +106,7 @@ export class SiteStack extends cdk.Stack {
       logFilePrefix: "cloudfront-access-logs/",
       logIncludesCookies: true,
       defaultBehavior: {
-        origin: new origins.S3Origin(siteBucket, {
-          // OAC will be configured below
-        }),
+        origin: origins.S3BucketOrigin.withOriginAccessControl(siteBucket),
         viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
         responseHeadersPolicy: responseHeadersPolicy,
         allowedMethods: cloudfront.AllowedMethods.ALLOW_GET_HEAD_OPTIONS,
@@ -136,32 +117,17 @@ export class SiteStack extends cdk.Stack {
       // errorResponses: [ ... ],
     });
 
-    // --- Deploy static assets ---
+    // Deploy assets
     new s3deploy.BucketDeployment(this, "DeployHelloWorld", {
       destinationBucket: siteBucket,
       sources: [
-        s3deploy.Source.data(
-          "index.html",
-          `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Hello</title></head><body><h1>Hello, world!</h1></body></html>`
+        s3deploy.Source.asset(
+          path.resolve(__dirname, "../../assets/build/client")
         ),
       ],
       distribution,
       distributionPaths: ["/*"],
     });
-
-    // --- Grant CloudFront Access to S3 via OAC ---
-    const cfnDistribution = distribution.node
-      .defaultChild as cloudfront.CfnDistribution;
-
-    // Remove OAI if it exists and apply OAC
-    cfnDistribution.addPropertyOverride(
-      "DistributionConfig.Origins.0.S3OriginConfig.OriginAccessIdentity",
-      ""
-    );
-    cfnDistribution.addPropertyOverride(
-      "DistributionConfig.Origins.0.OriginAccessControlId",
-      cfnOriginAccessControl.attrId
-    );
 
     // Update S3 Bucket Policy for OAC
     siteBucket.addToResourcePolicy(
@@ -177,7 +143,7 @@ export class SiteStack extends cdk.Stack {
       })
     );
 
-    // --- Outputs ---
+    //  Outputs
     new cdk.CfnOutput(this, "SiteBucketName", {
       value: siteBucket.bucketName,
       description: "Name of the S3 bucket storing website content",
