@@ -57,19 +57,11 @@ export class SiteStack extends cdk.Stack {
         responseHeadersPolicyName: `SecurityHeaders-${cdk.Aws.REGION}-${id}`,
         comment: "Security headers policy for the static site",
         securityHeadersBehavior: {
+          // TODO add CSP and verify other security best practices
+          // https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy
           //   contentSecurityPolicy: {
-          // contentSecurityPolicy:
-          //   "default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com", // Default policy for loading content such as JavaScript, Images, CSS, Fonts, AJAX requests, Frames, HTML5 Media
-          //       + "script-src 'self'; " + // Defines valid sources for JavaScript
-          //       "style-src 'self' https://fonts.googleapis.com; " + // Defines valid sources for stylesheets (CSS) - Added Google Fonts
-          //       "font-src 'self' https://fonts.gstatic.com; " + // Defines valid sources for fonts loaded using @font-face - Added Google Fonts static content
-          //       "img-src 'self' data:; " + // Defines valid sources of images and favicons (data: allows inline base64 images)
-          //       "connect-src 'self'; " + // Applies to XMLHttpRequest (AJAX), WebSocket or EventSource. If you connect to other APIs, add their domains here.
-          //       "object-src 'none'; " + // Defines valid sources for the <object>, <embed>, and <applet> elements (set to 'none' for safety)
-          //       "frame-ancestors 'none'; " + // Specifies valid parents that may embed a page using <frame>, <iframe>, <object>, <embed>, or <applet>. Replaces X-Frame-Options. 'none' is equivalent to DENY.
-          //       "base-uri 'self'; " + // Restricts the URLs which can be used in a document's <base> element.
-          //       "form-action 'self';", // Restricts the URLs which can be used as the target of form submissions from a given context.
-          // override: true,
+          //     contentSecurityPolicy: "",
+          //     override: true,
           //   },
           contentTypeOptions: { override: true },
           frameOptions: {
@@ -95,6 +87,8 @@ export class SiteStack extends cdk.Stack {
     );
 
     //  CloudFront Distribution
+    // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_cloudfront-readme.html#distribution-api
+    // TODO support multiple domains pointing to the same Cloudfront distribution
     const distribution = new cloudfront.Distribution(this, "SiteDistribution", {
       comment: `CloudFront distribution for ${props.domainName}`,
       defaultRootObject: "index.html",
@@ -113,8 +107,20 @@ export class SiteStack extends cdk.Stack {
         cachedMethods: cloudfront.CachedMethods.CACHE_GET_HEAD_OPTIONS,
         compress: true,
       },
-      // Optional: Configure custom error responses
-      // errorResponses: [ ... ],
+      errorResponses: [
+        {
+          httpStatus: 403,
+          responseHttpStatus: 200,
+          responsePagePath: "/index.html",
+          ttl: cdk.Duration.minutes(30),
+        },
+        {
+          httpStatus: 404,
+          responseHttpStatus: 200,
+          responsePagePath: "/index.html",
+          ttl: cdk.Duration.minutes(30),
+        },
+      ],
     });
 
     // Deploy assets
@@ -122,10 +128,12 @@ export class SiteStack extends cdk.Stack {
       destinationBucket: siteBucket,
       sources: [
         s3deploy.Source.asset(
+          // TODO use absolute path to build dir
           path.resolve(__dirname, "../../assets/build/client")
         ),
       ],
       distribution,
+      // TODO investigate how to correctly invalidate cache. Also, how to push update to favicon.ico to users?
       distributionPaths: ["/*"],
     });
 

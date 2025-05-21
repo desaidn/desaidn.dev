@@ -1,5 +1,7 @@
 import type { Config } from "@react-router/dev/config";
 
 export default {
-  ssr: false, // https://reactrouter.com/start/framework/rendering#client-side-rendering
+  // TODO determine best rendering strategy
+  // https://reactrouter.com/start/framework/rendering#client-side-rendering
+  ssr: false,
 } satisfies Config;
