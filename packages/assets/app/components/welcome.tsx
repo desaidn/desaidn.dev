@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import type { ReactElement } from "react";
 
 const menuItems = [
   { name: "about", path: "/about" },
@@ -11,19 +12,52 @@ export function Welcome() {
   const [showMenu, setShowMenu] = useState(false);
   const [displayText, setDisplayText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
+  const [commandHistory, setCommandHistory] = useState<Array<{ command: string; result: string | ReactElement }>>([]);
 
   useEffect(() => {
-    const targetText = "ls -l";
     let currentIndex = 0;
+    let currentStep = 0;
+    const steps = [
+      { command: "whoami", result: "desaidn" },
+      { 
+        command: "ls", 
+        result: (
+          <div>
+            {menuItems.map((item) => (
+              <div
+                key={item.name}
+                className="flex items-center text-green-400"
+              >
+                <a href={item.path} className="hover:text-white">
+                  {item.name}/
+                </a>
+              </div>
+            ))}
+          </div>
+        )
+      }
+    ];
 
     const typingInterval = setInterval(() => {
-      if (currentIndex < targetText.length) {
-        setDisplayText(targetText.slice(0, currentIndex + 1));
-        currentIndex++;
-      } else {
-        clearInterval(typingInterval);
-        setIsTyping(false);
-        setShowMenu(true);
+      if (currentStep < steps.length) {
+        const step = steps[currentStep];
+        
+        if (currentIndex < step.command.length) {
+          setDisplayText(step.command.slice(0, currentIndex + 1));
+          currentIndex++;
+        } else {
+          // Add command and result to history
+          setCommandHistory(prev => [...prev, { command: step.command, result: step.result }]);
+          currentStep++;
+          currentIndex = 0;
+          setDisplayText(""); // Clear displayText before next command
+          
+          if (currentStep === steps.length) {
+            clearInterval(typingInterval);
+            setIsTyping(false);
+            setShowMenu(true);
+          }
+        }
       }
     }, 500);
 
@@ -68,48 +102,40 @@ export function Welcome() {
           </div>
         </header>
 
-        <div className="w-full max-w-2xl h-[200px] bg-black/80 backdrop-blur-sm text-green-400 p-6 rounded-lg shadow-lg border border-gray-700/50 overflow-hidden flex flex-col">
-          <div className="flex items-center">
-            <span className="mr-2">$</span>
-            <div className="flex-1 flex items-center relative">
-              <input
-                type="text"
-                value={displayText}
-                className="bg-transparent border-none outline-none flex-1 text-green-400 caret-transparent"
-                autoFocus
-                readOnly={isTyping}
-              />
-              <span 
-                className="absolute h-5 w-2 bg-green-400 ml-0.5" 
-                style={{ 
-                  left: `${displayText.length * 0.6}rem`
-                }}
-              ></span>
-            </div>
-          </div>
-
-          {showMenu && (
-            <div className="overflow-y-auto overflow-x-auto flex-1">
-              <div className="min-w-max">
-                {menuItems.map((item) => (
-                  <div
-                    key={item.name}
-                    className="flex items-center text-green-400 whitespace-nowrap"
-                  >
-                    <span className="mx-2">drwxr-xr-x@</span>
-                    <span className="mx-2">3</span>
-                    <span className="mx-2">desaidn</span>
-                    <span className="mx-2">staff</span>
-                    <span className="mx-2">96B</span>
-                    <span className="mx-2">Nov 22 10:00</span>
-                    <a href={item.path} className="ml-2 hover:text-white">
-                      {item.name}/
-                    </a>
-                  </div>
-                ))}
+        <div className="w-full max-w-2xl h-[300px] bg-black/80 backdrop-blur-sm text-green-400 p-6 rounded-lg shadow-lg border border-gray-700/50 overflow-hidden flex flex-col">
+          <div className="flex-1 overflow-y-auto">
+            {commandHistory.map((item, index) => (
+              <div key={index} className="mb-1">
+                <div className="flex items-center">
+                  <span className="mr-2">$</span>
+                  <span>{item.command}</span>
+                </div>
+                {item.result && (
+                  <div className="ml-4">{item.result}</div>
+                )}
               </div>
-            </div>
-          )}
+            ))}
+            {isTyping && (
+              <div className="flex items-center">
+                <span className="mr-2">$</span>
+                <div className="flex-1 flex items-center relative">
+                  <input
+                    type="text"
+                    value={displayText}
+                    className="bg-transparent border-none outline-none flex-1 text-green-400 caret-transparent"
+                    autoFocus
+                    readOnly={isTyping}
+                  />
+                  <span 
+                    className="absolute h-5 w-2 bg-green-400 ml-0.5" 
+                    style={{ 
+                      left: `${displayText.length * 0.6}rem`
+                    }}
+                  ></span>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </main>
