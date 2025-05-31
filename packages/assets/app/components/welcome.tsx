@@ -44,14 +44,13 @@ export function Welcome() {
           setDisplayText(step.command.slice(0, currentIndex + 1));
           currentIndex++;
         } else {
-          // Add command and result to history
           setCommandHistory((prev) => [
             ...prev,
             { command: step.command, result: step.result },
           ]);
           currentStep++;
           currentIndex = 0;
-          setDisplayText(""); // Clear displayText before next command
+          setDisplayText("");
 
           if (currentStep === steps.length) {
             clearInterval(typingInterval);
@@ -69,10 +68,10 @@ export function Welcome() {
   return (
     <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
       <header className="flex flex-col items-start">
-        <h1 className="text-gray-700 dark:text-gray-200 text-3xl lg:text-4xl font-bold mb-2">
+        <h1 className="text-gray-200 text-3xl lg:text-4xl font-bold mb-2">
           Hi, I'm Dhairya
         </h1>
-        <h2 className="text-gray-700 dark:text-gray-200 text-3xl lg:text-4xl font-bold mb-6 whitespace-nowrap">
+        <h2 className="text-gray-200 text-3xl lg:text-4xl font-bold mb-6 whitespace-nowrap">
           Software Engineer
         </h2>
         <div className="mt-6 flex space-x-4 justify-center w-full">
