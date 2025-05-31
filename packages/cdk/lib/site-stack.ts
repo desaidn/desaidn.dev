@@ -128,12 +128,10 @@ export class SiteStack extends cdk.Stack {
       destinationBucket: siteBucket,
       sources: [
         s3deploy.Source.asset(
-          // TODO use absolute path to build dir
           path.resolve(__dirname, "../../assets/build/client")
         ),
       ],
       distribution,
-      // TODO investigate how to correctly invalidate cache. Also, how to push update to favicon.ico to users?
       distributionPaths: ["/*"],
     });
 
