@@ -69,7 +69,7 @@ export default function Home(): ReactElement {
           Software Engineer
         </h2>
         <p className="text-green-400 text-sm mb-2 mx-6 text-center">
-          high performance computing, distributed systems and user interfaces
+          High Performance Computing, Distributed Systems and User Interfaces
         </p>
         <div className="my-4 flex space-x-4 justify-center w-full">
           <a
