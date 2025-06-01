@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 
-export function useHeightAnimation(isOpen: boolean, duration: number = 300) {
+export default function useHeightAnimation(
+  isOpen: boolean,
+  duration: number = 300
+) {
   const ref = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState<number | "auto">(0);
 
