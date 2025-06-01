@@ -1,6 +1,6 @@
 import type { Experience } from "~/types/experience";
 
-export const EXPERIENCES: Experience[] = [
+export default [
   {
     id: "aws",
     company: "Amazon Web Services (AWS)",
@@ -100,4 +100,4 @@ export const EXPERIENCES: Experience[] = [
     location: "Oxford, Ohio, United States",
     technologies: undefined,
   },
-] as const;
+] satisfies Experience[];

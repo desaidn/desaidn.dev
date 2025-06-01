@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { ReactElement } from "react";
-import { MENU_ITEMS } from "~/constants/menu-items";
+import MENU_ITEMS from "~/constants/menu-items";
 
 export default function Home() {
   const [displayText, setDisplayText] = useState("");

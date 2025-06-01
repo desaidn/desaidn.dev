@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { ReactElement } from "react";
-import { EXPERIENCES } from "~/constants/experiences";
+import EXPERIENCES from "~/constants/experiences";
 import ExperienceItem from "./ExperienceItem";
 
 export default function Experience(): ReactElement {
