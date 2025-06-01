@@ -14,11 +14,15 @@ export default [
       "TypeScript",
       "React",
       "Python",
-      "AWS Lambda",
+      "Lambda",
+      "EC2",
       "Fargate",
       "S3",
       "DynamoDB",
       "Kinesis",
+      "Athena",
+      "Glue",
+      "Bedrock",
     ],
     highlights: [
       "Developing and optimizing RESTful APIs for quick and fault tolerant data processing, often for customer facing interactions",
@@ -36,7 +40,7 @@ export default [
     description:
       "Web and mobile application software development. Frontend web development primarily using JavaScript, VueJS, HTML, and CSS. Frontend mobile development for iOS and Android primarily using React Native. Backend development primarily using NodeJS, Express, Redis, MySQL, Ansible, Docker and AWS (S3, Fargate, Lambda, EC2).",
     technologies: [
-      "JavaScript",
+      "TypeScript",
       "VueJS",
       "React Native",
       "NodeJS",
@@ -48,7 +52,7 @@ export default [
       "AWS",
     ],
     highlights: [
-      "Notable work: designed, developed, and deployed an early Point-of-Sale integration service for 10,000+ venues across the globe to ingest item data in real-time and help automate inventory management for customers",
+      "Designed, developed, and deployed an early Point-of-Sale integration service for 10,000+ venues across the globe to ingest item data in real-time and help automate inventory management for customers.",
     ],
   },
   {
@@ -69,7 +73,11 @@ export default [
       "MySQL",
     ],
     highlights: [
-      "Notable work: QR code menu system, flexible inventory session system, PDF / HTML menu parsing tool, real-time bar inventory collaboration enhancements, usage and FIFO cost prediction system",
+      "QR code menu system",
+      "Flexible inventory session system",
+      "PDF / HTML menu parsing tool",
+      "Real-time bar inventory collaboration enhancements",
+      "Usage and First-In, First-Out (FIFO) cost prediction system",
     ],
   },
   {
@@ -80,7 +88,14 @@ export default [
     location: "Atlanta, Georgia, United States",
     description:
       "Summer supply chain intern for Elemica Inc. working closely with Elemica's product management and product development teams in order to learn and progress their supply chain network initiatives. These initiative broadly fall under the following categories: (1) Supply Chain Visibility, (2) Supply Chain Network Interoperability, (3) Applicability of Blockchain Technology.",
-    technologies: ["Blockchain Technology", "Supply Chain Analytics"],
+    technologies: [
+      "JavaScript",
+      "SQL",
+      "Java",
+      "Ethereum",
+      "IBM Hyperledger",
+      "Supply Chain Analytics",
+    ],
     highlights: [
       "Supply Chain Visibility initiatives",
       "Supply Chain Network Interoperability projects",
@@ -91,13 +106,11 @@ export default [
     id: "miami",
     company: "Miami University",
     role: "Bachelor's degree, Computer Science",
-    description: undefined,
     dates: "August 2017 - May 2021",
     highlights: [
       "First Place Among College Teams at Blockland Blockchain Hack-a-thon",
       "Dean's List Second Semester",
     ],
     location: "Oxford, Ohio, United States",
-    technologies: undefined,
   },
 ] satisfies Experience[];

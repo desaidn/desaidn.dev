@@ -38,7 +38,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <main className="flex items-center justify-center min-h-screen p-8 bg-gradient-to-br from-gray-900 via-emerald-900 to-gray-900 font-mono">
+        <main className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-emerald-900 to-gray-900 font-mono">
           {children}
           <ScrollRestoration />
           <Scripts />
