@@ -60,15 +60,19 @@ export default function Home(): ReactElement {
   }, []);
 
   return (
-    <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
-      <header className="flex flex-col items-start">
+    <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-16">
+      <header className="flex flex-col items-center">
         <h1 className="text-gray-200 text-3xl lg:text-4xl font-bold mb-2">
           Hi, I'm Dhairya
         </h1>
-        <h2 className="text-gray-200 text-3xl lg:text-4xl font-bold mb-6 whitespace-nowrap">
+        <h2 className="text-gray-200 text-2xl lg:text-4xl font-bold mb-4 whitespace-nowrap">
           Software Engineer
         </h2>
-        <div className="mt-6 flex space-x-4 justify-center w-full">
+        <p className="text-green-400 text-sm mb-2 mx-6 text-center">
+          I ❤️ high performance computing, distributed systems and user
+          interfaces.
+        </p>
+        <div className="my-4 flex space-x-4 justify-center w-full">
           <a
             href="https://www.linkedin.com/in/dhairya-n-desai"
             target="_blank"

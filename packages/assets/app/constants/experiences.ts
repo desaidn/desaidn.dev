@@ -8,7 +8,7 @@ export default [
     dates: "July 2022 - Present",
     location: "New York, New York, United States",
     description:
-      "Working on developing scalable service-oriented and event-driven architectures for billing and procurement systems. My role involves building highly available Java microservices, accessible UIs with TypeScript and React, and reusable Python utilities to process millions of billing artifacts. I leverage AWS technologies (Lambda, Fargate, S3, DynamoDB, Kinesis, etc) to design and implement robust, distributed systems that handle large volumes of data across multiple regions.",
+      "Working on developing scalable service-oriented and event-driven architectures for billing and procurement systems. My role involves building highly available Java microservices, accessible UIs with TypeScript and React, and reusable Python utilities to enable billions in cloud transactions monthly. I leverage AWS technologies (Lambda, Fargate, S3, DynamoDB, Kinesis, etc) to design and implement robust, distributed systems that handle large volumes of data across multiple regions.",
     technologies: [
       "Java",
       "TypeScript",
