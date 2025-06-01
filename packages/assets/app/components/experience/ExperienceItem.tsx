@@ -38,7 +38,7 @@ export default function ExperienceItem({
           </div>
           <div className="lg:text-right flex justify-between gap-2">
             <span className="inline-block px-3 py-1 bg-gray-900/50 text-green-400 text-sm rounded-full border border-gray-700/50">
-              {experience.duration}
+              {experience.dates}
             </span>
             <svg
               className={`w-5 h-5 text-green-400 transition-transform duration-300 ${

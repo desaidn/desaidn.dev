@@ -2,7 +2,7 @@ export interface Experience {
   id: string;
   company: string;
   role: string;
-  duration: string;
+  dates: string;
   location: string;
   description: string | undefined;
   technologies: string[] | undefined;
