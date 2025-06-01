@@ -2,13 +2,12 @@ import { useEffect, useState } from "react";
 import type { ReactElement } from "react";
 
 const MENU_ITEMS = [
-  { name: "about", path: "/about" },
   { name: "experience", path: "/experience" },
   { name: "projects", path: "/projects" },
   { name: "blog", path: "/blog" },
 ] as const;
 
-export function Welcome() {
+export function Home() {
   const [displayText, setDisplayText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
   const [commandHistory, setCommandHistory] = useState<

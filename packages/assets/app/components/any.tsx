@@ -1,4 +1,4 @@
-export function ComingSoon() {
+export function Any() {
   return (
     <div className="flex-1 flex flex-col items-center justify-center">
       <div className="max-w-[300px] w-full space-y-6 px-4">
