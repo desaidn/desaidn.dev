@@ -4,7 +4,7 @@ import * as s3 from "aws-cdk-lib/aws-s3";
 import * as cloudfront from "aws-cdk-lib/aws-cloudfront";
 import * as origins from "aws-cdk-lib/aws-cloudfront-origins";
 import * as certificatemanager from "aws-cdk-lib/aws-certificatemanager";
-import * as iam from "aws-cdk-lib/aws-iam"; // Import IAM
+import * as iam from "aws-cdk-lib/aws-iam";
 import * as s3deploy from "aws-cdk-lib/aws-s3-deployment";
 import * as path from "node:path";
 
@@ -57,31 +57,63 @@ export class SiteStack extends cdk.Stack {
         responseHeadersPolicyName: `SecurityHeaders-${cdk.Aws.REGION}-${id}`,
         comment: "Security headers policy for the static site",
         securityHeadersBehavior: {
-          // TODO add CSP and verify other security best practices
-          // https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy
-          //   contentSecurityPolicy: {
-          //     contentSecurityPolicy: "",
-          //     override: true,
-          //   },
-          contentTypeOptions: { override: true },
+          contentSecurityPolicy: {
+            contentSecurityPolicy: [
+              "default-src 'none'",
+              "script-src 'self' 'unsafe-inline'", // TODO fix
+              "style-src 'self' https://fonts.googleapis.com",
+              "img-src 'self' data: https:",
+              "font-src 'self' https://fonts.gstatic.com",
+              "connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com",
+              "frame-ancestors 'none'",
+              "form-action 'self'",
+              "base-uri 'self'",
+              "object-src 'none'",
+              "upgrade-insecure-requests",
+            ].join("; "),
+            override: true,
+          },
+          contentTypeOptions: {
+            override: true,
+          },
           frameOptions: {
             frameOption: cloudfront.HeadersFrameOption.DENY,
             override: true,
           },
           referrerPolicy: {
-            referrerPolicy: cloudfront.HeadersReferrerPolicy.NO_REFERRER,
+            referrerPolicy:
+              cloudfront.HeadersReferrerPolicy.STRICT_ORIGIN_WHEN_CROSS_ORIGIN,
             override: true,
           },
           strictTransportSecurity: {
-            accessControlMaxAge: cdk.Duration.seconds(600),
+            accessControlMaxAge: cdk.Duration.seconds(31536000), // 1 year
             includeSubdomains: true,
+            preload: true,
             override: true,
           },
-          xssProtection: {
-            protection: true,
-            modeBlock: false,
-            override: true,
-          },
+        },
+        customHeadersBehavior: {
+          customHeaders: [
+            {
+              header: "Permissions-Policy",
+              value: [
+                "camera=()",
+                "microphone=()",
+                "geolocation=()",
+                "payment=()",
+                "usb=()",
+                "magnetometer=()",
+                "gyroscope=()",
+                "accelerometer=()",
+              ].join(", "),
+              override: true,
+            },
+            {
+              header: "Server",
+              value: "",
+              override: true,
+            },
+          ],
         },
       }
     );
