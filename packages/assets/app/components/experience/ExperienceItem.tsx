@@ -1,5 +1,5 @@
 import type { Experience } from "~/types/experience";
-import { useHeightAnimation } from "./useHeightAnimation";
+import { useHeightAnimation } from "../../hooks/useHeightAnimation";
 
 interface ExperienceItemProps {
   experience: Experience;
