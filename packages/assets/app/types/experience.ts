@@ -4,7 +4,7 @@ export interface Experience {
   role: string;
   dates: string;
   location: string;
-  description: string | undefined;
-  technologies: string[] | undefined;
   highlights: string[];
+  description?: string;
+  technologies?: string[];
 }

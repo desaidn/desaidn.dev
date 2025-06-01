@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import type { ReactElement } from "react";
 import MENU_ITEMS from "~/constants/menu-items";
 
-export default function Home() {
+export default function Home(): ReactElement {
   const [displayText, setDisplayText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
   const [commandHistory, setCommandHistory] = useState<
-    Array<{ command: string; result: string | ReactElement }>
+    Array<{ command: string; result: ReactNode }>
   >([]);
 
   useEffect(() => {

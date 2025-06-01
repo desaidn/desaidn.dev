@@ -1,5 +1,6 @@
 import type { Experience } from "~/types/experience";
 import useHeightAnimation from "../../hooks/useHeightAnimation";
+import type { ReactElement } from "react";
 
 interface ExperienceItemProps {
   experience: Experience;
@@ -11,7 +12,7 @@ export default function ExperienceItem({
   experience,
   isOpen,
   onToggle,
-}: ExperienceItemProps) {
+}: ExperienceItemProps): ReactElement {
   const animationProps = useHeightAnimation(isOpen);
 
   return (
