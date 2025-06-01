@@ -68,7 +68,7 @@ export default function Home(): ReactElement {
         <h2 className="text-gray-200 text-2xl lg:text-4xl font-bold mb-4 whitespace-nowrap">
           Software Engineer
         </h2>
-        <p className="text-green-400 text-sm mb-2 mx-6 text-center">
+        <p className="text-green-400 text-sm mb-2 mx-6 text-center whitespace-nowrap">
           High Performance Computing, Distributed Systems and User Interfaces
         </p>
         <div className="my-4 flex space-x-4 justify-center w-full">
