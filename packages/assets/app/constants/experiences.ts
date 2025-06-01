@@ -15,6 +15,7 @@ export default [
       "React",
       "Python",
       "Lambda",
+      "SNS/SQS",
       "EC2",
       "Fargate",
       "S3",
@@ -23,6 +24,7 @@ export default [
       "Athena",
       "Glue",
       "Bedrock",
+      "CloudWatch",
     ],
     highlights: [
       "Developing and optimizing RESTful APIs for quick and fault tolerant data processing, often for customer facing interactions",
