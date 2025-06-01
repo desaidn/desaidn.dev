@@ -1,13 +1,8 @@
 import { useEffect, useState } from "react";
 import type { ReactElement } from "react";
+import { MENU_ITEMS } from "~/constants/menu-items";
 
-const MENU_ITEMS = [
-  { name: "experience", path: "/experience" },
-  { name: "projects", path: "/projects" },
-  { name: "blog", path: "/blog" },
-] as const;
-
-export function Home() {
+export default function Home() {
   const [displayText, setDisplayText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
   const [commandHistory, setCommandHistory] = useState<

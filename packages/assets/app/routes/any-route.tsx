@@ -1,4 +1,4 @@
-import { Any } from "~/components/any";
+import Any from "~/components/Any";
 
 export default function AnyRoute() {
   return <Any />;
