@@ -2,7 +2,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import type { ReactElement } from "react";
 import MENU_ITEMS from "~/constants/menu-items";
 
-export default function Home(): ReactElement {
+export default function About(): ReactElement {
   const [displayText, setDisplayText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
   const [commandHistory, setCommandHistory] = useState<
