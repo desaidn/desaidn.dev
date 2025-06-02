@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 
-export default function Any(): ReactElement {
+export default function ComingSoon(): ReactElement {
   return (
     <div className="flex-1 flex flex-col items-center justify-center">
       <div className="max-w-[300px] w-full space-y-6 px-4">
