@@ -7,5 +7,4 @@ export default function AnyRoute() {
   useEffect(() => {
     navigate("/");
   }, []);
-  return <About />;
 }

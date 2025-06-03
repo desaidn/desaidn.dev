@@ -50,7 +50,7 @@ export default function About(): ReactElement {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black p-6">
+    <div className="p-6">
       <div className="w-full max-w-2xl mx-auto pt-32">
         <div className="bg-black text-green-400 font-mono">
           <div className="flex items-center h-6">
