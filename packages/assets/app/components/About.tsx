@@ -1,6 +1,5 @@
 import { useEffect, useState, type ReactElement } from "react";
 
-// Mock menu items - replace with your actual MENU_ITEMS import
 const MENU_ITEMS = [
   { name: "experience", path: "/experience" },
   { name: "projects", path: "/projects" },
