@@ -123,9 +123,6 @@ export default function About(): ReactElement {
                           {item.name}/
                         </span>
                         <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-green-400/10 blur-sm rounded-sm"></span>
-                        <span className="ml-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-8px] group-hover:translate-x-0 text-green-400/70">
-                          →
-                        </span>
                       </a>
                     </div>
                   ))}
