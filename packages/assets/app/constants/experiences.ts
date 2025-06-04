@@ -8,12 +8,16 @@ export default [
     role: 'Software Development Engineer',
     dates: 'July 2022 - Present',
     location: 'New York, New York, United States',
-    description:
-      'Working on developing scalable service-oriented and event-driven architectures for billing and procurement systems. My role involves building highly available Java microservices, accessible UIs with TypeScript and React, and reusable Python utilities to enable billions in cloud transactions monthly. I leverage AWS technologies (Lambda, Fargate, S3, DynamoDB, Kinesis, etc) to design and implement robust, distributed systems that handle large volumes of data across multiple regions.',
+    description: `
+    Working on developing scalable service-oriented and event-driven architectures for billing and procurement systems. 
+    My role involves building highly available Java / Kotlin microservices, accessible UIs with TypeScript and React, and reusable Python utilities to enable billions in cloud transactions monthly. 
+    I leverage AWS technologies (Lambda, Fargate, S3, DynamoDB, Kinesis, etc) to design and implement robust, distributed systems that handle large volumes of data across multiple regions.`.trim(),
     technologies: [
       'Java',
+      'Kotlin',
       'TypeScript',
       'React',
+      'CloudScape Design System',
       'Python',
       'Lambda',
       'SNS/SQS',
@@ -53,7 +57,13 @@ export default [
       'MySQL',
       'Ansible',
       'Docker',
-      'AWS',
+      'EC2',
+      'Fargate',
+      'Lambda',
+      'SNS/SQS',
+      'CloudWatch',
+      'HubSpot',
+      'Google Analytics',
     ],
     highlights: [
       'Designed, developed, and deployed an early Point-of-Sale integration service for 10,000+ venues across the globe to ingest item data in real-time and help automate inventory management for customers.',
