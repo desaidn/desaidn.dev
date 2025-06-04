@@ -86,6 +86,14 @@ export default function About(): ReactElement {
                   github.com/desaidn
                 </a>
                 <a
+                  href="https://x.com/writessoftly"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-green-400 transition-colors underline underline-offset-4"
+                >
+                  x.com/writessoftly
+                </a>
+                <a
                   href="https://www.linkedin.com/in/dhairya-n-desai"
                   target="_blank"
                   rel="noopener noreferrer"
