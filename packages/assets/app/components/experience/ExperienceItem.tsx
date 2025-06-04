@@ -1,6 +1,6 @@
-import type { Experience } from "~/types/experience";
-import useHeightAnimation from "../../hooks/useHeightAnimation";
-import type { ReactElement } from "react";
+import type { Experience } from '~/types/experience';
+import useHeightAnimation from '../../hooks/useHeightAnimation';
+import type { ReactElement } from 'react';
 
 interface ExperienceItemProps {
   experience: Experience;
@@ -19,8 +19,8 @@ export default function ExperienceItem({
     <div
       className={`bg-black/80 border rounded-lg overflow-hidden transition-[border-color] duration-300 ${
         isOpen
-          ? "border-green-400/50"
-          : "border-gray-700/50 hover:border-green-400/50"
+          ? 'border-green-400/50'
+          : 'border-gray-700/50 hover:border-green-400/50'
       }`}
     >
       <button
@@ -48,7 +48,7 @@ export default function ExperienceItem({
             </span>
             <svg
               className={`w-5 h-5 text-green-400 transition-transform duration-300 ${
-                isOpen ? "rotate-180" : ""
+                isOpen ? 'rotate-180' : ''
               }`}
               fill="none"
               stroke="currentColor"
@@ -81,7 +81,7 @@ export default function ExperienceItem({
               <ul className="text-gray-300 text-sm space-y-1">
                 {experience.highlights.map((highlight, index) => (
                   <li key={index} className="flex items-start gap-2">
-                    <span className="text-green-400 mt-1.5 w-1 h-1 bg-green-400 rounded-full flex-shrink-0"></span>
+                    <span className="text-green-400 mt-1.5 w-1 h-1 bg-green-400 rounded-full flex-shrink-0" />
                     <span>{highlight}</span>
                   </li>
                 ))}
@@ -94,7 +94,7 @@ export default function ExperienceItem({
                   Technologies:
                 </h5>
                 <div className="flex flex-wrap gap-2">
-                  {experience.technologies?.map((tech) => (
+                  {experience.technologies?.map(tech => (
                     <span
                       key={tech}
                       className="px-2 py-1 bg-gray-900/50 text-gray-300 text-xs rounded border border-gray-700/50"

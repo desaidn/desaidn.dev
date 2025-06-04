@@ -1,10 +1,9 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router";
-import About from "~/components/About";
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router';
 
 export default function AnyRoute() {
   const navigate = useNavigate();
   useEffect(() => {
-    navigate("/");
-  }, []);
+    void navigate('/');
+  }, [navigate]);
 }

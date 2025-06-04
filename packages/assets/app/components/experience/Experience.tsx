@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { useNavigate } from "react-router";
-import type { ReactElement } from "react";
-import EXPERIENCES from "~/constants/experiences";
-import ExperienceItem from "./ExperienceItem";
+import { useState } from 'react';
+import { useNavigate } from 'react-router';
+import type { ReactElement } from 'react';
+import EXPERIENCES from '~/constants/experiences';
+import ExperienceItem from './ExperienceItem';
 
 export default function Experience(): ReactElement {
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ export default function Experience(): ReactElement {
   };
 
   const handleBackClick = (): void => {
-    navigate("/");
+    void navigate('/');
   };
 
   return (
@@ -50,7 +50,7 @@ export default function Experience(): ReactElement {
             Experience
           </h2>
           <div className="space-y-4">
-            {EXPERIENCES.map((exp) => (
+            {EXPERIENCES.map(exp => (
               <ExperienceItem
                 key={exp.id}
                 experience={exp}

@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from 'react';
 
 export default function useHeightAnimation(
   isOpen: boolean,
   duration: number = 300
 ) {
   const ref = useRef<HTMLDivElement>(null);
-  const [height, setHeight] = useState<number | "auto">(0);
+  const [height, setHeight] = useState<number | 'auto'>(0);
 
   useEffect(() => {
     if (!ref.current) return;
@@ -18,6 +18,7 @@ export default function useHeightAnimation(
         setHeight(currentHeight);
 
         // Force browser reflow
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         element.offsetHeight;
 
         // Then animate to full height
@@ -28,7 +29,7 @@ export default function useHeightAnimation(
           // After animation completes, set to auto for responsive behavior
           setTimeout(() => {
             if (isOpen) {
-              setHeight("auto");
+              setHeight('auto');
             }
           }, duration);
         });
@@ -38,6 +39,7 @@ export default function useHeightAnimation(
         setHeight(currentHeight);
 
         // Force browser reflow
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         element.offsetHeight;
 
         requestAnimationFrame(() => {
@@ -53,7 +55,7 @@ export default function useHeightAnimation(
     ref,
     style: {
       height,
-      overflow: "hidden",
+      overflow: 'hidden',
       transition: `height ${duration}ms cubic-bezier(0.4, 0, 0.2, 1)`,
     },
   };

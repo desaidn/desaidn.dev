@@ -1,20 +1,20 @@
-import { useEffect, useState, type ReactElement } from "react";
+import { useEffect, useState, type ReactElement } from 'react';
 
 const MENU_ITEMS = [
-  { name: "experience", path: "/experience" },
-  { name: "projects", path: "/projects" },
-  { name: "blog", path: "/blog" },
+  { name: 'experience', path: '/experience' },
+  { name: 'projects', path: '/projects' },
+  { name: 'blog', path: '/blog' },
 ];
 
 export default function About(): ReactElement {
-  const [displayText, setDisplayText] = useState("");
+  const [displayText, setDisplayText] = useState('');
   const [showInfo, setShowInfo] = useState(false);
   const [showLsCommand, setShowLsCommand] = useState(false);
-  const [lsDisplayText, setLsDisplayText] = useState("");
+  const [lsDisplayText, setLsDisplayText] = useState('');
   const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
-    const whoamiCommand = "whoami";
+    const whoamiCommand = 'whoami';
     let currentIndex = 0;
 
     const typingInterval = setInterval(() => {
@@ -29,7 +29,7 @@ export default function About(): ReactElement {
             setShowLsCommand(true);
 
             // Start typing ls command
-            const lsCommand = "ls";
+            const lsCommand = 'ls';
             let lsIndex = 0;
             const lsTypingInterval = setInterval(() => {
               if (lsIndex < lsCommand.length) {
@@ -56,7 +56,7 @@ export default function About(): ReactElement {
             <span className="mr-2">$</span>
             <span>{displayText}</span>
             {!showInfo && (
-              <span className="w-2 h-5 bg-green-400 ml-1 animate-pulse"></span>
+              <span className="w-2 h-5 bg-green-400 ml-1 animate-pulse" />
             )}
           </div>
 
@@ -103,12 +103,12 @@ export default function About(): ReactElement {
                 <span className="mr-2">$</span>
                 <span>{lsDisplayText}</span>
                 {!showMenu && (
-                  <span className="w-2 h-5 bg-green-400 ml-1 animate-pulse"></span>
+                  <span className="w-2 h-5 bg-green-400 ml-1 animate-pulse" />
                 )}
               </div>
               {showMenu && (
                 <div className="-ml-2 space-y-1">
-                  {MENU_ITEMS.map((item) => (
+                  {MENU_ITEMS.map(item => (
                     <div key={item.name} className="group">
                       <a
                         href={item.path}
@@ -117,11 +117,11 @@ export default function About(): ReactElement {
                         <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 mr-2 text-white font-mono">
                           &gt;
                         </span>
-                        <span className="absolute inset-0 bg-green-400/0 group-hover:bg-green-400/20 transition-all duration-300 rounded-sm transform scale-x-0 group-hover:scale-x-100 origin-left"></span>
+                        <span className="absolute inset-0 bg-green-400/0 group-hover:bg-green-400/20 transition-all duration-300 rounded-sm transform scale-x-0 group-hover:scale-x-100 origin-left" />
                         <span className="relative z-10 font-mono tracking-wide group-hover:font-semibold transition-all duration-300 underline underline-offset-4">
                           {item.name}
                         </span>
-                        <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-green-400/10 blur-sm rounded-sm"></span>
+                        <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-green-400/10 blur-sm rounded-sm" />
                       </a>
                     </div>
                   ))}
