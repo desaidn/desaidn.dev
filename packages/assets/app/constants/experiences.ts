@@ -36,7 +36,7 @@ export default [
   },
   {
     id: "backbar-engineer",
-    company: "Backbar (Beverage Management Platform - Acquired)",
+    company: "Backbar (Beverage Management Platform - Acquired 2022)",
     link: "https://www.getbackbar.com/",
     role: "Full Stack Engineer",
     dates: "June 2021 - July 2022",
@@ -61,7 +61,7 @@ export default [
   },
   {
     id: "backbar-intern",
-    company: "Backbar",
+    company: "Backbar (Beverage Management Platform - Acquired 2022)",
     role: "Software Engineering Intern",
     link: "https://www.getbackbar.com/",
     dates: "May 2020 - May 2021",
