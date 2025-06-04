@@ -4,6 +4,7 @@ export default [
   {
     id: "aws",
     company: "Amazon Web Services (AWS)",
+    link: "https://aws.amazon.com/",
     role: "Software Development Engineer",
     dates: "July 2022 - Present",
     location: "New York, New York, United States",
@@ -35,7 +36,8 @@ export default [
   },
   {
     id: "backbar-engineer",
-    company: "Backbar",
+    company: "Backbar (Beverage Management Platform - Acquired)",
+    link: "https://www.getbackbar.com/",
     role: "Full Stack Engineer",
     dates: "June 2021 - July 2022",
     location: "Chicago, Illinois, United States",
@@ -61,6 +63,7 @@ export default [
     id: "backbar-intern",
     company: "Backbar",
     role: "Software Engineering Intern",
+    link: "https://www.getbackbar.com/",
     dates: "May 2020 - May 2021",
     location: "Chicago, Illinois, United States",
     description:
@@ -85,6 +88,7 @@ export default [
   {
     id: "elemica",
     company: "Elemica",
+    link: "https://www.elemica.com/",
     role: "Supply Chain Intern",
     dates: "June 2019 - August 2019",
     location: "Atlanta, Georgia, United States",
@@ -107,6 +111,7 @@ export default [
   {
     id: "miami",
     company: "Miami University",
+    link: "https://miamioh.edu/",
     role: "Bachelor's degree, Computer Science",
     dates: "August 2017 - May 2021",
     highlights: [

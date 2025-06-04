@@ -25,7 +25,7 @@ export default function Experience(): ReactElement {
       <div className="max-w-6xl mx-auto">
         <button
           onClick={handleBackClick}
-          className="group mb-6 flex items-center gap-2 text-white/70 hover:text-white transition-all duration-200 ease-out hover:translate-x-[-2px] active:scale-95 focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg p-2 -ml-2"
+          className="group mb-6 flex items-center gap-2 text-white/70 hover:text-green-400 transition-all duration-200 ease-out hover:translate-x-[-2px] active:scale-95 focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg p-2 -ml-2"
           aria-label="Go back to home page"
         >
           <svg

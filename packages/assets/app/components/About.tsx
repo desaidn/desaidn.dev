@@ -61,19 +61,19 @@ export default function About(): ReactElement {
           </div>
 
           {showInfo && (
-            <div className="mt-4 ml-3 space-y-2 text-gray-300">
+            <div className="mt-2 ml-4 space-y-2 text-gray-300">
               <div className="text-white text-xl font-semibold">
                 Dhairya Desai
               </div>
-              <div className="text-green-400">Software Engineer</div>
+              <div>Software Engineer</div>
               <div className="text-sm">
                 Programming Languages, Distributed Systems, User Interfaces
               </div>
 
-              <div className="mt-4 space-y-1">
+              <div className="mt-2 space-y-1">
                 <a
                   href="mailto:me@desaidn.dev"
-                  className="block hover:text-green-400 transition-colors"
+                  className="block text-green-400 transition-colors underline underline-offset-4"
                 >
                   me@desaidn.dev
                 </a>
@@ -81,7 +81,7 @@ export default function About(): ReactElement {
                   href="https://github.com/desaidn"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block hover:text-green-400 transition-colors"
+                  className="block text-green-400 transition-colors underline underline-offset-4"
                 >
                   github.com/desaidn
                 </a>
@@ -89,7 +89,7 @@ export default function About(): ReactElement {
                   href="https://www.linkedin.com/in/dhairya-n-desai"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block hover:text-green-400 transition-colors"
+                  className="block text-green-400 transition-colors underline underline-offset-4"
                 >
                   linkedin.com/in/dhairya-n-desai
                 </a>
@@ -98,8 +98,8 @@ export default function About(): ReactElement {
           )}
 
           {showLsCommand && (
-            <div className="mt-8">
-              <div className="flex items-center text-green-400 mb-2">
+            <div className="mt-4">
+              <div className="flex items-center text-green-400">
                 <span className="mr-2">$</span>
                 <span>{lsDisplayText}</span>
                 {!showMenu && (
@@ -118,8 +118,8 @@ export default function About(): ReactElement {
                           &gt;
                         </span>
                         <span className="absolute inset-0 bg-green-400/0 group-hover:bg-green-400/20 transition-all duration-300 rounded-sm transform scale-x-0 group-hover:scale-x-100 origin-left"></span>
-                        <span className="relative z-10 font-mono tracking-wide group-hover:font-semibold transition-all duration-300">
-                          {item.name}/
+                        <span className="relative z-10 font-mono tracking-wide group-hover:font-semibold transition-all duration-300 underline underline-offset-4">
+                          {item.name}
                         </span>
                         <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-green-400/10 blur-sm rounded-sm"></span>
                       </a>
