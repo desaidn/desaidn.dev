@@ -2,7 +2,7 @@ import type { ReactElement } from 'react';
 import type { Experience } from '~/types/experience';
 import useHeightAnimation from '../../hooks/useHeightAnimation';
 
-interface ExperienceItemProps {
+export interface ExperienceItemProps {
   experience: Experience;
   isOpen: boolean;
   onToggle: () => void;
