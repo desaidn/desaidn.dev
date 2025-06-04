@@ -39,11 +39,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <main className="min-h-screen bg-black font-mono">
-          {children}
-          <ScrollRestoration />
-          <Scripts />
-        </main>
+        {children}
+        <ScrollRestoration />
+        <Scripts />
       </body>
     </html>
   );
