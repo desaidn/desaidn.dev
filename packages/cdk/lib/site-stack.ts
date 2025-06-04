@@ -1,11 +1,11 @@
 import * as cdk from "aws-cdk-lib";
-import { Construct } from "constructs";
-import * as s3 from "aws-cdk-lib/aws-s3";
+import * as certificatemanager from "aws-cdk-lib/aws-certificatemanager";
 import * as cloudfront from "aws-cdk-lib/aws-cloudfront";
 import * as origins from "aws-cdk-lib/aws-cloudfront-origins";
-import * as certificatemanager from "aws-cdk-lib/aws-certificatemanager";
 import * as iam from "aws-cdk-lib/aws-iam";
+import * as s3 from "aws-cdk-lib/aws-s3";
 import * as s3deploy from "aws-cdk-lib/aws-s3-deployment";
+import { Construct } from "constructs";
 import * as path from "node:path";
 
 export interface SiteStackProps extends cdk.StackProps {
@@ -120,7 +120,6 @@ export class SiteStack extends cdk.Stack {
 
     //  CloudFront Distribution
     // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_cloudfront-readme.html#distribution-api
-    // TODO support multiple domains pointing to the same Cloudfront distribution
     const distribution = new cloudfront.Distribution(this, "SiteDistribution", {
       comment: `CloudFront distribution for ${props.domainName}`,
       defaultRootObject: "index.html",
