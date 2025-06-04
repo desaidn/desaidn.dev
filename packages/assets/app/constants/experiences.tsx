@@ -8,10 +8,17 @@ export default [
     role: 'Software Development Engineer',
     dates: 'July 2022 - Present',
     location: 'New York, New York, United States',
-    description: `
-    Working on developing scalable service-oriented and event-driven architectures for billing and procurement systems. 
-    My role involves building highly available Java / Kotlin microservices, accessible UIs with TypeScript and React, and reusable Python utilities to enable billions in cloud transactions monthly. 
-    I leverage AWS technologies (Lambda, Fargate, S3, DynamoDB, Kinesis, etc) to design and implement robust, distributed systems that handle large volumes of data across multiple regions.`.trim(),
+    description: (
+      <p>
+        Working on developing scalable service-oriented and event-driven
+        architectures for billing and procurement systems. My role involves
+        building highly available Java / Kotlin microservices, accessible UIs
+        with TypeScript and React, and reusable Python utilities to enable
+        billions in cloud transactions monthly. I leverage AWS to design and
+        implement robust, distributed systems that handle large volumes of data
+        across multiple regions.
+      </p>
+    ),
     technologies: [
       'Java',
       'Kotlin',
@@ -45,8 +52,22 @@ export default [
     role: 'Full Stack Engineer',
     dates: 'June 2021 - July 2022',
     location: 'Chicago, Illinois, United States',
-    description:
-      'Web and mobile application software development. Frontend web development primarily using JavaScript, VueJS, HTML, and CSS. Frontend mobile development for iOS and Android primarily using React Native. Backend development primarily using NodeJS, Express, Redis, MySQL, Ansible, Docker and AWS (S3, Fargate, Lambda, EC2).',
+    description: (
+      <p>
+        Web and mobile application software development. 1 of 2 engineers on the
+        team that was acquired by{' '}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-lg text-green-400 hover:text-gray-300 mb-2 underline underline-offset-4"
+          href="https://public.vtinfo.com/"
+        >
+          VIP
+        </a>
+        . Owned web platform and data ingestion pipelines. Contributed to mobile
+        (iOS/Android) app.
+      </p>
+    ),
     technologies: [
       'TypeScript',
       'VueJS',

@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 export interface Experience {
   id: string;
   company: string;
@@ -6,6 +8,6 @@ export interface Experience {
   dates: string;
   location: string;
   highlights: string[];
-  description?: string;
+  description?: ReactNode;
   technologies?: string[];
 }
