@@ -9,7 +9,7 @@ const MENU_ITEMS = [
 
 const TYPING_INTERVAL = 150;
 
-const WAIT_INTERVAL = 500;
+const WAIT_INTERVAL = 300;
 
 const WHOAMI_CMD = 'whoami';
 
