@@ -6,6 +6,14 @@ const MENU_ITEMS = [
   { name: 'blog', path: '/blog' },
 ];
 
+const TYPING_INTERVAL = 150;
+
+const WAIT_INTERVAL = 500;
+
+const WHOAMI_CMD = 'whoami';
+
+const LS_COMMAND = 'ls';
+
 export default function About(): ReactElement {
   const [displayText, setDisplayText] = useState('');
   const [showInfo, setShowInfo] = useState(false);
@@ -14,12 +22,11 @@ export default function About(): ReactElement {
   const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
-    const whoamiCommand = 'whoami';
     let currentIndex = 0;
 
     const typingInterval = setInterval(() => {
-      if (currentIndex < whoamiCommand.length) {
-        setDisplayText(whoamiCommand.slice(0, currentIndex + 1));
+      if (currentIndex < WHOAMI_CMD.length) {
+        setDisplayText(WHOAMI_CMD.slice(0, currentIndex + 1));
         currentIndex++;
       } else {
         clearInterval(typingInterval);
@@ -27,23 +34,20 @@ export default function About(): ReactElement {
           setShowInfo(true);
           setTimeout(() => {
             setShowLsCommand(true);
-
-            // Start typing ls command
-            const lsCommand = 'ls';
             let lsIndex = 0;
             const lsTypingInterval = setInterval(() => {
-              if (lsIndex < lsCommand.length) {
-                setLsDisplayText(lsCommand.slice(0, lsIndex + 1));
+              if (lsIndex < LS_COMMAND.length) {
+                setLsDisplayText(LS_COMMAND.slice(0, lsIndex + 1));
                 lsIndex++;
               } else {
                 clearInterval(lsTypingInterval);
-                setTimeout(() => setShowMenu(true), 500);
+                setTimeout(() => setShowMenu(true), WAIT_INTERVAL);
               }
-            }, 150);
-          }, 1000);
-        }, 500);
+            }, TYPING_INTERVAL);
+          }, WAIT_INTERVAL);
+        }, WAIT_INTERVAL);
       }
-    }, 150);
+    }, TYPING_INTERVAL);
 
     return () => clearInterval(typingInterval);
   }, []);
@@ -73,7 +77,7 @@ export default function About(): ReactElement {
               <div className="mt-2 space-y-1">
                 <a
                   href="mailto:me@desaidn.dev"
-                  className="block text-green-400 transition-colors underline underline-offset-4"
+                  className="block text-green-400 hover:text-gray-300 transition-colors underline underline-offset-4"
                 >
                   me@desaidn.dev
                 </a>
@@ -81,7 +85,7 @@ export default function About(): ReactElement {
                   href="https://github.com/desaidn"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-green-400 transition-colors underline underline-offset-4"
+                  className="block text-green-400 hover:text-gray-300 transition-colors underline underline-offset-4"
                 >
                   github.com/desaidn
                 </a>
@@ -89,7 +93,7 @@ export default function About(): ReactElement {
                   href="https://x.com/writessoftly"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-green-400 transition-colors underline underline-offset-4"
+                  className="block text-green-400 hover:text-gray-300 transition-colors underline underline-offset-4"
                 >
                   x.com/writessoftly
                 </a>
@@ -97,7 +101,7 @@ export default function About(): ReactElement {
                   href="https://www.linkedin.com/in/dhairya-n-desai"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-green-400 transition-colors underline underline-offset-4"
+                  className="block text-green-400 hover:text-gray-300 transition-colors underline underline-offset-4"
                 >
                   linkedin.com/in/dhairya-n-desai
                 </a>
@@ -126,7 +130,7 @@ export default function About(): ReactElement {
                           &gt;
                         </span>
                         <span className="absolute inset-0 bg-green-400/0 group-hover:bg-green-400/20 transition-all duration-300 rounded-sm transform scale-x-0 group-hover:scale-x-100 origin-left" />
-                        <span className="relative z-10 font-mono tracking-wide group-hover:font-semibold transition-all duration-300 underline underline-offset-4">
+                        <span className="relative z-10 font-mono tracking-wide transition-all duration-300 underline underline-offset-4">
                           {item.name}
                         </span>
                         <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-green-400/10 blur-sm rounded-sm" />
