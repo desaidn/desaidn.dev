@@ -57,9 +57,9 @@ export default function About(): ReactElement {
     <AppLayout>
       <div className="p-6">
         <div className="w-full max-w-2xl mx-auto pt-32">
-          <div className="bg-black text-green-400 font-mono">
+          <div className="bg-black text-gray-300 font-mono">
             <div className="flex items-center h-6">
-              <span className="mr-2">$</span>
+              <span className="mr-2">λ</span>
               <span>{displayText}</span>
               {!showInfo && (
                 <span className="w-2 h-5 bg-green-400 ml-1 animate-pulse" />
@@ -113,8 +113,8 @@ export default function About(): ReactElement {
 
             {showLsCommand && (
               <div className="mt-4">
-                <div className="flex items-center text-green-400">
-                  <span className="mr-2">$</span>
+                <div className="flex items-center text-gray-300">
+                  <span className="mr-2">λ</span>
                   <span>{lsDisplayText}</span>
                   {!showMenu && (
                     <span className="w-2 h-5 bg-green-400 ml-1 animate-pulse" />
