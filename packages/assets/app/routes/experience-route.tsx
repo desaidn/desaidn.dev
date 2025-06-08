@@ -1,5 +1,5 @@
-import Experience from '~/components/experience/Experience';
+import ExperiencePage from '~/components/experience/ExperiencePage';
 
 export default function ExperienceRoute() {
-  return <Experience />;
+  return <ExperiencePage />;
 }

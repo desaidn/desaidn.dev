@@ -1,5 +1,5 @@
-import About from '../components/about/About';
+import AboutPage from '../components/about/AboutPage';
 
 export default function IndexRoute() {
-  return <About />;
+  return <AboutPage />;
 }

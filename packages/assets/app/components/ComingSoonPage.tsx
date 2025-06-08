@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
-import AppLayout from './AppLayout';
+import AppLayout from './common/AppLayout';
 
-export default function ComingSoon(): ReactElement {
+export default function ComingSoonPage(): ReactElement {
   return (
     <AppLayout>
       <div className="max-w-4xl mx-auto pt-10 md:pt-20 lg:pt-32">

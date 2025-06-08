@@ -2,10 +2,10 @@ import type { ReactElement } from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import EXPERIENCES from '~/constants/experiences';
-import AppLayout from '../AppLayout';
+import AppLayout from '../common/AppLayout';
 import ExperienceItem from './ExperienceItem';
 
-export default function Experience(): ReactElement {
+export default function ExperiencePage(): ReactElement {
   const navigate = useNavigate();
   const [selectedExperience, setSelectedExperience] = useState<string | null>(
     null

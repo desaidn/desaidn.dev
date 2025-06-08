@@ -1,5 +1,5 @@
-import ComingSoon from '~/components/ComingSoon';
+import ComingSoonPage from '~/components/ComingSoonPage';
 
 export default function ProjectsRoute() {
-  return <ComingSoon />;
+  return <ComingSoonPage />;
 }
