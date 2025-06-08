@@ -3,9 +3,9 @@ import Link from '../../common/Link';
 export default function Whoami() {
   return (
     <div className="ml-4 space-y-2 text-gray-300">
-      <div className="text-white text-xl font-semibold">Dhairya Desai</div>
-      <div>Software Engineer</div>
-      <div className="text-sm">
+      <div className="text-2xl font-bold">Dhairya Desai</div>
+      <div className="text-xl font-semibold">Software Engineer</div>
+      <div className="text-md">
         Programming Languages, Distributed Systems, User Interfaces
       </div>
 

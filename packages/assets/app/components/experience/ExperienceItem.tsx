@@ -30,19 +30,21 @@ export default function ExperienceItem({
       >
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
           <div className="flex-1">
-            <h3 className="text-xl font-semibold text-gray-200 mb-1 transition-colors duration-200">
+            <h3 className="text-xl font-semibold text-gray-200 mb-2 transition-colors duration-200">
               {experience.role}
             </h3>
-            <Link 
-              href={experience.link}
-              className="text-lg text-green-400 hover:text-gray-200 mb-2 underline underline-offset-4"
-            >
-              {experience.company}
-            </Link>
+            <div className="mb-2">
+              <Link
+                href={experience.link}
+                className="text-lg text-green-400 hover:text-gray-200 mb-2 underline underline-offset-4"
+              >
+                {experience.company}
+              </Link>
+            </div>
             <p className="text-gray-400 text-sm mb-2">{experience.location}</p>
           </div>
           <div className="lg:text-right flex justify-between gap-2">
-            <span className="inline-block px-3 py-1 text-green-400 text-sm">
+            <span className="inline-block py-1 text-green-400 text-sm">
               {experience.dates}
             </span>
             <svg

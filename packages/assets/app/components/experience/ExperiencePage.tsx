@@ -43,7 +43,7 @@ export default function ExperiencePage(): ReactElement {
               d="M15 19l-7-7 7-7"
             />
           </svg>
-          <span className="text-sm font-medium">Back</span>
+          <span className="text-sm">Back</span>
         </button>
 
         <section className="mb-8">
