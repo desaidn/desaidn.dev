@@ -1,4 +1,5 @@
 import type { Experience } from '~/types/experience';
+import Link from '../components/common/Link';
 
 export default [
   {
@@ -56,16 +57,13 @@ export default [
       <p>
         Web and mobile application software development. 1 of 2 engineers on the
         team that was acquired by{' '}
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-lg text-green-400 hover:text-gray-300 mb-2 underline underline-offset-4"
+        <Link 
           href="https://public.vtinfo.com/"
+          className="text-lg text-green-400 hover:text-gray-300 mb-2 underline underline-offset-4"
         >
           VIP
-        </a>
-        . Owned web platform and data ingestion pipelines. Contributed to mobile
-        (iOS/Android) app.
+        </Link>. Owned web platform
+        and data ingestion pipelines. Contributed to mobile (iOS/Android) app.
       </p>
     ),
     technologies: [

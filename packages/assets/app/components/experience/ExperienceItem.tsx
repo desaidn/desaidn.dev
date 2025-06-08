@@ -1,6 +1,7 @@
 import type { ReactElement } from 'react';
 import type { Experience } from '~/types/experience';
 import useHeightAnimation from '../../hooks/useHeightAnimation';
+import Link from '../common/Link';
 
 export interface ExperienceItemProps {
   experience: Experience;
@@ -32,14 +33,12 @@ export default function ExperienceItem({
             <h3 className="text-xl font-semibold text-gray-200 mb-1 transition-colors duration-200">
               {experience.role}
             </h3>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-lg text-green-400 hover:text-gray-200 mb-2 underline underline-offset-4"
+            <Link 
               href={experience.link}
+              className="text-lg text-green-400 hover:text-gray-200 mb-2 underline underline-offset-4"
             >
               {experience.company}
-            </a>
+            </Link>
             <p className="text-gray-400 text-sm mb-2">{experience.location}</p>
           </div>
           <div className="lg:text-right flex justify-between gap-2">
