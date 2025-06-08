@@ -57,22 +57,7 @@ export class SiteStack extends cdk.Stack {
         responseHeadersPolicyName: `SecurityHeaders-${cdk.Aws.REGION}-${id}`,
         comment: "Security headers policy for the static site",
         securityHeadersBehavior: {
-          contentSecurityPolicy: {
-            contentSecurityPolicy: [
-              "default-src 'none'",
-              "script-src 'self' 'unsafe-inline'", // TODO fix
-              "style-src 'self' https://fonts.googleapis.com",
-              "img-src 'self' data: https:",
-              "font-src 'self' https://fonts.gstatic.com",
-              "connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com",
-              "frame-ancestors 'none'",
-              "form-action 'self'",
-              "base-uri 'self'",
-              "object-src 'none'",
-              "upgrade-insecure-requests",
-            ].join("; "),
-            override: true,
-          },
+          // CSP is handled by Vite CSP plugin in meta tag
           contentTypeOptions: {
             override: true,
           },
