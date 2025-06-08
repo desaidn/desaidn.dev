@@ -14,7 +14,7 @@ export default function CommandExecution({
   const { state } = useCommandExecution(commands);
 
   return (
-    <div className="bg-black text-gray-300 font-mono space-y-4">
+    <div className="bg-black text-gray-400 font-mono space-y-4">
       {commands.map((command, index) => {
         const isCurrentCommand = command.name === state.currentCommand;
         const isPastCommand =

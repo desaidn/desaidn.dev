@@ -23,10 +23,10 @@ export default function Experience(): ReactElement {
 
   return (
     <AppLayout>
-      <div className="max-w-6xl">
+      <div className="max-w-4xl mx-auto">
         <button
           onClick={handleBackClick}
-          className="group mb-2 flex items-center gap-2 text-white/70 hover:text-green-400 transition-all duration-200 ease-out hover:translate-x-[-2px] active:scale-95 focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg p-2 -ml-2"
+          className="group mb-2 flex items-center gap-2 text-gray-400 hover:text-green-400 transition-all duration-200 ease-out hover:translate-x-[-2px] active:scale-95 focus:outline-none focus:ring-2 focus:ring-gray-700/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg p-2 -ml-2"
           aria-label="Go back to home page"
         >
           <svg
@@ -47,7 +47,7 @@ export default function Experience(): ReactElement {
         </button>
 
         <section className="mb-8">
-          <h2 className="text-2xl text-white mb-4 flex items-center gap-2">
+          <h2 className="text-2xl text-gray-200 mb-4 flex items-center gap-2">
             Experience
           </h2>
           <div className="space-y-4">

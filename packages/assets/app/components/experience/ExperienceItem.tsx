@@ -35,7 +35,7 @@ export default function ExperienceItem({
             <a
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg text-green-400 hover:text-gray-300 mb-2 underline underline-offset-4"
+              className="text-lg text-green-400 hover:text-gray-200 mb-2 underline underline-offset-4"
               href={experience.link}
             >
               {experience.company}
@@ -69,7 +69,7 @@ export default function ExperienceItem({
         <div className="px-6 pb-6 border-t border-gray-700/50">
           <div className="pt-4">
             {experience.description && (
-              <p className="text-gray-300 mb-4 leading-relaxed">
+              <p className="text-gray-400 mb-4 leading-relaxed">
                 {experience.description}
               </p>
             )}
@@ -78,7 +78,7 @@ export default function ExperienceItem({
               <h5 className="text-sm font-semibold text-green-400 mb-2">
                 Key Highlights:
               </h5>
-              <ul className="text-gray-300 text-sm space-y-1">
+              <ul className="text-gray-400 text-sm space-y-1">
                 {experience.highlights.map((highlight, index) => (
                   <li key={index} className="flex items-start gap-2">
                     <span className="text-green-400 mt-1.5 w-1 h-1 bg-green-400 rounded-full flex-shrink-0" />
@@ -97,7 +97,7 @@ export default function ExperienceItem({
                   {experience.technologies?.map(tech => (
                     <span
                       key={tech}
-                      className="px-2 py-1 bg-gray-900/50 text-gray-300 text-xs rounded border border-gray-700/50"
+                      className="px-2 py-1 bg-gray-900/50 text-gray-400 text-xs rounded border border-gray-700/50"
                     >
                       {tech}
                     </span>
