@@ -11,22 +11,25 @@ export default function CommandExecution({
   commands,
   showPrompt = true,
 }: CommandExecutionProps): ReactElement {
-  const { state } = useCommandExecution(commands);
+  const { state: execState } = useCommandExecution(commands);
 
   return (
     <div className="bg-black text-gray-400 font-mono space-y-4">
       {commands.map((command, index) => {
-        const isCurrentCommand = command.name === state.currentCommand;
+        const isCurrentCommand = command.name === execState.currentCommand;
         const isPastCommand =
-          commands.findIndex(cmd => cmd.name === state.currentCommand) > index;
+          commands.findIndex(cmd => cmd.name === execState.currentCommand) >
+          index;
         const shouldShow = isCurrentCommand || isPastCommand;
 
         if (!shouldShow) return null;
 
-        const displayText = isCurrentCommand ? state.displayText : command.name;
+        const displayText = isCurrentCommand
+          ? execState.displayText
+          : command.name;
         const showOutput =
-          isPastCommand || (isCurrentCommand && state.showOutput);
-        const showCursor = isCurrentCommand && state.isTyping;
+          isPastCommand || (isCurrentCommand && execState.showOutput);
+        const showCursor = isCurrentCommand && execState.isTyping;
 
         return (
           <div key={command.name}>
