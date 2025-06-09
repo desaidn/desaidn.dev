@@ -4,4 +4,4 @@ export default [
   { name: 'experience', path: '/experience' },
   { name: 'projects', path: '/projects' },
   { name: 'blog', path: '/blog' },
-] satisfies MenuItem[];
+] as const satisfies MenuItem[];

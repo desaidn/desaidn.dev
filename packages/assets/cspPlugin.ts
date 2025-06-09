@@ -6,8 +6,6 @@ import type { Plugin } from 'vite';
 /**
  * Auto-CSP Plugin: Automatically generates and injects Content Security Policy
  * directly into the HTML after React Router generates it
- *
- * TODO this is not accounting for 1 script. Skipping this script isn't causing issues, so it could be the "Hey, developer.." React Router script.
  */
 export default function cspPlugin(): Plugin {
   return {

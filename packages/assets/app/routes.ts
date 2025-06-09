@@ -6,4 +6,4 @@ export default [
   route('projects', 'routes/projects-route.tsx'),
   route('blog', 'routes/blog-route.tsx'),
   route('*', 'routes/any-route.tsx'),
-] satisfies RouteConfig;
+] as const satisfies RouteConfig;
