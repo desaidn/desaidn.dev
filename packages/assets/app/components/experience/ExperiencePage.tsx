@@ -21,7 +21,7 @@ export default function ExperiencePage(): ReactElement {
   return (
     <AppLayout>
       <div className="max-w-4xl mx-auto">
-        <div className="mb-6">
+        <div className="mb-2">
           <div className="flex items-start gap-2 mb-4">
             <BackButton to="/" ariaLabel="Go back to home page" />
           </div>
