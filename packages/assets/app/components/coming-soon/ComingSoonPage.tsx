@@ -1,8 +1,8 @@
 import type { ReactElement } from 'react';
-import CommandExecution from './about/CommandExecution';
-import COMING_SOON_COMMANDS from './coming-soon/commands';
-import AppLayout from './common/AppLayout';
-import BackButton from './common/BackButton';
+import CommandExecution from '../about/CommandExecution';
+import AppLayout from '../common/AppLayout';
+import BackButton from '../common/BackButton';
+import COMING_SOON_COMMANDS from './commands';
 
 export default function ComingSoonPage(): ReactElement {
   return (
