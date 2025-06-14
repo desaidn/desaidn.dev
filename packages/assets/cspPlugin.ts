@@ -4,7 +4,7 @@ import { resolve } from 'path';
 import type { Plugin } from 'vite';
 
 /**
- * Auto-CSP Plugin: Automatically generates and injects Content Security Policy
+ * CSP Plugin: Automatically generates and injects Content Security Policy
  * directly into the HTML after React Router generates it
  */
 export default function cspPlugin(): Plugin {
