@@ -1,9 +1,9 @@
 import type { ReactElement } from 'react';
 import { useCallback, useState } from 'react';
 import EXPERIENCES from '~/constants/experiences';
-import CommandExecution from '../about/CommandExecution';
 import AppLayout from '../common/AppLayout';
 import BackButton from '../common/BackButton';
+import CommandExecution from '../common/CommandExecution';
 import EXPERIENCE_COMMANDS from './commands';
 import ExperienceItem from './ExperienceItem';
 

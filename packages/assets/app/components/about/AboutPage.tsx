@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 import AppLayout from '../common/AppLayout';
-import CommandExecution from './CommandExecution';
+import CommandExecution from '../common/CommandExecution';
 import ABOUT_PAGE_COMMANDS from './commands';
 
 export default function AboutPage(): ReactElement {
