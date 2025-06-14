@@ -1,5 +1,5 @@
-import { createHash } from 'crypto';
 import { existsSync, readFileSync, writeFileSync } from 'fs';
+import { createHash } from 'node:crypto';
 import { resolve } from 'path';
 import type { Plugin } from 'vite';
 
