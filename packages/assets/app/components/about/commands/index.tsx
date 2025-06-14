@@ -15,4 +15,4 @@ export default [
     typingSpeed: 150,
     waitAfter: 300,
   },
-] as TerminalCommand[];
+] satisfies TerminalCommand[];

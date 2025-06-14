@@ -1,55 +1,37 @@
 import type { ReactElement } from 'react';
-import { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useCallback, useState } from 'react';
 import EXPERIENCES from '~/constants/experiences';
+import CommandExecution from '../about/CommandExecution';
 import AppLayout from '../common/AppLayout';
+import BackButton from '../common/BackButton';
+import EXPERIENCE_COMMANDS from './commands';
 import ExperienceItem from './ExperienceItem';
 
 export default function ExperiencePage(): ReactElement {
-  const navigate = useNavigate();
   const [selectedExperience, setSelectedExperience] = useState<string | null>(
     null
   );
 
-  const handleExperienceClick = (experienceId: string): void => {
-    setSelectedExperience(
-      selectedExperience === experienceId ? null : experienceId
+  const handleExperienceClick = useCallback((experienceId: string): void => {
+    setSelectedExperience(prev =>
+      prev === experienceId ? null : experienceId
     );
-  };
-
-  const handleBackClick = (): void => {
-    void navigate('/');
-  };
+  }, []);
 
   return (
     <AppLayout>
       <div className="max-w-4xl mx-auto">
-        <button
-          onClick={handleBackClick}
-          className="group mb-2 flex items-center gap-2 text-gray-400 hover:text-green-400 transition-all duration-200 ease-out hover:translate-x-[-2px] active:scale-95 focus:outline-none focus:ring-2 focus:ring-gray-700/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg p-2 -ml-2"
-          aria-label="Go back to home page"
-        >
-          <svg
-            className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-[-2px]"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-          <span className="text-sm">Back</span>
-        </button>
+        <div className="mb-6">
+          <div className="flex items-start gap-2 mb-4">
+            <BackButton to="/" ariaLabel="Go back to home page" />
+          </div>
+
+          <div className="h-20 overflow-hidden">
+            <CommandExecution commands={EXPERIENCE_COMMANDS} />
+          </div>
+        </div>
 
         <section className="mb-8">
-          <h2 className="text-2xl text-gray-200 mb-4 flex items-center gap-2">
-            Experience
-          </h2>
           <div className="space-y-4">
             {EXPERIENCES.map(exp => (
               <ExperienceItem

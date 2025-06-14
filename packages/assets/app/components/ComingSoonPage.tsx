@@ -1,11 +1,17 @@
 import type { ReactElement } from 'react';
+import CommandExecution from './about/CommandExecution';
+import COMING_SOON_COMMANDS from './coming-soon/commands';
 import AppLayout from './common/AppLayout';
+import BackButton from './common/BackButton';
 
 export default function ComingSoonPage(): ReactElement {
   return (
     <AppLayout>
       <div className="max-w-4xl mx-auto pt-10 md:pt-20 lg:pt-32">
-        <h1 className="text-3xl lg:text-4xl text-gray-200 mb-2">Coming Soon</h1>
+        <div className="mb-6">
+          <BackButton to="/" ariaLabel="Go back to about page" />
+        </div>
+        <CommandExecution commands={COMING_SOON_COMMANDS} />
       </div>
     </AppLayout>
   );
