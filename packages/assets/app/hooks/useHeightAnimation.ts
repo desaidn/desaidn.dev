@@ -13,20 +13,13 @@ export default function useHeightAnimation(
     const element = ref.current;
     const updateHeight = () => {
       if (isOpen) {
-        // First, set height to current height to enable transition
         const currentHeight = element.offsetHeight;
         setHeight(currentHeight);
 
-        // Force browser reflow
-        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-        element.offsetHeight;
-
-        // Then animate to full height
         requestAnimationFrame(() => {
           const scrollHeight = element.scrollHeight;
           setHeight(scrollHeight);
 
-          // After animation completes, set to auto for responsive behavior
           setTimeout(() => {
             if (isOpen) {
               setHeight('auto');
@@ -34,13 +27,8 @@ export default function useHeightAnimation(
           }, duration);
         });
       } else {
-        // For closing, first set to current height, then to 0
         const currentHeight = element.scrollHeight;
         setHeight(currentHeight);
-
-        // Force browser reflow
-        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-        element.offsetHeight;
 
         requestAnimationFrame(() => {
           setHeight(0);
