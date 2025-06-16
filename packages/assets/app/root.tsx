@@ -51,6 +51,10 @@ export default function App() {
   return <Outlet />;
 }
 
+export function HydrateFallback() {
+  return <p>Loading...</p>;
+}
+
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   let message = 'Oops!';
   let details = 'An unexpected error occurred.';
