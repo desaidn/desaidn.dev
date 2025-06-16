@@ -1,32 +1,24 @@
-import { useState } from 'react';
 import menuItems from '../../../constants/menu-items';
 import Link from '../../common/Link';
+import { useMobileAnimationWithId } from '../../../hooks/useMobileAnimation';
 
 export default function Ls() {
-  const [activeItem, setActiveItem] = useState<string | null>(null);
+  const { activeId, handleClick } = useMobileAnimationWithId();
 
   const handleItemClick = (
     itemName: string,
     href: string,
     event: React.MouseEvent
   ) => {
-    const isTouchDevice =
-      'ontouchstart' in window || navigator.maxTouchPoints > 0;
-
-    if (isTouchDevice) {
-      event.preventDefault();
-      setActiveItem(itemName);
-
-      setTimeout(() => {
-        window.location.href = href;
-      }, 300);
-    }
+    handleClick(event, itemName, () => {
+      window.location.href = href;
+    });
   };
 
   return (
     <div className="-ml-2">
       {menuItems.map(item => {
-        const isActive = activeItem === item.name;
+        const isActive = activeId === item.name;
         return (
           <div key={item.name} className="group">
             <Link
