@@ -5,7 +5,7 @@ const AppLayout = memo(({ children }: { children: React.ReactNode }) => {
     <div className="min-h-screen w-full bg-black font-mono flex flex-col">
       <main className="flex-1 p-6">{children}</main>
       <footer className="p-6 text-center">
-        <p className="text-sm font-thin text-gray-300">
+        <p className="text-sm font-thin text-gray-400">
           © 2025 Dhairya Desai. All Rights Reserved.
         </p>
       </footer>
