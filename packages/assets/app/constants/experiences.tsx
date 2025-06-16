@@ -1,4 +1,4 @@
-import type { Experience } from '~/types/experience';
+import type { Experience } from 'types';
 import Link from '../components/common/Link';
 
 export default [
@@ -10,15 +10,15 @@ export default [
     dates: 'July 2022 - Present',
     location: 'New York, New York, United States',
     description: (
-      <p>
-        Working on developing scalable service-oriented and event-driven
-        architectures for billing and procurement systems. My role involves
-        building highly available Java / Kotlin microservices, accessible UIs
-        with TypeScript and React, and reusable Python utilities to enable
-        billions in cloud transactions monthly. I leverage AWS to design and
-        implement robust, distributed systems that handle large volumes of data
+      <>
+        Developing scalable, service-oriented and event-driven architectures for
+        billing, procurement and contracting systems. My role involves building
+        highly available Java and Kotlin microservices, reliable UIs with React
+        and TypeScript, and reusable Python utilities to facilitate billions in
+        cloud transactions monthly. I leverage AWS to design, implement and
+        maintain robust, distributed systems that handle large volumes of data
         across multiple regions.
-      </p>
+      </>
     ),
     technologies: [
       'Java',
@@ -40,10 +40,10 @@ export default [
       'CloudWatch',
     ],
     highlights: [
-      'Developing and optimizing RESTful APIs for quick and fault tolerant data processing, often for customer facing interactions',
-      'Implementing data ingestion pipelines to ensure continuous and reliable flow of billing data',
-      'Collaborating cross-functionally to deliver customer-centric features and improve system efficiency',
-      "Monitoring service performance and contributing to the team's on-call rotation",
+      'Developing and optimizing RESTful APIs for quick and fault tolerant data processing. APIs used by console and SDK clients.',
+      'Implementing data ingestion pipelines to ensure continuous and accurate flow of billing data.',
+      'Collaborating with Product Managers, UX Designers and expert users to deliver features and system efficiency improvements.',
+      "Monitoring service performance and contributing to the team's on-call rotation.",
     ],
   },
   {
@@ -54,7 +54,7 @@ export default [
     dates: 'June 2021 - July 2022',
     location: 'Chicago, Illinois, United States',
     description: (
-      <p>
+      <>
         Web and mobile application software development. 1 of 2 engineers on the
         team that was acquired by{' '}
         <Link
@@ -65,7 +65,7 @@ export default [
         </Link>
         . Owned web platform and data ingestion pipelines. Contributed to mobile
         (iOS/Android) app.
-      </p>
+      </>
     ),
     technologies: [
       'TypeScript',

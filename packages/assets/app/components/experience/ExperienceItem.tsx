@@ -1,5 +1,5 @@
 import { memo, type ReactElement } from 'react';
-import type { Experience } from '~/types/experience';
+import type { Experience } from 'types';
 import useHeightAnimation from '../../hooks/useHeightAnimation';
 import Link from '../common/Link';
 

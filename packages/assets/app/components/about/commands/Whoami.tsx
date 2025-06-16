@@ -1,6 +1,7 @@
+import { memo } from 'react';
 import Link from '../../common/Link';
 
-export default function Whoami() {
+const Whoami = memo(() => {
   return (
     <div className="ml-4 space-y-2 text-gray-300">
       <div className="text-2xl font-bold">Dhairya Desai</div>
@@ -18,4 +19,6 @@ export default function Whoami() {
       </div>
     </div>
   );
-}
+});
+
+export default Whoami;

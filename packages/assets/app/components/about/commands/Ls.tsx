@@ -1,8 +1,9 @@
+import { memo } from 'react';
 import menuItems from '../../../constants/menu-items';
-import Link from '../../common/Link';
 import { useMobileAnimationWithId } from '../../../hooks/useMobileAnimation';
+import Link from '../../common/Link';
 
-export default function Ls() {
+const Ls = memo(() => {
   const { activeId, handleClick } = useMobileAnimationWithId();
 
   const handleItemClick = (
@@ -63,4 +64,6 @@ export default function Ls() {
       })}
     </div>
   );
-}
+});
+
+export default Ls;

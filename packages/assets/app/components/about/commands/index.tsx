@@ -1,4 +1,4 @@
-import type { TerminalCommand } from '../../../types/terminal-command';
+import type { TerminalCommand } from 'types';
 import Ls from './Ls';
 import Whoami from './Whoami';
 

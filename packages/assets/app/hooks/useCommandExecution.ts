@@ -1,11 +1,16 @@
 import { useCallback, useEffect, useState } from 'react';
-import type {
-  CommandExecutionState,
-  TerminalCommand,
-} from '~/types/terminal-command';
+import type { TerminalCommand } from 'types';
 
 const DEFAULT_TYPING_SPEED = 150;
 const DEFAULT_WAIT_AFTER = 300;
+
+export type CommandExecutionState = {
+  currentCommand: string | null;
+  displayText: string;
+  showOutput: boolean;
+  isTyping: boolean;
+  currentStep: number;
+};
 
 /**
  * Hook for terminal command typing animation and sequence execution.

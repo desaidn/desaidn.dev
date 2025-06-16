@@ -1,6 +1,6 @@
 import { memo, type ReactElement } from 'react';
+import type { TerminalCommand } from 'types';
 import { useCommandExecution } from '~/hooks/useCommandExecution';
-import type { TerminalCommand } from '~/types/terminal-command';
 
 interface CommandExecutionProps {
   commands: TerminalCommand[];
