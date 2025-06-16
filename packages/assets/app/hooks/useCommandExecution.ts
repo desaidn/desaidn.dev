@@ -7,6 +7,13 @@ import type {
 const DEFAULT_TYPING_SPEED = 150;
 const DEFAULT_WAIT_AFTER = 300;
 
+/**
+ * Hook for terminal command typing animation and sequence execution.
+ * Simulates typewriter effect with configurable timing and automatic progression.
+ * @example
+ * const { state, getCurrentCommand } = useCommandExecution(commands);
+ * <span>{state.displayText}</span>
+ */
 export function useCommandExecution(commands: TerminalCommand[]) {
   const [state, setState] = useState<CommandExecutionState>({
     currentCommand: null,

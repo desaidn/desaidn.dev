@@ -22,6 +22,13 @@ interface UseMobileAnimationWithIdReturn {
   ) => void;
 }
 
+/**
+ * Hook for multiple interactive elements. Tracks which item is active by ID.
+ * Desktop: immediate navigation. Mobile: animate then navigate.
+ * @example
+ * const { activeId, handleClick } = useMobileAnimationWithId();
+ * <button onClick={e => handleClick(e, item.id, () => navigate(item.path))}>
+ */
 export function useMobileAnimationWithId(
   options: UseMobileAnimationWithIdOptions = {}
 ): UseMobileAnimationWithIdReturn {
@@ -33,21 +40,16 @@ export function useMobileAnimationWithId(
     id: string,
     onNavigate: () => void
   ) => {
-    // Check if it's a touch device (mobile)
     const isTouchDevice =
       'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
     if (isTouchDevice) {
-      // Mobile behavior: show animation then navigate
       event.preventDefault();
       setActiveId(id);
-
-      // Navigate after animation completes
       setTimeout(() => {
         onNavigate();
       }, animationDuration);
     } else {
-      // Desktop behavior: navigate immediately
       onNavigate();
     }
   };
@@ -58,6 +60,13 @@ export function useMobileAnimationWithId(
   };
 }
 
+/**
+ * Hook for single interactive element. Tracks boolean active state.
+ * Desktop: immediate navigation. Mobile: animate then navigate.
+ * @example
+ * const { isActive, handleClick } = useMobileAnimation();
+ * <button onClick={e => handleClick(e, () => navigate('/back'))}>
+ */
 export default function useMobileAnimation(
   options: UseMobileAnimationOptions = {}
 ): UseMobileAnimationReturn {
@@ -65,21 +74,16 @@ export default function useMobileAnimation(
   const [isActive, setIsActive] = useState(false);
 
   const handleClick = (event: React.MouseEvent, onNavigate: () => void) => {
-    // Check if it's a touch device (mobile)
     const isTouchDevice =
       'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
     if (isTouchDevice) {
-      // Mobile behavior: show animation then navigate
       event.preventDefault();
       setIsActive(true);
-
-      // Navigate after animation completes
       setTimeout(() => {
         onNavigate();
       }, animationDuration);
     } else {
-      // Desktop behavior: navigate immediately
       onNavigate();
     }
   };

@@ -1,5 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 
+/**
+ * Hook for smooth height transitions in collapsible content.
+ * Automatically calculates height and provides smooth expand/collapse animations.
+ * @example
+ * const { ref, style } = useHeightAnimation(isOpen);
+ * <div {...{ ref, style }}><content /></div>
+ */
 export default function useHeightAnimation(
   isOpen: boolean,
   duration: number = 300
