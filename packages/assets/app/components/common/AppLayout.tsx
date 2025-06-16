@@ -1,4 +1,6 @@
-export default function AppLayout({ children }: { children: React.ReactNode }) {
+import { memo } from 'react';
+
+const AppLayout = memo(({ children }: { children: React.ReactNode }) => {
   return (
     <div className="min-h-screen w-full bg-black font-mono flex flex-col">
       <main className="flex-1 p-6">{children}</main>
@@ -9,4 +11,6 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       </footer>
     </div>
   );
-}
+});
+
+export default AppLayout;
