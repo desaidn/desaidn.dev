@@ -5,7 +5,7 @@ import type { Plugin } from 'vite';
 
 /**
  * CSP Plugin: Automatically generates and injects Content Security Policy
- * directly into the HTML after React Router generates it
+ * directly into the HTML after React Router generates it. SPA mode only.
  */
 export default function cspPlugin(): Plugin {
   return {
@@ -53,10 +53,8 @@ export default function cspPlugin(): Plugin {
 
         const cspPolicy = cspDirectives.join('; ');
 
-        // Inject CSP meta tag (minified format)
         const cspMeta = `<meta http-equiv="Content-Security-Policy" content="${cspPolicy}"/>`;
 
-        // Insert after charset meta tag (handles minified HTML)
         const updatedHtml = html.replace(
           /<meta\s+charSet="utf-8"\s*\/?>/,
           match => `${match}${cspMeta}`
@@ -64,12 +62,12 @@ export default function cspPlugin(): Plugin {
 
         writeFileSync(htmlPath, updatedHtml);
 
-        console.log(
-          `🔒 Auto-CSP: Generated policy with ${scriptHashes.length} script hashes`
+        console.info(
+          `CSP: Generated policy with ${scriptHashes.length} script hashes`
         );
-        console.log(`🔒 Auto-CSP: Injected CSP into ${htmlPath}`);
+        console.info(`CSP: Injected CSP into ${htmlPath}`);
       } catch (error) {
-        console.error('🔒 Auto-CSP: Error processing HTML:', error);
+        console.error('CSP: Error processing HTML:', error);
       }
     },
   };
