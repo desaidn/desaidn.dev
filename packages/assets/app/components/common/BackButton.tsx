@@ -17,7 +17,7 @@ export default function BackButton({
   return (
     <button
       onClick={() => void navigate(to)}
-      className="group flex items-start gap-2 text-gray-400 hover:text-green-400 transition-all duration-200 ease-out hover:translate-x-[-2px] active:scale-95 focus:outline-none focus:ring-2 focus:ring-gray-700/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg"
+      className="group flex items-start gap-2 text-gray-400 hover:text-green-400 transition-all duration-200 ease-out hover:translate-x-[-2px] active:scale-95 focus:outline-none focus:ring-2 focus:ring-gray-700/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg cursor-pointer"
       aria-label={ariaLabel ?? `Go back to ${to === '/' ? 'home page' : to}`}
     >
       <svg
