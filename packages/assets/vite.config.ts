@@ -6,15 +6,11 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import cspPlugin from './cspPlugin';
 
 export default defineConfig(({ mode }) => {
-  const isProduction = mode === 'production';
+  const plugins = [tailwindcss(), reactRouter(), tsconfigPaths(), cspPlugin()];
 
-  return {
-    plugins: [
-      tailwindcss(),
-      reactRouter(),
-      tsconfigPaths(),
-      cspPlugin(),
-      ...(isProduction ? [TailwindcssMangle()] : []),
-    ],
-  };
+  if (mode === 'production') {
+    plugins.push(TailwindcssMangle());
+  }
+
+  return { plugins };
 });
