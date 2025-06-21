@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "react-router build",
+    "build": "tw-patch extract && react-router build",
     "dev": "react-router dev --port 5173 & npx react-scan@latest localhost:5173",
     "start": "react-router-serve ./build/server/index.js",
     "lint": "eslint . --ext ts,tsx,js,jsx --report-unused-disable-directives --max-warnings 0",
@@ -11,7 +11,8 @@
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "quality": "npm run typecheck && npm run format && npm run lint:fix",
-    "typecheck": "react-router typegen && tsc"
+    "typecheck": "react-router typegen && tsc",
+    "prepare": "tw-patch install"
   },
   "dependencies": {
     "@react-router/node": "^7.5.3",
@@ -39,8 +40,10 @@
     "globals": "^16.2.0",
     "prettier": "^3.5.3",
     "tailwindcss": "^4.1.4",
+    "tailwindcss-patch": "^7.1.1",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.33.1",
+    "unplugin-tailwindcss-mangle": "^4.1.1",
     "vite": "^6.3.3",
     "vite-tsconfig-paths": "^5.1.4"
   }
