@@ -1,7 +1,6 @@
 {
   "name": "@desaidn.dev/cdk",
   "version": "0.1.0",
-  "type": "module",
   "bin": {
     "cdk": "bin/cdk.js"
   },
