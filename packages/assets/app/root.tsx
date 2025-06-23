@@ -26,6 +26,20 @@ export const links: Route.LinksFunction = () => [
     type: 'font/woff2',
     crossOrigin: 'anonymous',
   },
+  {
+    rel: 'preload',
+    href: '/fonts/JetBrainsMono-SemiBold.woff2',
+    as: 'font',
+    type: 'font/woff2',
+    crossOrigin: 'anonymous',
+  },
+  {
+    rel: 'preload',
+    href: '/fonts/JetBrainsMono-Thin.woff2',
+    as: 'font',
+    type: 'font/woff2',
+    crossOrigin: 'anonymous',
+  },
 ];
 
 export const meta: Route.MetaFunction = () => [
