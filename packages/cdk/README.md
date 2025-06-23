@@ -22,7 +22,7 @@ https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sso.html#cli-conf
 ### Manually update the profile name to default
 
 1. Open file where AWS SSO config is stored: `nvim ~/.aws/config`
-2. Update `[profile some-profile-name]` to `[default]
+2. Update `[profile some-profile-name]` to `[default]`
 
 ### Login with `aws sso login`
 
