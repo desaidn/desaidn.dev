@@ -1,6 +1,13 @@
 # Frontend Application (@desaidn.dev/assets)
 
-[React 19](https://react.dev/) app with [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/), and [React Router](https://reactrouter.com/).
+Portfolio website frontend.
+
+## Tech Stack
+
+- **Framework**: [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) v4
+- **Routing**: [React Router](https://reactrouter.com/) v7 (SPA mode)
+- **Build**: Vite
 
 ## Directory Structure
 
@@ -8,24 +15,23 @@
 packages/assets/
 ├── app/
 │   ├── components/       # React components
-│   ├── routes/           # React Router route files
+│   ├── routes/           # Route files
 │   └── root.tsx          # App root component
 ├── public/               # Static assets
 └── package.json
 ```
 
-## Routes
+## Architecture
+
+SPA with client-side routing.
+
+### Routes
 
 - `/` - Home page (index-route.tsx)
 - `/experience` - Experience page (experience-route.tsx)
 - `/projects` - Projects page (projects-route.tsx)
 - `/blog` - Blog page (blog-route.tsx)
 - `/*` - Catch-all route (any-route.tsx)
-
-## Architecture
-
-- **SPA mode**: No server-side rendering
-- **Build**: Vite with React Router integration
 
 ## Getting Started
 
@@ -92,6 +98,10 @@ Make sure to deploy the output of `pnpm run build`
 │   ├── client/    # Static assets
 │   └── server/    # Server-side code
 ```
+
+## Documentation
+
+For complete development workflows and commands, see [CLAUDE.md](../../CLAUDE.md#common-commands).
 
 ---
 

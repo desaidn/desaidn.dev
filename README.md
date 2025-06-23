@@ -5,9 +5,9 @@ Personal website: [desaidn.dev](https://desaidn.dev)
 ## Stack
 
 - **Frontend**: React + TypeScript + Tailwind + React Router (SPA)
-- **Infrastructure / Deployment**: AWS CDK + Cloudflare (domain ONLY)
+- **Infrastructure**: AWS CDK + Cloudflare (domain only)
 
-## Project Structure
+## Directory Structure
 
 ```
 ├── packages/
@@ -17,7 +17,13 @@ Personal website: [desaidn.dev](https://desaidn.dev)
 └── package.json    # Workspace configuration with pnpm
 ```
 
-## Quick Start
+## Architecture
+
+Monorepo with React frontend deployed to AWS S3 + CloudFront via CDK.
+
+## Getting Started
+
+### Quick Start
 
 ```bash
 pnpm install         # Install all dependencies
@@ -26,7 +32,7 @@ pnpm run build       # Build all packages
 pnpm run quality     # Run lint + typecheck + format
 ```
 
-## Deployment
+### Deployment
 
 ```bash
 pnpm run deploy:prepare    # Build + synth + diff

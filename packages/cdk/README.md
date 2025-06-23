@@ -2,11 +2,27 @@
 
 AWS CDK stack for hosting the portfolio website on S3 + CloudFront.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Tech Stack
 
-For complete deployment workflows, see [CLAUDE.md](../../CLAUDE.md#deployment-workflow).
+- **Infrastructure as Code**: AWS CDK (TypeScript) deploys React SPA
+- **Hosting**: S3 + CloudFront
+- **Domain**: SSL certificate + custom domain (Cloudflare)
 
-## AWS Credentials
+## Directory Structure
+
+```
+packages/cdk/
+├── lib/
+│   └── site-stack.ts     # Main CDK stack definition
+├── bin/
+│   └── cdk.ts           # CDK app entry point
+├── cdk.json             # CDK configuration
+└── package.json
+```
+
+## Getting Started
+
+### AWS Credentials Setup
 
 ### Configure your profile with the `aws configure sso` wizard
 
@@ -20,3 +36,7 @@ For complete deployment workflows, see [CLAUDE.md](../../CLAUDE.md#deployment-wo
 ### Login with `aws sso login`
 
 [AWS SSO Login Guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sso.html#cli-configure-sso-login)
+
+## Documentation
+
+For complete deployment workflows and commands, see [CLAUDE.md](../../CLAUDE.md#deployment-workflow).
