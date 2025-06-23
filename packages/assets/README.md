@@ -1,14 +1,31 @@
-# React Router
+# Frontend Application (@desaidn.dev/assets)
 
-## Features
+[React 19](https://react.dev/) app with [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/), and [React Router](https://reactrouter.com/).
 
-- Server-side rendering
-- Hot Module Replacement (HMR)
-- Asset bundling and optimization
-- Data loading and mutations
-- TypeScript by default
-- [Tailwind CSS](https://tailwindcss.com/)
-- [React Router docs](https://reactrouter.com/)
+## Directory Structure
+
+```
+packages/assets/
+├── app/
+│   ├── components/       # React components
+│   ├── routes/           # React Router route files
+│   └── root.tsx          # App root component
+├── public/               # Static assets
+└── package.json
+```
+
+## Routes
+
+- `/` - Home page (index-route.tsx)
+- `/experience` - Experience page (experience-route.tsx)
+- `/projects` - Projects page (projects-route.tsx)
+- `/blog` - Blog page (blog-route.tsx)
+- `/*` - Catch-all route (any-route.tsx)
+
+## Architecture
+
+- **SPA mode**: No server-side rendering
+- **Build**: Vite with React Router integration
 
 ## Getting Started
 
@@ -29,6 +46,8 @@ pnpm run dev
 ```
 
 Your application will be available at `http://localhost:5173`.
+
+For complete development workflows, see [CLAUDE.md](../../CLAUDE.md#common-commands).
 
 ## Building for Production
 

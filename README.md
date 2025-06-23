@@ -1,50 +1,40 @@
 # desaidn.dev
 
-Personal portfolio website.
+Personal website: [desaidn.dev](https://desaidn.dev)
 
-**Live Site:** [desaidn.dev](https://desaidn.dev)
+## Stack
 
-## Structure
+- **Frontend**: React + TypeScript + Tailwind + React Router (SPA)
+- **Infrastructure / Deployment**: AWS CDK + Cloudflare (domain ONLY)
+
+## Project Structure
 
 ```
 ├── packages/
-│   ├── assets/     # React frontend
-│   └── cdk/        # AWS infrastructure
+│   ├── assets/     # React app
+│   └── cdk/        # AWS CDK IaC
+├── CLAUDE.md       # Comprehensive development guide
+└── package.json    # Workspace configuration with pnpm
 ```
 
-## Development
+## Quick Start
 
 ```bash
-# Install dependencies
-pnpm install
-
-# Start development server
-pnpm run dev
-
-# Build for production
-pnpm run build
-
-# Run linting and type checking
-pnpm run quality
+pnpm install         # Install all dependencies
+pnpm run dev         # Start development server
+pnpm run build       # Build all packages
+pnpm run quality     # Run lint + typecheck + format
 ```
 
 ## Deployment
 
-Assuming credentials are set:
-
 ```bash
-# Build, synth, and show diff
-pnpm run deploy:prepare
-
-# Deploy to AWS (after reviewing diff)
-pnpm run deploy
+pnpm run deploy:prepare    # Build + synth + diff
+pnpm run deploy           # Full deployment to AWS
 ```
 
-Deploys to AWS S3 + CloudFront with custom domain and SSL.
+## Documentation
 
-## Stack
-
-- React 19 + TypeScript
-- Tailwind CSS
-- React Router v7
-- AWS CDK
+- **[CLAUDE.md](./CLAUDE.md)** - Complete development workflows and commands
+- **[Frontend README](./packages/assets/README.md)** - React application details
+- **[Infrastructure README](./packages/cdk/README.md)** - AWS CDK stack information
