@@ -42,10 +42,10 @@ export default function cspPlugin(): Plugin {
         const cspDirectives = [
           "default-src 'none'",
           `script-src 'self' ${scriptHashes.join(' ')}`,
-          "style-src 'self' https://fonts.googleapis.com",
+          "style-src 'self'",
           "img-src 'self' data: https:",
-          "font-src 'self' https://fonts.gstatic.com",
-          "connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com",
+          "font-src 'self'",
+          "connect-src 'self'",
           "form-action 'self'",
           "base-uri 'self'",
           "object-src 'none'",
