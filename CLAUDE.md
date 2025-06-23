@@ -11,25 +11,41 @@ This is a monorepo containing a personal portfolio website with two main package
 
 ## Common Commands
 
-### Frontend Development (packages/assets/)
+### Workspace Commands (from root)
 
 ```bash
-cd packages/assets
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run lint         # Run ESLint
-npm run lint:fix     # Fix ESLint issues
-npm run typecheck    # Run TypeScript compiler
-npm run quality      # Run all quality checks (lint + typecheck)
+pnpm install         # Install all dependencies
+pnpm run build       # Build all packages
+pnpm run dev         # Start frontend development server
+pnpm run test        # Run tests in all packages
+pnpm run quality     # Run all quality checks (lint + typecheck + format)
+pnpm run clean       # Clean build artifacts in all packages
 ```
 
-### Infrastructure (packages/cdk/)
+### Enhanced Deployment Commands
 
 ```bash
-cd packages/cdk
-npm run build        # Compile TypeScript
-npm run test         # Run Jest tests
-npm run cdk          # Run CDK CLI commands
+# Simplified deployment workflow
+pnpm run deploy:prepare    # Build assets + CDK synth + diff (your usual steps 1-2)
+pnpm run deploy           # Full deployment (build + synth + deploy)
+
+# Utility commands
+pnpm run cdk              # Run CDK commands from root (e.g., pnpm run cdk list)
+```
+
+### Package-Specific Commands
+
+```bash
+# Frontend Development (packages/assets/)
+pnpm --filter @desaidn.dev/assets dev        # Start development server
+pnpm --filter @desaidn.dev/assets build      # Build for production
+pnpm --filter @desaidn.dev/assets lint       # Run ESLint
+pnpm --filter @desaidn.dev/assets typecheck  # Run TypeScript compiler
+
+# Infrastructure (packages/cdk/)
+pnpm --filter @desaidn.dev/cdk build         # Compile TypeScript
+pnpm --filter @desaidn.dev/cdk test          # Run Jest tests
+pnpm --filter @desaidn.dev/cdk cdk           # Run CDK CLI commands
 ```
 
 ## Architecture Overview
@@ -73,13 +89,20 @@ npm run cdk          # Run CDK CLI commands
 ## Development Environment
 
 - **Node.js**: Version 23 (managed via mise.toml)
-- **Package Manager**: npm
+- **Package Manager**: pnpm (workspace-enabled monorepo)
 - **Code Quality**: ESLint + Prettier + TypeScript strict mode
 - **Testing**: Jest for CDK infrastructure tests
 
+## Monorepo Structure
+
+- **Root**: Contains workspace configuration and shared dependencies
+- **packages/assets/**: `@desaidn.dev/assets` - React frontend application
+- **packages/cdk/**: `@desaidn.dev/cdk` - AWS CDK infrastructure code
+- **Shared Dependencies**: TypeScript, Prettier, and common dev tools managed at root level
+
 ## Deployment Workflow
 
-1. Frontend changes are built using Vite
+1. Frontend changes are built using Vite (`pnpm run build`)
 2. CDK automatically deploys build artifacts to S3
 3. CloudFront serves the static site with proper security headers
 4. DNS is managed externally via Cloudflare

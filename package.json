@@ -1,0 +1,29 @@
+{
+  "name": "desaidn.dev",
+  "private": true,
+  "description": "Personal portfolio website with React frontend and AWS CDK infrastructure",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "pnpm run --recursive build",
+    "dev": "pnpm --filter @desaidn.dev/assets dev",
+    "test": "pnpm run --recursive test",
+    "quality": "pnpm run --recursive quality",
+    "clean": "pnpm run --recursive clean",
+    "cdk": "pnpm --filter @desaidn.dev/cdk cdk",
+    "deploy:prepare": "pnpm --filter @desaidn.dev/assets build && pnpm --filter @desaidn.dev/cdk cdk synth && pnpm --filter @desaidn.dev/cdk cdk diff",
+    "deploy": "pnpm run deploy:prepare && pnpm --filter @desaidn.dev/cdk cdk deploy"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.9",
+    "pnpm": "^10.12.1",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  },
+  "packageManager": "pnpm@10.12.1"
+}

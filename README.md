@@ -16,17 +16,16 @@ Personal portfolio website.
 
 ```bash
 # Install dependencies
-npm install
+pnpm install
 
 # Start development server
-cd packages/assets
-npm run dev
+pnpm run dev
 
 # Build for production
-npm run build
+pnpm run build
 
 # Run linting and type checking
-npm run quality
+pnpm run quality
 ```
 
 ## Deployment
@@ -34,8 +33,11 @@ npm run quality
 Assuming credentials are set:
 
 ```bash
-cd packages/cdk
-npm run cdk deploy
+# Build, synth, and show diff
+pnpm run deploy:prepare
+
+# Deploy to AWS (after reviewing diff)
+pnpm run deploy
 ```
 
 Deploys to AWS S3 + CloudFront with custom domain and SSL.
