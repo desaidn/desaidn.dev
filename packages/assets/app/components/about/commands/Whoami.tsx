@@ -7,7 +7,7 @@ const Whoami = memo(() => {
       <div className="text-2xl font-bold">Dhairya Desai</div>
       <div className="text-xl font-semibold">Software Engineer</div>
       <div className="text-md">
-        Programming Languages, Distributed Systems, User Interfaces
+        Distributed Systems, Programming Languages & User Interfaces
       </div>
 
       <div className="mt-2 space-y-1">
