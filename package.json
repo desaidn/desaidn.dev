@@ -1,6 +1,7 @@
 {
   "name": "desaidn.dev",
   "private": true,
+  "type": "module",
   "description": "Personal portfolio website with React frontend and AWS CDK infrastructure",
   "workspaces": [
     "packages/*"
@@ -9,17 +10,27 @@
     "build": "pnpm run --recursive build",
     "dev": "pnpm --filter @desaidn.dev/assets dev",
     "test": "pnpm run --recursive test",
+    "lint": "pnpm run --recursive lint",
+    "lint:fix": "pnpm run --recursive lint:fix",
+    "format": "pnpm run --recursive format",
+    "format:check": "pnpm run --recursive format:check",
     "quality": "pnpm run --recursive quality",
+    "typecheck": "pnpm run --recursive typecheck",
     "clean": "pnpm run --recursive clean",
     "cdk": "pnpm --filter @desaidn.dev/cdk cdk",
     "deploy:prepare": "pnpm --filter @desaidn.dev/assets build && pnpm --filter @desaidn.dev/cdk cdk synth && pnpm --filter @desaidn.dev/cdk cdk diff",
     "deploy": "pnpm run deploy:prepare && pnpm --filter @desaidn.dev/cdk cdk deploy"
   },
   "devDependencies": {
+    "@eslint/js": "^9.28.0",
     "@types/node": "^22.7.9",
+    "eslint": "^9.28.0",
+    "eslint-config-prettier": "^10.1.5",
+    "globals": "^16.2.0",
     "pnpm": "^10.12.1",
     "prettier": "^3.5.3",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.33.1"
   },
   "engines": {
     "node": ">=18",

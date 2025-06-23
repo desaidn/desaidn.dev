@@ -81,7 +81,9 @@ export function useCommandExecution(commands: TerminalCommand[]) {
     const executeNext = () => {
       if (currentStep >= commands.length) return;
 
-      const command = commands[currentStep];
+      const command = commands.at(currentStep);
+      if (!command) return;
+
       displayCommandExecution(command.name, command.output);
 
       const totalWaitTime =

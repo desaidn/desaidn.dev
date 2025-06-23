@@ -1,29 +1,20 @@
-import js from '@eslint/js';
-import globals from 'globals';
-import reactHooks from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
-import tseslint from 'typescript-eslint';
-import react from 'eslint-plugin-react';
 import stylistic from '@stylistic/eslint-plugin';
 import eslintConfigPrettier from 'eslint-config-prettier';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
+import baseConfig from '../../eslint.config.base.js';
 
 export default tseslint.config(
-  {
-    // Global ignores
-    ignores: [
-      'dist/**',
-      'build/**',
-      'node_modules/**',
-      '.react-router/**',
-      'coverage/**',
-      '*.config.js',
-      '*.config.ts',
-    ],
-  },
+  // Extend base configuration
+  ...baseConfig,
 
-  // Base configurations
-  js.configs.recommended,
-  ...tseslint.configs.recommended,
+  {
+    // Additional ignores specific to React app
+    ignores: ['.react-router/**'],
+  },
 
   // React configuration
   {
@@ -71,21 +62,6 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
 
-      // TypeScript Rules
-      '@typescript-eslint/no-unused-vars': [
-        'error',
-        {
-          argsIgnorePattern: '^_',
-          varsIgnorePattern: '^_',
-        },
-      ],
-      '@typescript-eslint/no-explicit-any': 'warn',
-      '@/prefer-const': 'error',
-      '@typescript-eslint/consistent-type-imports': [
-        'error',
-        { prefer: 'type-imports', fixStyle: 'inline-type-imports' },
-      ],
-
       // Stylistic Rules (minimal set to complement Prettier)
       '@stylistic/jsx-self-closing-comp': 'error',
       '@stylistic/jsx-curly-brace-presence': [
@@ -98,30 +74,27 @@ export default tseslint.config(
     },
   },
 
-  // TypeScript-specific overrides
+  // Additional TypeScript rules specific to React app
   {
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
-      parser: tseslint.parser,
       parserOptions: {
         project: './tsconfig.json',
       },
     },
-    rules: {
-      // Additional TypeScript rules for type-aware linting
-      '@typescript-eslint/no-floating-promises': 'error',
-      '@typescript-eslint/await-thenable': 'error',
-      '@typescript-eslint/no-misused-promises': 'error',
-    },
   },
 
-  // Configuration files
+  // Configuration files and build tools
   {
-    files: ['**/*.config.{js,ts}', 'vite.config.{js,ts}'],
+    files: ['**/*.config.{js,ts}', 'vite.config.{js,ts}', '*Plugin.{js,ts}'],
     languageOptions: {
       globals: {
         ...globals.node,
       },
+    },
+    rules: {
+      // Allow console in build tools and config files
+      'no-console': 'off',
     },
   },
 

@@ -28,12 +28,14 @@ export default function cspPlugin(): Plugin {
         let match;
 
         while ((match = inlineScriptRegex.exec(html)) !== null) {
-          const scriptContent = match[1].trim();
-          if (scriptContent) {
-            const hash = createHash('sha256')
-              .update(scriptContent, 'utf8')
-              .digest('base64');
-            scriptHashes.push(`'sha256-${hash}'`);
+          if (match.length > 1 && match[1]) {
+            const scriptContent = match[1].trim();
+            if (scriptContent) {
+              const hash = createHash('sha256')
+                .update(scriptContent, 'utf8')
+                .digest('base64');
+              scriptHashes.push(`'sha256-${hash}'`);
+            }
           }
         }
 
