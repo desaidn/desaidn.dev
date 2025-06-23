@@ -16,10 +16,10 @@
     "format:check": "pnpm run --recursive format:check",
     "quality": "pnpm run --recursive quality",
     "typecheck": "pnpm run --recursive typecheck",
-    "clean": "pnpm run --recursive clean",
     "cdk": "pnpm --filter @desaidn.dev/cdk cdk",
     "deploy:prepare": "pnpm --filter @desaidn.dev/assets build && pnpm --filter @desaidn.dev/cdk cdk synth && pnpm --filter @desaidn.dev/cdk cdk diff",
-    "deploy": "pnpm run deploy:prepare && pnpm --filter @desaidn.dev/cdk cdk deploy"
+    "deploy": "pnpm run deploy:prepare && pnpm --filter @desaidn.dev/cdk cdk deploy",
+    "clean": "rm -rf node_modules && pnpm run --recursive clean"
   },
   "devDependencies": {
     "@eslint/js": "^9.28.0",

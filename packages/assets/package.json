@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tw-patch extract && react-router build",
+    "build": "pnpm run typecheck && tw-patch extract && react-router build",
     "dev": "react-router dev --port 5173 & npx react-scan@latest localhost:5173",
     "start": "react-router-serve ./build/server/index.js",
     "lint": "eslint . --ext ts,tsx,js,jsx --report-unused-disable-directives --max-warnings 0",
@@ -12,7 +12,8 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "quality": "pnpm run typecheck && pnpm run format && pnpm run lint:fix",
     "typecheck": "react-router typegen && tsc",
-    "prepare": "tw-patch install"
+    "prepare": "tw-patch install",
+    "clean": "rm -rf .react-router .tw-patch build node_modules"
   },
   "dependencies": {
     "@react-router/node": "^7.5.3",
