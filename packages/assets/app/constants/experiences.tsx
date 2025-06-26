@@ -11,13 +11,12 @@ export default [
     location: 'New York, New York, United States',
     description: (
       <>
-        Developing scalable, service-oriented and event-driven architectures for
-        billing, procurement and contracting systems. My role involves building
-        highly available Java and Kotlin microservices, reliable UIs with React
-        and TypeScript, and reusable Python utilities to facilitate billions in
-        cloud transactions monthly. I leverage AWS to design, implement and
-        maintain robust, distributed systems that handle large volumes of data
-        across multiple regions.
+        Designing and implementing scalable, service-oriented and event-driven
+        architectures for AWS Billing systems. Building highly available Java
+        and Kotlin microservices, React/TypeScript UIs, and Python utilities
+        that enable reliable metering of cloud usage at planet scale. Leveraging
+        AWS to maintain distributed systems that accurately track billions in
+        cloud transactions monthly.
       </>
     ),
     technologies: [

@@ -22,14 +22,12 @@ pnpm run quality     # Run all quality checks (lint + typecheck + format)
 pnpm run clean       # Clean build artifacts in all packages
 ```
 
-### Enhanced Deployment Commands
+### Deployment Commands
 
 ```bash
-# Simplified deployment workflow
-pnpm run deploy:prepare    # Build assets + CDK synth + diff (your usual steps 1-2)
+pnpm run deploy:prepare   # Build assets + CDK synth + diff (your usual steps 1-2)
 pnpm run deploy           # Full deployment (build + synth + deploy)
 
-# Utility commands
 pnpm run cdk              # Run CDK commands from root (e.g., pnpm run cdk list)
 ```
 
