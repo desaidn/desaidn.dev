@@ -1,5 +1,5 @@
 export default [
-  { name: 'experience', path: '/experience' },
-  { name: 'projects', path: '/projects' },
-  { name: 'blog', path: '/blog' },
+  { name: 'experience', path: '/experience', external: false },
+  { name: 'projects', path: '/projects', external: false },
+  { name: 'newsletter', path: 'https://desaidn.substack.com/', external: true },
 ] as const;

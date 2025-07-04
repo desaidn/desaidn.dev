@@ -9,10 +9,18 @@ const Ls = memo(() => {
   const handleItemClick = (
     itemName: string,
     href: string,
+    external: boolean,
     event: React.MouseEvent
   ) => {
+    if (external) {
+      event.preventDefault();
+    }
     handleClick(event, itemName, () => {
-      window.location.href = href;
+      if (external) {
+        window.open(href, '_blank');
+      } else {
+        window.location.href = href;
+      }
     });
   };
 
@@ -24,11 +32,13 @@ const Ls = memo(() => {
           <div key={item.name} className="group">
             <Link
               href={item.path}
-              external={false}
+              external={item.external}
               className={`relative flex items-center transition-all duration-300 ease-out active:scale-95 focus:outline-none focus:ring-2 focus:ring-green-400/50 focus:ring-offset-2 focus:ring-offset-black rounded-sm py-1 px-2 cursor-pointer ${
                 isActive ? 'translate-x-2' : 'hover:translate-x-2'
               }`}
-              onClick={e => handleItemClick(item.name, item.path, e)}
+              onClick={e =>
+                handleItemClick(item.name, item.path, item.external, e)
+              }
             >
               <span
                 className={`transition-opacity duration-300 mr-2 text-white ${
