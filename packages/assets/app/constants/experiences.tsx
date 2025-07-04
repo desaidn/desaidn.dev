@@ -39,10 +39,11 @@ export default [
       'CloudWatch',
     ],
     highlights: [
-      'Developing and optimizing RESTful APIs for quick and fault tolerant data processing. APIs used by console and SDK clients.',
+      'Developing and optimizing RESTful APIs for quick and fault tolerant data processing. APIs used by AWS console and SDK clients.',
       'Implementing data ingestion pipelines to ensure continuous and accurate flow of billing data.',
       'Collaborating with Product Managers, UX Designers and expert users to deliver features and system efficiency improvements.',
       "Monitoring service performance and contributing to the team's on-call rotation.",
+      'Mentoring early-career engineers through projects, code reviews, pair programming, and demos.',
     ],
   },
   {
