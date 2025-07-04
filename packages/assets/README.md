@@ -30,8 +30,9 @@ SPA with client-side routing.
 - `/` - Home page (index-route.tsx)
 - `/experience` - Experience page (experience-route.tsx)
 - `/projects` - Projects page (projects-route.tsx)
-- `/blog` - Blog page (blog-route.tsx)
 - `/*` - Catch-all route (any-route.tsx)
+
+**Note**: The newsletter menu item is an external link to Substack (https://desaidn.substack.com/) rather than a route. This design decision avoids the need to build a custom blog system while still providing content access.
 
 ## Getting Started
 

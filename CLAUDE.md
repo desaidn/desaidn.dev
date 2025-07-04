@@ -58,8 +58,8 @@ pnpm --filter @desaidn.dev/cdk cdk           # Run CDK CLI commands
   - `/` - Home page (index-route.tsx)
   - `/experience` - Experience page (experience-route.tsx)
   - `/projects` - Projects page (projects-route.tsx)
-  - `/blog` - Blog page (blog-route.tsx)
   - `/*` - Catch-all route (any-route.tsx)
+  - **Note**: Newsletter menu item is an external link to Substack (https://desaidn.substack.com/) rather than a route
 
 ### Component Structure
 
@@ -67,7 +67,8 @@ pnpm --filter @desaidn.dev/cdk cdk           # Run CDK CLI commands
 - `About.tsx` - About section component
 - `ComingSoon.tsx` - Placeholder component
 - `experience/` - Experience-related components
-- Shared constants for experiences and menu items
+- Shared constants for experiences and menu items (includes newsletter external link)
+- Mobile-friendly animations for both internal and external navigation links
 
 ### Infrastructure Architecture
 
