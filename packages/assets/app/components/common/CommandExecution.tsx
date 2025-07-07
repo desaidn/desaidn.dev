@@ -12,7 +12,7 @@ const CommandExecution = memo(
     const { state: execState } = useCommandExecution(commands);
 
     return (
-      <div className="text-gray-400 space-y-4">
+      <div className="text-muted space-y-4">
         {commands.map((command, index) => {
           const isCurrentCommand = command.name === execState.currentCommand;
           const isPastCommand =

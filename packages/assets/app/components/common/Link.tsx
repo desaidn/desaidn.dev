@@ -18,7 +18,7 @@ const Link = memo(
       : {};
 
     const defaultClassName =
-      'block text-green-400 hover:text-gray-300 transition-colors underline underline-offset-4';
+      'block text-link hover:text-link-hover transition-colors underline underline-offset-4';
 
     return (
       <a

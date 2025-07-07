@@ -3,7 +3,7 @@ import Link from '../../common/Link';
 
 const Whoami = memo(() => {
   return (
-    <div className="ml-4 space-y-2 text-gray-300">
+    <div className="ml-4 space-y-2 text-secondary">
       <div className="text-2xl font-bold">Dhairya Desai</div>
       <div className="text-xl font-semibold">Software Engineer</div>
       <div className="text-md">

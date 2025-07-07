@@ -59,7 +59,7 @@ export default [
         team that was acquired by{' '}
         <Link
           href="https://public.vtinfo.com/"
-          className="text-lg text-green-400 hover:text-gray-300 mb-2 underline underline-offset-4"
+          className="text-lg text-link hover:text-link-hover mb-2 underline underline-offset-4"
         >
           VIP
         </Link>

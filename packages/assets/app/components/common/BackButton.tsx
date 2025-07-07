@@ -18,10 +18,10 @@ const BackButton = memo(
     return (
       <button
         onClick={e => handleClick(e, () => void navigate(to))}
-        className={`group flex items-start gap-2 transition-all duration-200 ease-out active:scale-95 focus:outline-none focus:ring-2 focus:ring-gray-700/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg cursor-pointer ${
+        className={`group flex items-start gap-2 transition-all duration-200 ease-out active:scale-95 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg cursor-pointer ${
           isActive
-            ? 'text-green-400 translate-x-[-2px]'
-            : 'text-gray-400 hover:text-green-400 hover:translate-x-[-2px]'
+            ? 'text-link translate-x-[-2px]'
+            : 'text-muted hover:text-link hover:translate-x-[-2px]'
         }`}
         aria-label={ariaLabel ?? `Go back to ${to === '/' ? 'home page' : to}`}
       >
