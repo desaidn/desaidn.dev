@@ -35,7 +35,7 @@ const CommandExecution = memo(
                 {showPrompt && <span className="mr-2">λ</span>}
                 <span>{displayText}</span>
                 {showCursor && (
-                  <span className="w-2 h-5 bg-green-400 ml-1 animate-pulse" />
+                  <span className="w-2 h-5 bg-muted ml-1 animate-pulse" />
                 )}
               </div>
 
