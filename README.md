@@ -2,6 +2,12 @@
 
 Personal website: [desaidn.dev](https://desaidn.dev)
 
+## Copyright
+
+© 2025 Dhairya Desai. All Rights Reserved.
+
+This code is provided for portfolio demonstration. While you may view and fork on GitHub, no license is granted for copying, modifying, or distributing elsewhere. Feel free to reach out if you'd like to discuss usage.
+
 ## Stack
 
 - **Frontend**: React + TypeScript + Tailwind + React Router (SPA)
