@@ -145,8 +145,8 @@ export default [
     role: "Bachelor's degree, Computer Science",
     dates: 'August 2017 - May 2021',
     highlights: [
-      'First Place Among College Teams at Blockland Blockchain Hack-a-thon',
-      "Dean's List Second Semester",
+      'First place among college teams at Blockland Blockchain Hackathon.',
+      "Dean's list senior year.",
     ],
     location: 'Oxford, Ohio, United States',
   },
