@@ -16,9 +16,7 @@ const ExperienceItem = memo(
     return (
       <div
         className={`bg-primary/80 border rounded-lg overflow-hidden transition-[border-color] duration-300 ${
-          isOpen
-            ? 'border-link/50'
-            : 'border-border/50 hover:border-link/50'
+          isOpen ? 'border-link/50' : 'border-border/50 hover:border-link/50'
         }`}
       >
         <button
@@ -38,9 +36,7 @@ const ExperienceItem = memo(
                   {experience.company}
                 </Link>
               </div>
-              <p className="text-muted text-sm mb-2">
-                {experience.location}
-              </p>
+              <p className="text-muted text-sm mb-2">{experience.location}</p>
             </div>
             <div className="lg:text-right flex justify-between gap-2">
               <span className="inline-block py-1 text-link text-sm">
