@@ -1,5 +1,20 @@
-import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet, Font } from '@react-pdf/renderer';
 import type { Experience } from 'types';
+
+// Register JetBrains Mono font
+Font.register({
+  family: 'JetBrains Mono',
+  fonts: [
+    {
+      src: `${window.location.origin}/fonts/JetBrainsMono-Regular.ttf`,
+      fontWeight: 'normal',
+    },
+    {
+      src: `${window.location.origin}/fonts/JetBrainsMono-Bold.ttf`,
+      fontWeight: 'bold',
+    },
+  ],
+});
 
 const styles = StyleSheet.create({
   page: {
@@ -8,7 +23,7 @@ const styles = StyleSheet.create({
     padding: 12, // Increased from 10
     fontSize: 9, // Increased from 8
     lineHeight: 1.2, // Slightly increased from 1.1
-    fontFamily: 'Courier', // Closest monospace font to JetBrains Mono
+    fontFamily: 'JetBrains Mono',
     color: '#d4d4d4', // --color-secondary
   },
   container: {
