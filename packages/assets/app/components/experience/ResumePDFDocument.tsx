@@ -39,16 +39,16 @@ const createStyles = (theme: ReturnType<typeof getStaticThemeSnapshot>) =>
       maxWidth: '100%',
     },
     experienceContainer: {
-      gap: 4,
+      gap: 0,
     },
     experienceItem: {
       backgroundColor: theme.colors.primary,
-      marginBottom: 3,
+      marginBottom: 0,
       overflow: 'hidden',
     },
     experienceButton: {
       width: '100%',
-      padding: theme.spacing.sm,
+      padding: 0,
       backgroundColor: theme.colors.primary,
     },
     experienceHeader: {
@@ -88,7 +88,7 @@ const createStyles = (theme: ReturnType<typeof getStaticThemeSnapshot>) =>
       paddingVertical: 0,
     },
     expandedContent: {
-      paddingHorizontal: 4,
+      paddingHorizontal: 0,
       paddingBottom: 4,
     },
     expandedInner: {
