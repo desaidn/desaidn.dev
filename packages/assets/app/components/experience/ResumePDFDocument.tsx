@@ -317,7 +317,7 @@ export default function ResumePDFDocument({
               Currently developing AWS Console applications that serve millions
               of developers and billing systems processing billions in
               transactions. Passionate about crafting excellent user experiences
-              and mentoring teams to ship reliable software.
+              and collaborating to ship reliable software.
             </Text>
           </View>
 
