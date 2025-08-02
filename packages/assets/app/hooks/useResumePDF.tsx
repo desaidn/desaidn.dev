@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { pdf } from '@react-pdf/renderer';
 import type { Experience } from 'types';
 import ResumePDFDocument from '../components/experience/ResumePDFDocument';
@@ -27,7 +27,7 @@ export default function useResumePDF(
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = 'Dhairya_Desai_Resume.pdf';
+      link.download = 'dhairya_desai_resume.pdf';
 
       document.body.appendChild(link);
       link.click();
