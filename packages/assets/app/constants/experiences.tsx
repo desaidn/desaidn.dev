@@ -11,12 +11,10 @@ export default [
     location: 'New York, New York, United States',
     description: (
       <>
-        Designing and implementing scalable, service-oriented and event-driven
-        architectures for AWS Billing systems. Building highly available Java
-        and Kotlin microservices, React/TypeScript UIs, and Python utilities
-        that enable reliable metering of cloud usage at planet scale. Leveraging
-        AWS to maintain distributed systems that accurately track billions in
-        cloud transactions monthly.
+        Building full-stack applications for the AWS Console used by millions of
+        developers. Designing scalable billing systems and user interfaces while
+        collaborating with product teams to deliver reliable developer
+        experiences at cloud scale.
       </>
     ),
     technologies: [
@@ -39,11 +37,11 @@ export default [
       'CloudWatch',
     ],
     highlights: [
-      'Developing and optimizing RESTful APIs for quick and fault tolerant data processing. APIs used by AWS console and SDK clients.',
-      'Implementing data ingestion pipelines to ensure continuous and accurate flow of billing data.',
-      'Collaborating with Product Managers, UX Designers and expert users to deliver features and system efficiency improvements.',
-      "Monitoring service performance and contributing to the team's on-call rotation.",
-      'Mentoring early-career engineers through projects, code reviews, pair programming, and demos.',
+      'Developing AWS Console features and APIs serving millions of developers',
+      'Building scalable billing platforms processing billions in transactions',
+      'Collaborating with designers and PMs on developer experience improvements',
+      'Maintaining high availability through monitoring and incident response',
+      'Mentoring engineers on architecture decisions and code quality',
     ],
   },
   {
@@ -61,7 +59,7 @@ export default [
           href="https://public.vtinfo.com/"
           className="text-lg text-link hover:text-link-hover mb-2 underline underline-offset-4"
         >
-          VIP
+          Vermont Information Processing (VIP)
         </Link>
         . Owned web platform and data ingestion pipelines. Contributed to mobile
         (iOS/Android) app.

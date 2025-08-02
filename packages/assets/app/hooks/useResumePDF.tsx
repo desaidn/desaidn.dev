@@ -20,22 +20,18 @@ export default function useResumePDF(
     setError(null);
 
     try {
-      // Generate PDF blob
       const blob = await pdf(
         <ResumePDFDocument experiences={experiences} />
       ).toBlob();
 
-      // Create download link
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
       link.download = 'Dhairya_Desai_Resume.pdf';
 
-      // Trigger download
       document.body.appendChild(link);
       link.click();
 
-      // Cleanup
       document.body.removeChild(link);
       URL.revokeObjectURL(url);
     } catch (err) {
