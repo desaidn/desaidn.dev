@@ -43,7 +43,7 @@ const createStyles = (theme: ReturnType<typeof getStaticThemeSnapshot>) =>
     },
     experienceItem: {
       backgroundColor: theme.colors.primary,
-      marginBottom: 0,
+      marginBottom: 1,
       overflow: 'hidden',
     },
     experienceButton: {
@@ -101,7 +101,7 @@ const createStyles = (theme: ReturnType<typeof getStaticThemeSnapshot>) =>
       lineHeight: 1.2,
     },
     header: {
-      marginBottom: theme.spacing.lg,
+      marginBottom: theme.spacing.md,
     },
     name: {
       fontSize: 17,
@@ -162,7 +162,7 @@ const createStyles = (theme: ReturnType<typeof getStaticThemeSnapshot>) =>
       flexShrink: 0,
     },
     skillsSection: {
-      marginBottom: theme.spacing.sm,
+      marginBottom: theme.spacing.md,
     },
     skillsTitle: {
       fontSize: 10,
