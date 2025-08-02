@@ -330,7 +330,7 @@ export default function ResumePDFDocument({
                 </Text>
                 <Text style={styles.skillsList}>
                   TypeScript & React interfaces, Java & Kotlin services, Python
-                  automation, functional programming patterns
+                  automation, typed functional programming patterns
                 </Text>
               </View>
               <View style={styles.skillCategory}>
@@ -338,15 +338,16 @@ export default function ResumePDFDocument({
                   Developer Platforms
                 </Text>
                 <Text style={styles.skillsList}>
-                  AWS Console applications, browser-based tools, scalable
-                  architectures, API design for expert users
+                  AWS Console applications, SDK generation and distribution,
+                  browser-based tools, scalable and event-driven architectures,
+                  API design for expert users
                 </Text>
               </View>
               <View style={styles.skillCategory}>
                 <Text style={styles.skillCategoryTitle}>User Experience</Text>
                 <Text style={styles.skillsList}>
-                  Sophisticated UIs, typed functional programming, component
-                  abstractions, collaborative design
+                  Polished and reliable UIs for technical users, user research
+                  and rapid prototyping
                 </Text>
               </View>
               <View style={styles.skillCategory}>
@@ -361,8 +362,7 @@ export default function ResumePDFDocument({
               <View style={styles.skillCategory}>
                 <Text style={styles.skillCategoryTitle}>AI & Automation</Text>
                 <Text style={styles.skillsList}>
-                  LLM integration, AI-powered workflows, automation systems,
-                  mentoring AI/ML projects
+                  LLM integration, AI-powered workflows, automation systems
                 </Text>
               </View>
               <View style={styles.skillCategory}>
