@@ -41,7 +41,7 @@ export default function cspPlugin(): Plugin {
 
         const cspDirectives = [
           "default-src 'none'",
-          `script-src 'self' ${scriptHashes.join(' ')}`,
+          `script-src 'self' 'unsafe-eval' ${scriptHashes.join(' ')}`,
           "style-src 'self'",
           "img-src 'self' data: https:",
           "font-src 'self'",
