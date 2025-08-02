@@ -366,7 +366,7 @@ export default function ResumePDFDocument({
                 </Text>
               </View>
               <View style={styles.skillCategory}>
-                <Text style={styles.skillCategoryTitle}>AI & Automation</Text>
+                <Text style={styles.skillCategoryTitle}>Interests</Text>
                 <Text style={styles.skillsList}>
                   GPU/CPU architecture, RISC-V, WebGL, animation libraries,
                   compilers

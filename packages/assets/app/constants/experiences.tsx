@@ -12,10 +12,10 @@ export default [
     description: (
       <>
         Developing AWS Console applications, AWS SDK APIs and internal tools
-        serving millions of developers and billing systems processing billions
-        annually. Leading full-stack development with Java/Kotlin backends and
-        React frontends. Designing event-driven architectures for cloud usage
-        metering at planet scale.
+        serving millions of developers. Building highly available Java and
+        Kotlin microservices, React and TypeScript UIs, and Python automation.
+        Designing and implementing scalable, service-oriented and event-driven
+        architectures for cloud usage metering at planet scale.
       </>
     ),
     technologies: [
@@ -38,12 +38,13 @@ export default [
       'CloudWatch',
     ],
     highlights: [
+      'Developing and optimizing RESTful APIs for quick and fault tolerant data processing. APIs used by AWS console and SDK clients.',
       'Built AWS Console features serving millions of developers with 99.99% availability',
+      'Implementing data ingestion pipelines to ensure continuous and accurate flow of billing data.',
+      'Collaborating with Product Managers, UX Designers and expert users to deliver features and system efficiency improvements.',
       'Designed high TPS billing systems processing billions in annual transaction volume',
-      'Architected event-driven systems for cloud usage metering at planet scale',
-      'Collaborating with designers and PMs on developer experience improvements',
       'Delivered major features improving developer productivity and user experience',
-      'Maintaining high availability through monitoring and incident response',
+      "Monitoring service performance and contributing to the team's on-call rotation.",
       'Mentoring early career engineers and intern projects. For example, AI co-pilot for logical expression optimization and MCP server/client implementation',
     ],
   },
