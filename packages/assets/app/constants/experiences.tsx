@@ -11,10 +11,11 @@ export default [
     location: 'New York, New York, United States',
     description: (
       <>
-        Building full-stack applications for the AWS Console used by millions of
-        developers. Designing scalable billing systems and user interfaces while
-        collaborating with product teams to deliver reliable developer
-        experiences at cloud scale.
+        Developing AWS Console applications, AWS SDK APIs and internal tools
+        serving millions of developers and billing systems processing billions
+        annually. Leading full-stack development with Java/Kotlin backends and
+        React frontends. Designing event-driven architectures for cloud usage
+        metering at planet scale.
       </>
     ),
     technologies: [
@@ -37,11 +38,13 @@ export default [
       'CloudWatch',
     ],
     highlights: [
-      'Developing AWS Console features and APIs serving millions of developers',
-      'Building scalable billing platforms processing billions in transactions',
+      'Built AWS Console features serving millions of developers with 99.99% availability',
+      'Designed high TPS billing systems processing billions in annual transaction volume',
+      'Architected event-driven systems for cloud usage metering at planet scale',
       'Collaborating with designers and PMs on developer experience improvements',
+      'Delivered major features improving developer productivity and user experience',
       'Maintaining high availability through monitoring and incident response',
-      'Mentoring engineers on architecture decisions and code quality',
+      'Mentoring early career engineers and intern projects. For example, AI co-pilot for logical expression optimization and MCP server/client implementation',
     ],
   },
   {

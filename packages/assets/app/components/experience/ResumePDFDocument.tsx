@@ -365,6 +365,13 @@ export default function ResumePDFDocument({
                   mentoring AI/ML projects
                 </Text>
               </View>
+              <View style={styles.skillCategory}>
+                <Text style={styles.skillCategoryTitle}>AI & Automation</Text>
+                <Text style={styles.skillsList}>
+                  GPU/CPU architecture, RISC-V, WebGL, animation libraries,
+                  compilers
+                </Text>
+              </View>
             </View>
           </View>
 
