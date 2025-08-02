@@ -38,13 +38,13 @@ export default [
       'CloudWatch',
     ],
     highlights: [
-      'Developing and optimizing RESTful APIs for quick and fault tolerant data processing. APIs used by AWS console and SDK clients.',
+      'Developing and optimizing RESTful APIs for quick and fault tolerant data processing. APIs used by AWS console and SDK clients',
       'Built AWS Console features serving millions of developers with 99.99% availability',
-      'Implementing data ingestion pipelines to ensure continuous and accurate flow of billing data.',
-      'Collaborating with Product Managers, UX Designers and expert users to deliver features and system efficiency improvements.',
+      'Implementing data ingestion pipelines to ensure continuous and accurate flow of billing data',
+      'Collaborating with Product Managers, UX Designers and expert users to deliver features and system efficiency improvements',
       'Designed high TPS billing systems processing billions in annual transaction volume',
       'Delivered major features improving developer productivity and user experience',
-      "Monitoring service performance and contributing to the team's on-call rotation.",
+      "Monitoring service performance and contributing to the team's on-call rotation",
       'Mentoring early career engineers and intern projects. For example, AI co-pilot for logical expression optimization and MCP server/client implementation',
     ],
   },
@@ -88,7 +88,7 @@ export default [
       'Google Analytics',
     ],
     highlights: [
-      'Designed, developed, and deployed an early Point-of-Sale integration service for 10,000+ venues across the globe to ingest item data in real-time and help automate inventory management for customers.',
+      'Designed, developed, and deployed an early Point-of-Sale integration service for 10,000+ venues across the globe to ingest item data in real-time and help automate inventory management for customers',
     ],
   },
   {
@@ -147,8 +147,8 @@ export default [
     role: "Bachelor's degree, Computer Science",
     dates: 'August 2017 - May 2021',
     highlights: [
-      'First place among college teams at Blockland Blockchain Hackathon.',
-      "Dean's list senior year.",
+      'First place among college teams at Blockland Blockchain Hackathon',
+      "Dean's list senior year",
     ],
     location: 'Oxford, Ohio, United States',
   },
