@@ -43,7 +43,7 @@ const createStyles = (theme: ReturnType<typeof getStaticThemeSnapshot>) =>
     },
     experienceItem: {
       backgroundColor: theme.colors.primary,
-      marginBottom: 1,
+      marginBottom: 3,
       overflow: 'hidden',
     },
     experienceButton: {
@@ -64,10 +64,10 @@ const createStyles = (theme: ReturnType<typeof getStaticThemeSnapshot>) =>
       fontSize: 12,
       fontWeight: theme.fontWeights.bold,
       color: theme.colors.secondary,
-      marginBottom: 3,
+      marginBottom: 2,
     },
     companyContainer: {
-      marginBottom: 3,
+      marginBottom: 2,
     },
     company: {
       fontSize: 11,
@@ -89,7 +89,7 @@ const createStyles = (theme: ReturnType<typeof getStaticThemeSnapshot>) =>
     },
     expandedContent: {
       paddingHorizontal: 0,
-      paddingBottom: 4,
+      paddingBottom: 2,
     },
     expandedInner: {
       paddingTop: 2,
@@ -101,7 +101,7 @@ const createStyles = (theme: ReturnType<typeof getStaticThemeSnapshot>) =>
       lineHeight: 1.2,
     },
     header: {
-      marginBottom: theme.spacing.md,
+      marginBottom: theme.spacing.sm,
     },
     name: {
       fontSize: 17,
@@ -113,11 +113,11 @@ const createStyles = (theme: ReturnType<typeof getStaticThemeSnapshot>) =>
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      marginBottom: theme.spacing.md,
+      marginBottom: theme.spacing.sm,
     },
     contactLeft: {
       flexDirection: 'row',
-      gap: 8,
+      gap: 4,
     },
     contactItem: {
       fontSize: 8,
@@ -130,7 +130,7 @@ const createStyles = (theme: ReturnType<typeof getStaticThemeSnapshot>) =>
     summary: {
       fontSize: 8,
       color: theme.colors.muted,
-      lineHeight: 1.3,
+      lineHeight: 1.2,
       marginTop: theme.spacing.xs,
     },
     highlightsSection: {
@@ -140,7 +140,7 @@ const createStyles = (theme: ReturnType<typeof getStaticThemeSnapshot>) =>
       fontSize: 8,
       fontWeight: theme.fontWeights.bold,
       color: theme.colors.secondary,
-      marginBottom: theme.spacing.xs,
+      marginBottom: 2,
     },
     highlightsList: {
       gap: 0,
@@ -148,10 +148,10 @@ const createStyles = (theme: ReturnType<typeof getStaticThemeSnapshot>) =>
     highlight: {
       flexDirection: 'row',
       alignItems: 'flex-start',
-      gap: 3,
+      gap: 4,
       fontSize: 8,
       color: theme.colors.muted,
-      lineHeight: 1.1,
+      lineHeight: 1.05,
     },
     bullet: {
       width: 1.5,
@@ -162,22 +162,23 @@ const createStyles = (theme: ReturnType<typeof getStaticThemeSnapshot>) =>
       flexShrink: 0,
     },
     skillsSection: {
-      marginBottom: theme.spacing.md,
+      marginBottom: theme.spacing.sm,
     },
     skillsTitle: {
       fontSize: 10,
       fontWeight: theme.fontWeights.bold,
       color: theme.colors.secondary,
-      marginBottom: theme.spacing.sm,
+      marginBottom: theme.spacing.xs,
     },
     skillsGrid: {
       flexDirection: 'row',
       flexWrap: 'wrap',
-      gap: 6,
+      gap: 4,
     },
     skillCategory: {
       flex: 1,
       minWidth: '48%',
+      marginBottom: 2,
     },
     skillCategoryTitle: {
       fontSize: 8,
@@ -188,7 +189,7 @@ const createStyles = (theme: ReturnType<typeof getStaticThemeSnapshot>) =>
     skillsList: {
       fontSize: 7,
       color: theme.colors.muted,
-      lineHeight: 1.2,
+      lineHeight: 1.1,
     },
   });
 
