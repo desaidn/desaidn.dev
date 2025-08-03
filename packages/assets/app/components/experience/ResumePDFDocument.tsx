@@ -122,6 +122,7 @@ const createStyles = (theme: ReturnType<typeof getStaticThemeSnapshot>) =>
     contactItem: {
       fontSize: 8,
       color: theme.colors.link,
+      marginRight: 8,
     },
     location: {
       fontSize: 8,
@@ -314,12 +315,12 @@ export default function ResumePDFDocument({
               <Text style={styles.location}>New York, NY</Text>
             </View>
             <Text style={styles.summary}>
-              Full-stack engineer with 5+ years of experience building internal
-              tools, platforms, and scalable distributed systems. Currently
-              developing AWS Console applications and backend services serving
-              millions of developers and processing billions in billing
+              Full-stack engineer with 5+ years of experience building
+              platforms, scalable distributed systems and internal tools.
+              Currently developing AWS Console applications and backend services
+              serving millions of developers and processing billions in billing
               transactions. Passionate about intuitive UIs, typed functional
-              programming, and AI-powered productivity tools.
+              programming and AI-powered tooling.
             </Text>
           </View>
 
@@ -332,8 +333,7 @@ export default function ResumePDFDocument({
                 </Text>
                 <Text style={styles.skillsList}>
                   TypeScript & React interfaces, Java & Kotlin services, Python
-                  tooling, AWS CDK and internal frameworks for Infrastructure as
-                  Code and CI/CD
+                  tooling, AWS CDK for Infrastructure as Code and CI/CD
                 </Text>
               </View>
 
@@ -342,16 +342,15 @@ export default function ResumePDFDocument({
                   Platform Development
                 </Text>
                 <Text style={styles.skillsList}>
-                  AWS Console applications, SDK generation & distribution, CLI
-                  tooling, browser-based UIs, platform APIs for expert users
+                  APIs, SDK distribution, CLI tooling, Browser-Based UIs
                 </Text>
               </View>
 
               <View style={styles.skillCategory}>
                 <Text style={styles.skillCategoryTitle}>AI & Automation</Text>
                 <Text style={styles.skillsList}>
-                  LLM integration (Claude via Bedrock), internal AI co-pilots,
-                  AI-assisted developer tools, workflow automation systems
+                  LLM Integration (Claude via Bedrock), AI-assisted Internal
+                  Tooling, Workflow Automation Systems
                 </Text>
               </View>
 
@@ -360,18 +359,19 @@ export default function ResumePDFDocument({
                   Cloud & Infrastructure
                 </Text>
                 <Text style={styles.skillsList}>
-                  Deep understanding of AWS (Lambda, Fargate, EC2, EFS,
-                  DynamoDB, Step Functions, SNS/SQS), monitoring, high-scale
-                  distributed systems, system reliability & incident response
+                  Deep Understanding of AWS (Lambda, Fargate, EC2, EFS,
+                  DynamoDB, Step Functions, SNS/SQS, etc), Monitoring, Large
+                  Scale Distributed Systems, System Reliability & Incident
+                  Response
                 </Text>
               </View>
 
               <View style={styles.skillCategory}>
                 <Text style={styles.skillCategoryTitle}>UI & Experience</Text>
                 <Text style={styles.skillsList}>
-                  High-quality UIs for technical users, user-centered design,
-                  prototyping, accessibility considerations, UI abstraction
-                  patterns
+                  High-quality UIs for Technical Users, User-Centered Design,
+                  Prototyping, Accessibility Considerations, Building UI
+                  Libraries
                 </Text>
               </View>
 
@@ -380,17 +380,16 @@ export default function ResumePDFDocument({
                   Languages & Paradigms
                 </Text>
                 <Text style={styles.skillsList}>
-                  TypeScript, Java, Kotlin, Python, Rust (learning), OCaml
-                  (learning), typed functional programming principles
+                  TypeScript, Java, Kotlin, Python, Rust (learning), Object
+                  Oriented Programming, Typed Functional Programming
                 </Text>
               </View>
 
               <View style={styles.skillCategory}>
                 <Text style={styles.skillCategoryTitle}>Interests</Text>
                 <Text style={styles.skillsList}>
-                  Compilers, systems programming, WebGL, RISC-V, GPU
-                  architecture, type-safe UI frameworks, internal tools,
-                  language design
+                  Compilers & Language Design, Systems Programming, WebGL,
+                  RISC-V, GPU architecture, CLI Utilities
                 </Text>
               </View>
             </View>
