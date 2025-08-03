@@ -148,7 +148,7 @@ export default [
     id: 'miami',
     company: 'Miami University',
     link: 'https://miamioh.edu/',
-    role: "Bachelor's degree, Computer Science",
+    role: "Bachelor's Degree, Computer Science",
     dates: 'August 2017 - May 2021',
     highlights: [
       'First place among college teams at Blockland Blockchain Hackathon',
