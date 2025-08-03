@@ -313,11 +313,12 @@ export default function ResumePDFDocument({
               <Text style={styles.location}>New York, NY</Text>
             </View>
             <Text style={styles.summary}>
-              Full-stack engineer with 5+ years building scalable platforms.
-              Currently developing AWS Console applications that serve millions
-              of developers and billing systems processing billions in
-              transactions. Passionate about crafting excellent user experiences
-              and collaborating to ship reliable software.
+              Full-stack engineer with 5+ years of experience building internal
+              tools, platforms, and scalable distributed systems. Currently
+              developing AWS Console applications and backend services serving
+              millions of developers and processing billions in billing
+              transactions. Passionate about intuitive UIs, typed functional
+              programming, and AI-powered productivity tools.
             </Text>
           </View>
 
@@ -330,46 +331,65 @@ export default function ResumePDFDocument({
                 </Text>
                 <Text style={styles.skillsList}>
                   TypeScript & React interfaces, Java & Kotlin services, Python
-                  automation, typed functional programming patterns
+                  tooling, AWS CDK and internal frameworks for Infrastructure as
+                  Code and CI/CD
                 </Text>
               </View>
+
               <View style={styles.skillCategory}>
                 <Text style={styles.skillCategoryTitle}>
-                  Developer Platforms
+                  Platform Development
                 </Text>
                 <Text style={styles.skillsList}>
-                  AWS Console applications, SDK generation and distribution,
-                  browser-based tools, scalable and event-driven architectures,
-                  API design for expert users
+                  AWS Console applications, SDK generation & distribution, CLI
+                  tooling, browser-based UIs, platform APIs for expert users
                 </Text>
               </View>
-              <View style={styles.skillCategory}>
-                <Text style={styles.skillCategoryTitle}>User Experience</Text>
-                <Text style={styles.skillsList}>
-                  Polished and reliable UIs for technical users, user research
-                  and rapid prototyping
-                </Text>
-              </View>
-              <View style={styles.skillCategory}>
-                <Text style={styles.skillCategoryTitle}>
-                  Cloud & Operations
-                </Text>
-                <Text style={styles.skillsList}>
-                  AWS infrastructure, distributed systems, monitoring, incident
-                  response, system reliability
-                </Text>
-              </View>
+
               <View style={styles.skillCategory}>
                 <Text style={styles.skillCategoryTitle}>AI & Automation</Text>
                 <Text style={styles.skillsList}>
-                  LLM integration, AI-powered workflows, automation systems
+                  LLM integration (Claude via Bedrock), internal AI co-pilots,
+                  AI-assisted developer tools, workflow automation systems
                 </Text>
               </View>
+
+              <View style={styles.skillCategory}>
+                <Text style={styles.skillCategoryTitle}>
+                  Cloud & Infrastructure
+                </Text>
+                <Text style={styles.skillsList}>
+                  Deep understanding of AWS (Lambda, Fargate, EC2, EFS,
+                  DynamoDB, Step Functions, SNS/SQS), monitoring, high-scale
+                  distributed systems, system reliability & incident response
+                </Text>
+              </View>
+
+              <View style={styles.skillCategory}>
+                <Text style={styles.skillCategoryTitle}>UI & Experience</Text>
+                <Text style={styles.skillsList}>
+                  High-quality UIs for technical users, user-centered design,
+                  prototyping, accessibility considerations, UI abstraction
+                  patterns
+                </Text>
+              </View>
+
+              <View style={styles.skillCategory}>
+                <Text style={styles.skillCategoryTitle}>
+                  Languages & Paradigms
+                </Text>
+                <Text style={styles.skillsList}>
+                  TypeScript, Java, Kotlin, Python, Rust (learning), OCaml
+                  (learning), typed functional programming principles
+                </Text>
+              </View>
+
               <View style={styles.skillCategory}>
                 <Text style={styles.skillCategoryTitle}>Interests</Text>
                 <Text style={styles.skillsList}>
-                  GPU/CPU architecture, RISC-V, WebGL, animation libraries,
-                  compilers
+                  Compilers, systems programming, WebGL, RISC-V, GPU
+                  architecture, type-safe UI frameworks, internal tools,
+                  language design
                 </Text>
               </View>
             </View>
