@@ -332,8 +332,8 @@ export default function ResumePDFDocument({
                   Full-Stack Development
                 </Text>
                 <Text style={styles.skillsList}>
-                  TypeScript & React interfaces, Java & Kotlin services, Python
-                  tooling, AWS CDK for Infrastructure as Code and CI/CD
+                  TypeScript & React Interfaces, Java & Kotlin Services, Python
+                  Tooling, AWS CDK for Infrastructure as Code and CI/CD
                 </Text>
               </View>
 
@@ -342,7 +342,7 @@ export default function ResumePDFDocument({
                   Platform Development
                 </Text>
                 <Text style={styles.skillsList}>
-                  APIs, SDK distribution, CLI tooling, Browser-Based UIs
+                  APIs, SDK Distribution, CLI tooling, Browser-Based UIs
                 </Text>
               </View>
 
