@@ -389,7 +389,7 @@ export default function ResumePDFDocument({
                 <Text style={styles.skillCategoryTitle}>Interests</Text>
                 <Text style={styles.skillsList}>
                   Compilers & Language Design, Systems Programming, WebGL,
-                  RISC-V, GPU architecture, CLI Utilities
+                  RISC-V, GPU Architecture, CLI Utilities
                 </Text>
               </View>
             </View>
