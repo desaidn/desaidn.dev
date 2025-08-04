@@ -16,8 +16,8 @@ export default [
         Kotlin microservices, React and TypeScript UIs, and Python automation.
         Designing and implementing scalable, service-oriented and event-driven
         architectures for cloud usage metering at planet scale. Currently,
-        focused on developer / analyst productivity, platform reliability, and
-        AI-enhanced workflows.
+        focused on developer/financial analyst productivity, platform
+        reliability, and AI Agents for Workflow Automation Systems.
       </>
     ),
     technologies: [
@@ -45,9 +45,9 @@ export default [
       'Built fault-tolerant REST APIs powering billing data flows and SDKs, optimized for high throughput and low latency',
       'Designed scalable ingestion pipelines and state machines for accurate real-time usage metering of cloud services',
       'Shipped internal tooling improvements that reduced support overhead and boosted billing team efficiency by 25%',
-      'Developed an AI-powered co-pilot using LLMs (Claude) to optimize logical expression configs in billing rules',
+      'Developed an AI agent with Bedrock inference in a state machine to optimize logical expression configs in billing rules',
       'Collaborated with UX researchers and PMs to rapidly prototype and iterate on developer-facing interfaces',
-      'Mentored interns and junior engineers; oversaw projects including widely used internal CLI tool & MCP server code gen',
+      'Mentored interns and junior engineers; oversaw projects including widely used internal CLI tool & MCP code generation',
       'Drove operational excellence through on-call rotations, system monitoring, and proactive incident response',
     ],
   },

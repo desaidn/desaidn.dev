@@ -72,7 +72,6 @@ const createStyles = (theme: ReturnType<typeof getStaticThemeSnapshot>) =>
     company: {
       fontSize: 11,
       color: theme.colors.link,
-      textDecoration: 'underline',
     },
     jobLocation: {
       fontSize: 8,
@@ -122,10 +121,12 @@ const createStyles = (theme: ReturnType<typeof getStaticThemeSnapshot>) =>
     contactItem: {
       fontSize: 8,
       color: theme.colors.link,
+      marginTop: 4,
       marginRight: 8,
     },
     location: {
       fontSize: 8,
+      marginTop: 4,
       color: theme.colors.muted,
     },
     summary: {
@@ -320,7 +321,7 @@ export default function ResumePDFDocument({
               Currently developing AWS Console applications and backend services
               serving millions of developers and processing billions in billing
               transactions. Passionate about intuitive UIs, typed functional
-              programming and AI-powered tooling.
+              programming and AI agents.
             </Text>
           </View>
 
@@ -349,8 +350,7 @@ export default function ResumePDFDocument({
               <View style={styles.skillCategory}>
                 <Text style={styles.skillCategoryTitle}>AI & Automation</Text>
                 <Text style={styles.skillsList}>
-                  LLM Integration (Claude via Bedrock), AI-assisted Internal
-                  Tooling, Workflow Automation Systems
+                  LLM Integration, AI Agents for Workflow Automation Systems
                 </Text>
               </View>
 
