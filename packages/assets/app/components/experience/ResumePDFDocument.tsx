@@ -43,7 +43,7 @@ const createStyles = (theme: ReturnType<typeof getStaticThemeSnapshot>) =>
     },
     experienceItem: {
       backgroundColor: theme.colors.primary,
-      marginBottom: 3,
+      marginBottom: 2,
       overflow: 'hidden',
     },
     experienceButton: {
@@ -106,13 +106,13 @@ const createStyles = (theme: ReturnType<typeof getStaticThemeSnapshot>) =>
       fontSize: 17,
       fontWeight: theme.fontWeights.bold,
       color: theme.colors.secondary,
-      marginBottom: theme.spacing.lg,
+      marginBottom: theme.spacing.md,
     },
     contactInfo: {
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      marginBottom: theme.spacing.sm,
+      marginBottom: theme.spacing.xs,
     },
     contactLeft: {
       flexDirection: 'row',
@@ -316,12 +316,13 @@ export default function ResumePDFDocument({
               <Text style={styles.location}>New York, NY</Text>
             </View>
             <Text style={styles.summary}>
-              Full-stack engineer with 5+ years of experience building
-              platforms, scalable distributed systems and internal tools.
-              Currently developing AWS Console applications and backend services
-              serving millions of developers and processing billions in billing
-              transactions. Passionate about intuitive UIs, typed functional
-              programming and AI agents.
+              Full-stack engineer with 5+ years of experience building scalable
+              platforms, distributed systems, and developer tools. Currently
+              developing AWS Console applications and backend services that
+              serve millions of developers and process billions in billing
+              transactions. Passionate about building performant user
+              experiences, applying typed functional programming, and exploring
+              the potential of AI agents.
             </Text>
           </View>
 
