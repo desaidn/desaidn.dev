@@ -1,0 +1,2 @@
+export const PROFESSIONAL_SUMMARY =
+  'Full-stack engineer with 5+ years of experience building scalable platforms, distributed systems, and developer tools. Currently developing AWS Console applications and backend services that serve millions of developers and process billions in billing transactions. Passionate about building performant user experiences, applying typed functional programming, and exploring the potential of AI agents.';

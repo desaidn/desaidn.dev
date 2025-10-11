@@ -7,6 +7,7 @@ import {
   Font,
 } from '@react-pdf/renderer';
 import type { Experience } from 'types';
+import { PROFESSIONAL_SUMMARY } from '~/constants/summary';
 import { extractTextFromReactNode } from '../../utils/textExtraction';
 import { getStaticThemeSnapshot } from '../../utils/themeUtils';
 
@@ -315,15 +316,7 @@ export default function ResumePDFDocument({
               </View>
               <Text style={styles.location}>New York, NY</Text>
             </View>
-            <Text style={styles.summary}>
-              Full-stack engineer with 5+ years of experience building scalable
-              platforms, distributed systems, and developer tools. Currently
-              developing AWS Console applications and backend services that
-              serve millions of developers and process billions in billing
-              transactions. Passionate about building performant user
-              experiences, applying typed functional programming, and exploring
-              the potential of AI agents.
-            </Text>
+            <Text style={styles.summary}>{PROFESSIONAL_SUMMARY}</Text>
           </View>
 
           <View style={styles.skillsSection}>

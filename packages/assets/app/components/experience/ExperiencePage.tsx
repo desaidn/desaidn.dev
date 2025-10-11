@@ -1,6 +1,7 @@
 import type { ReactElement } from 'react';
 import { useCallback, useState } from 'react';
 import EXPERIENCES from '~/constants/experiences';
+import { PROFESSIONAL_SUMMARY } from '~/constants/summary';
 import AppLayout from '../common/AppLayout';
 import BackButton from '../common/BackButton';
 import CommandExecution from '../common/CommandExecution';
@@ -46,6 +47,10 @@ export default function ExperiencePage(): ReactElement {
         </div>
 
         <section className="mb-8">
+          <div className="mb-6">
+            <p>{PROFESSIONAL_SUMMARY}</p>
+          </div>
+
           <div className="space-y-4">
             {EXPERIENCES.map(exp => (
               <ExperienceItem
