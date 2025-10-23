@@ -324,19 +324,11 @@ export default function ResumePDFDocument({
             <View style={styles.skillsGrid}>
               <View style={styles.skillCategory}>
                 <Text style={styles.skillCategoryTitle}>
-                  Full-Stack Development
+                  Full-Stack Platform Development
                 </Text>
                 <Text style={styles.skillsList}>
                   TypeScript & React Interfaces, Java & Kotlin Services, Python
-                  Tooling, AWS CDK for Infrastructure as Code and CI/CD
-                </Text>
-              </View>
-
-              <View style={styles.skillCategory}>
-                <Text style={styles.skillCategoryTitle}>
-                  Platform Development
-                </Text>
-                <Text style={styles.skillsList}>
+                  Tooling, AWS CDK for Infrastructure as Code and CI/CD. RESTful
                   APIs, SDK Distribution, CLI tooling, Browser-Based UIs
                 </Text>
               </View>
@@ -361,29 +353,11 @@ export default function ResumePDFDocument({
               </View>
 
               <View style={styles.skillCategory}>
-                <Text style={styles.skillCategoryTitle}>UI & Experience</Text>
+                <Text style={styles.skillCategoryTitle}>UI & UX</Text>
                 <Text style={styles.skillsList}>
                   High-quality UIs for Technical Users, User-Centered Design,
-                  Prototyping, Accessibility Considerations, Building UI
-                  Libraries
-                </Text>
-              </View>
-
-              <View style={styles.skillCategory}>
-                <Text style={styles.skillCategoryTitle}>
-                  Languages & Paradigms
-                </Text>
-                <Text style={styles.skillsList}>
-                  TypeScript, Java, Kotlin, Python, Rust (learning), Object
-                  Oriented Programming, Typed Functional Programming
-                </Text>
-              </View>
-
-              <View style={styles.skillCategory}>
-                <Text style={styles.skillCategoryTitle}>Interests</Text>
-                <Text style={styles.skillsList}>
-                  Compilers & Language Design, Systems Programming, WebGL,
-                  RISC-V, GPU Architecture, CLI Utilities
+                  Prototyping, Internationalization & Accessibility
+                  Considerations, Building UI Libraries
                 </Text>
               </View>
             </View>
