@@ -11,8 +11,8 @@ export default [
     location: 'New York, NY',
     description: (
       <>
-        Developing AWS Console applications, AWS SDK APIs and internal tools
-        serving millions of developers. Building highly available Java and
+        Developing AWS Billing console applications, AWS SDK APIs and internal
+        tools serving millions of developers. Building highly available Java and
         Kotlin microservices, React and TypeScript UIs, and Python automation.
         Designing and implementing scalable, service-oriented and event-driven
         architectures for cloud usage metering at planet scale. Currently,
