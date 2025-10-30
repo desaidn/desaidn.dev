@@ -11,13 +11,12 @@ export default [
     location: 'New York, NY',
     description: (
       <>
-        Developing AWS Billing console applications, APIs, SDKs, data pipelines
-        and internal tools serving millions of developers. Building highly
-        available Java and Kotlin microservices, React and TypeScript UIs, and
-        Python automation. Designing and implementing scalable, service-oriented
+        Developing APIs, UIs and data pipelines for AWS Billing. Building highly
+        available microservices in Java/Kotlin, React/TypeScript UIs, and Python
+        automation tools. Designing and implementing scalable, service-oriented
         and event-driven architectures for cloud usage metering at planet scale.
-        Currently, focused on financial analyst productivity, platform
-        reliability, and AI agents for workflow automation.
+        Currently focused on systems for ingesting and interpreting contracts
+        for bill computation and augmenting financial analysts with AI agents.
       </>
     ),
     technologies: [
@@ -40,16 +39,16 @@ export default [
       'CloudWatch',
     ],
     highlights: [
-      "Built an invoice consolidation workflow to drive E-Invoicing adoption amongst AWS's largest enterprise customers, which was a key contributor to my organization's 3-day reduction in Time-to-Bill and $40MM improvement in Free Cash Flow",
-      'Built multi-region, fault-tolerant REST APIs powering billing data flows, SDKs and Console features, optimized for 1K+ TPS/region and sub-second latency',
-      'Led development of high-availability Console features used by millions of developers globally, with 99.99% uptime',
-      'Designed scalable ingestion pipelines and state machines for accurate real-time usage metering of cloud services for arbitrary pricing models',
-      "Implemented zero touch region expansion for the team's entire product portfolio. Time to support new entities cut from three weeks to one day",
-      'Launched a service and UI to persist arbitrary query expressions that can reliably map legal text to product SKUs for\n bill computation, preventing ~$17MM/year in billing failures',
-      'Developed an AI agent with Claude Sonnet 4 in a state machine to optimize product mapping rulesets for faster SKU resolution',
-      'Collaborated with UX researchers and PMs to rapidly prototype and iterate on enterprise-facing product surfaces',
-      'Mentored interns and junior engineers; oversaw projects including legal text variant classifier & API to MCP \nclient code generation',
-      'Drove operational excellence through on-call rotations, system monitoring, and proactive incident response',
+      "Built invoice consolidation workflow to drive E-Invoicing adoption amongst AWS's largest enterprise customers, which was a key contributor to my organization's 3-day reduction in Time-to-Bill and $40MM improvement in Free Cash Flow.",
+      'Built multi-region, fault-tolerant RESTful APIs powering billing data flows, SDKs and console features, optimized for 1K+ TPS/region and sub-second latency.',
+      'Led development of high-availability console features used by millions of developers globally, with 99.99% uptime.',
+      'Designed scalable ingestion pipelines and state machines for accurate real-time usage metering of cloud services for arbitrary pricing models.',
+      "Implemented zero touch region expansion for the team's entire product portfolio. Time to support new entities cut from three weeks to one day.",
+      'Launched service and UI to persist arbitrary query expressions that can reliably map legal text to product SKUs for bill computation, preventing ~$17MM/year in billing failures.',
+      'Developed AI agent with Claude Sonnet 4 in a state machine to optimize product mapping rulesets for 10x faster (<100ms) product SKU resolution.',
+      'Collaborated with UX researchers and PMs to rapidly prototype and iterate on enterprise-facing product surfaces.',
+      'Mentored interns and junior engineers; oversaw projects including legal text variant classifier & API to MCP client code generation.',
+      'Drove operational excellence through on-call rotations, system monitoring, and proactive incident response.',
     ],
   },
   {
@@ -61,7 +60,7 @@ export default [
     location: 'Chicago, IL',
     description: (
       <>
-        One of two engineers at a beverage inventory startup acquired by{' '}
+        One of two engineers at a beverage tech startup acquired by{' '}
         <Link
           href="https://public.vtinfo.com/"
           className="text-lg text-link hover:text-link-hover mb-2 underline underline-offset-4"
@@ -91,7 +90,7 @@ export default [
       'Google Analytics',
     ],
     highlights: [
-      'Designed and shipped a real-time POS ingestion service for 10K+ venues worldwide',
+      'Designed and shipped real-time POS ingestion service for 10K+ venues worldwide',
       'Built inventory automation tools to predict stockouts and optimize reordering using usage heuristics',
       'Owned all aspects of the web platform, from UI to database schema to deployment pipelines',
       'Contributed to React Native mobile app features supporting live inventory sync and session sharing',
@@ -117,10 +116,10 @@ export default [
       'MySQL',
     ],
     highlights: [
-      'Built a QR code menu system used by bars and restaurants during the COVID pandemic',
-      'Developed a real-time collaboration feature for shared bar inventory sessions',
-      'Created a PDF/HTML menu parser for automating digital menu setup',
-      'Implemented a FIFO-based cost prediction system for inventory management',
+      'Built QR code menu system used by bars and restaurants during the COVID pandemic',
+      'Developed real-time collaboration feature for shared bar inventory sessions',
+      'Created PDF/HTML menu parser for automating digital menu setup',
+      'Implemented FIFO-based cost prediction system for inventory management',
     ],
   },
   {

@@ -20,7 +20,7 @@ const ATS_THEME = {
     sectionTitle: 12,
   },
   spacing: {
-    page: 20,
+    page: 16,
     section: 12,
     item: 3,
     small: 2,
@@ -206,7 +206,7 @@ export default function ResumePDFDocument({
                 {exp.highlights.map((highlight, index) => (
                   <View key={index} style={styles.highlight}>
                     <Text style={styles.bulletText}>-</Text>
-                    <Text>{highlight}</Text>
+                    <Text style={{ flex: 1 }}>{highlight}</Text>
                   </View>
                 ))}
               </View>
