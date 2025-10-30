@@ -1,40 +1,44 @@
-import {
-  Document,
-  Page,
-  Text,
-  View,
-  StyleSheet,
-  Font,
-} from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
 import type { Experience } from 'types';
 import { PROFESSIONAL_SUMMARY } from '~/constants/summary';
 import { extractTextFromReactNode } from '../../utils/textExtraction';
-import { getStaticThemeSnapshot } from '../../utils/themeUtils';
 
-Font.register({
-  family: 'JetBrains Mono',
-  fonts: [
-    {
-      src: `${window.location.origin}/fonts/JetBrainsMono-Regular.ttf`,
-      fontWeight: 'normal',
-    },
-    {
-      src: `${window.location.origin}/fonts/JetBrainsMono-Bold.ttf`,
-      fontWeight: 'bold',
-    },
-  ],
-});
+const ATS_THEME = {
+  colors: {
+    primary: '#FFFFFF',
+    text: '#000000',
+    textSecondary: '#333333',
+  },
+  fonts: {
+    main: 'Helvetica',
+  },
+  fontSizes: {
+    body: 9,
+    small: 8,
+    header: 14,
+    subheader: 11,
+    sectionTitle: 12,
+  },
+  spacing: {
+    page: 20,
+    section: 12,
+    item: 3,
+    small: 2,
+    tiny: 1,
+    jobSpacing: 8,
+  },
+};
 
-const createStyles = (theme: ReturnType<typeof getStaticThemeSnapshot>) =>
+const createStyles = () =>
   StyleSheet.create({
     page: {
       flexDirection: 'column',
-      backgroundColor: theme.colors.primary,
-      padding: theme.spacing.lg,
-      fontSize: 9,
+      backgroundColor: ATS_THEME.colors.primary,
+      padding: ATS_THEME.spacing.page,
+      fontSize: ATS_THEME.fontSizes.body,
       lineHeight: 1.2,
-      fontFamily: theme.fonts.mono,
-      color: theme.colors.secondary,
+      fontFamily: ATS_THEME.fonts.main,
+      color: ATS_THEME.colors.text,
     },
     container: {
       maxWidth: '100%',
@@ -43,156 +47,116 @@ const createStyles = (theme: ReturnType<typeof getStaticThemeSnapshot>) =>
       gap: 0,
     },
     experienceItem: {
-      backgroundColor: theme.colors.primary,
-      marginBottom: 2,
+      backgroundColor: ATS_THEME.colors.primary,
+      marginBottom: ATS_THEME.spacing.jobSpacing,
       overflow: 'hidden',
-    },
-    experienceButton: {
-      width: '100%',
-      padding: 0,
-      backgroundColor: theme.colors.primary,
     },
     experienceHeader: {
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'flex-start',
-      gap: theme.spacing.sm,
+      gap: ATS_THEME.spacing.small,
     },
     leftSection: {
       flex: 1,
     },
     jobTitle: {
-      fontSize: 12,
-      fontWeight: theme.fontWeights.bold,
-      color: theme.colors.secondary,
-      marginBottom: 2,
+      fontSize: ATS_THEME.fontSizes.subheader,
+      fontWeight: 'bold',
+      color: ATS_THEME.colors.text,
+      marginBottom: ATS_THEME.spacing.small,
     },
     companyContainer: {
-      marginBottom: 2,
+      marginBottom: ATS_THEME.spacing.small,
     },
     company: {
-      fontSize: 11,
-      color: theme.colors.link,
+      fontSize: ATS_THEME.fontSizes.body,
+      color: ATS_THEME.colors.text,
     },
     jobLocation: {
-      fontSize: 8,
-      color: theme.colors.muted,
+      fontSize: ATS_THEME.fontSizes.small,
+      color: ATS_THEME.colors.textSecondary,
       marginBottom: 0,
     },
     rightSection: {
       alignItems: 'flex-end',
     },
     dates: {
-      fontSize: 8,
-      color: theme.colors.link,
+      fontSize: ATS_THEME.fontSizes.small,
+      color: ATS_THEME.colors.textSecondary,
       paddingVertical: 0,
     },
     expandedContent: {
       paddingHorizontal: 0,
-      paddingBottom: 2,
+      paddingBottom: ATS_THEME.spacing.tiny,
     },
     expandedInner: {
-      paddingTop: 2,
+      paddingTop: ATS_THEME.spacing.tiny,
     },
     description: {
-      fontSize: 8,
-      color: theme.colors.muted,
-      marginBottom: theme.spacing.sm,
+      fontSize: ATS_THEME.fontSizes.body,
+      color: ATS_THEME.colors.text,
+      marginBottom: ATS_THEME.spacing.small,
       lineHeight: 1.2,
     },
     header: {
-      marginBottom: theme.spacing.sm,
+      marginBottom: ATS_THEME.spacing.jobSpacing,
     },
     name: {
-      fontSize: 17,
-      fontWeight: theme.fontWeights.bold,
-      color: theme.colors.secondary,
-      marginBottom: theme.spacing.md,
+      fontSize: ATS_THEME.fontSizes.header,
+      fontWeight: 'bold',
+      color: ATS_THEME.colors.text,
+      marginBottom: ATS_THEME.spacing.small,
     },
     contactInfo: {
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      marginBottom: theme.spacing.xs,
+      marginBottom: ATS_THEME.spacing.small,
     },
     contactLeft: {
       flexDirection: 'row',
-      gap: 4,
+      gap: ATS_THEME.spacing.small,
     },
     contactItem: {
-      fontSize: 8,
-      color: theme.colors.link,
-      marginTop: 4,
-      marginRight: 8,
+      fontSize: ATS_THEME.fontSizes.small,
+      color: ATS_THEME.colors.text,
+      marginTop: ATS_THEME.spacing.small,
+      marginRight: ATS_THEME.spacing.item,
     },
     location: {
-      fontSize: 8,
-      marginTop: 4,
-      color: theme.colors.muted,
+      fontSize: ATS_THEME.fontSizes.small,
+      marginTop: ATS_THEME.spacing.small,
+      color: ATS_THEME.colors.textSecondary,
     },
     summary: {
-      fontSize: 8,
-      color: theme.colors.muted,
+      fontSize: ATS_THEME.fontSizes.body,
+      color: ATS_THEME.colors.text,
       lineHeight: 1.2,
-      marginTop: theme.spacing.xs,
+      marginTop: ATS_THEME.spacing.small,
     },
     highlightsSection: {
       marginBottom: 0,
     },
     highlightsTitle: {
-      fontSize: 8,
-      fontWeight: theme.fontWeights.bold,
-      color: theme.colors.secondary,
-      marginBottom: 2,
+      fontSize: ATS_THEME.fontSizes.body,
+      fontWeight: 'bold',
+      color: ATS_THEME.colors.text,
+      marginBottom: ATS_THEME.spacing.tiny,
     },
     highlightsList: {
-      gap: 0,
+      gap: ATS_THEME.spacing.tiny,
     },
     highlight: {
       flexDirection: 'row',
       alignItems: 'flex-start',
-      gap: 4,
-      fontSize: 8,
-      color: theme.colors.muted,
-      lineHeight: 1.05,
+      gap: ATS_THEME.spacing.small,
+      fontSize: ATS_THEME.fontSizes.body,
+      color: ATS_THEME.colors.text,
+      lineHeight: 1.2,
     },
-    bullet: {
-      width: 1.5,
-      height: 1.5,
-      backgroundColor: theme.colors.secondary,
-      borderRadius: 0.75,
-      marginTop: 1.5,
-      flexShrink: 0,
-    },
-    skillsSection: {
-      marginBottom: theme.spacing.sm,
-    },
-    skillsTitle: {
-      fontSize: 10,
-      fontWeight: theme.fontWeights.bold,
-      color: theme.colors.secondary,
-      marginBottom: theme.spacing.xs,
-    },
-    skillsGrid: {
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      gap: 4,
-    },
-    skillCategory: {
-      flex: 1,
-      minWidth: '48%',
-      marginBottom: 2,
-    },
-    skillCategoryTitle: {
-      fontSize: 8,
-      fontWeight: theme.fontWeights.bold,
-      color: theme.colors.link,
-      marginBottom: 2,
-    },
-    skillsList: {
-      fontSize: 7,
-      color: theme.colors.muted,
-      lineHeight: 1.1,
+    bulletText: {
+      marginRight: ATS_THEME.spacing.small,
     },
   });
 
@@ -203,8 +167,7 @@ interface ResumePDFDocumentProps {
 export default function ResumePDFDocument({
   experiences,
 }: ResumePDFDocumentProps) {
-  const theme = getStaticThemeSnapshot();
-  const styles = createStyles(theme);
+  const styles = createStyles();
   const mainExperiences = experiences.filter(
     exp => exp.id === 'aws' || exp.id === 'backbar-engineer'
   );
@@ -213,20 +176,18 @@ export default function ResumePDFDocument({
       exp.id === 'backbar-intern' || exp.id === 'elemica' || exp.id === 'miami'
   );
 
-  const renderMainExperience = (exp: (typeof experiences)[0]) => (
+  const renderExperience = (exp: (typeof experiences)[0]) => (
     <View key={exp.id} style={styles.experienceItem}>
-      <View style={styles.experienceButton}>
-        <View style={styles.experienceHeader}>
-          <View style={styles.leftSection}>
-            <Text style={styles.jobTitle}>{exp.role}</Text>
-            <View style={styles.companyContainer}>
-              <Text style={styles.company}>{exp.company}</Text>
-            </View>
-            <Text style={styles.jobLocation}>{exp.location}</Text>
+      <View style={styles.experienceHeader}>
+        <View style={styles.leftSection}>
+          <Text style={styles.jobTitle}>{exp.role}</Text>
+          <View style={styles.companyContainer}>
+            <Text style={styles.company}>{exp.company}</Text>
           </View>
-          <View style={styles.rightSection}>
-            <Text style={styles.dates}>{exp.dates}</Text>
-          </View>
+          <Text style={styles.jobLocation}>{exp.location}</Text>
+        </View>
+        <View style={styles.rightSection}>
+          <Text style={styles.dates}>{exp.dates}</Text>
         </View>
       </View>
 
@@ -244,50 +205,7 @@ export default function ResumePDFDocument({
               <View style={styles.highlightsList}>
                 {exp.highlights.map((highlight, index) => (
                   <View key={index} style={styles.highlight}>
-                    <View style={styles.bullet} />
-                    <Text>{highlight}</Text>
-                  </View>
-                ))}
-              </View>
-            </View>
-          )}
-        </View>
-      </View>
-    </View>
-  );
-
-  const renderCompactExperience = (exp: (typeof experiences)[0]) => (
-    <View key={exp.id} style={styles.experienceItem}>
-      <View style={styles.experienceButton}>
-        <View style={styles.experienceHeader}>
-          <View style={styles.leftSection}>
-            <Text style={styles.jobTitle}>{exp.role}</Text>
-            <View style={styles.companyContainer}>
-              <Text style={styles.company}>{exp.company}</Text>
-            </View>
-            <Text style={styles.jobLocation}>{exp.location}</Text>
-          </View>
-          <View style={styles.rightSection}>
-            <Text style={styles.dates}>{exp.dates}</Text>
-          </View>
-        </View>
-      </View>
-
-      <View style={styles.expandedContent}>
-        <View style={styles.expandedInner}>
-          {exp.description && (
-            <Text style={styles.description}>
-              {extractTextFromReactNode(exp.description)}
-            </Text>
-          )}
-
-          {exp.highlights && exp.highlights.length > 0 && (
-            <View style={styles.highlightsSection}>
-              <Text style={styles.highlightsTitle}>Key Highlights:</Text>
-              <View style={styles.highlightsList}>
-                {exp.highlights.map((highlight, index) => (
-                  <View key={index} style={styles.highlight}>
-                    <View style={styles.bullet} />
+                    <Text style={styles.bulletText}>-</Text>
                     <Text>{highlight}</Text>
                   </View>
                 ))}
@@ -319,54 +237,10 @@ export default function ResumePDFDocument({
             <Text style={styles.summary}>{PROFESSIONAL_SUMMARY}</Text>
           </View>
 
-          <View style={styles.skillsSection}>
-            <Text style={styles.skillsTitle}>Core Technologies</Text>
-            <View style={styles.skillsGrid}>
-              <View style={styles.skillCategory}>
-                <Text style={styles.skillCategoryTitle}>
-                  Full-Stack Platform Development
-                </Text>
-                <Text style={styles.skillsList}>
-                  TypeScript & React Interfaces, Java & Kotlin Services, Python
-                  Tooling, AWS CDK for Infrastructure as Code and CI/CD. RESTful
-                  APIs, SDK Distribution, CLI tooling, Browser-Based UIs
-                </Text>
-              </View>
-
-              <View style={styles.skillCategory}>
-                <Text style={styles.skillCategoryTitle}>AI & Automation</Text>
-                <Text style={styles.skillsList}>
-                  LLM Integration, AI Agents for Workflow Automation Systems
-                </Text>
-              </View>
-
-              <View style={styles.skillCategory}>
-                <Text style={styles.skillCategoryTitle}>
-                  Cloud & Infrastructure
-                </Text>
-                <Text style={styles.skillsList}>
-                  Deep Understanding of AWS (Lambda, Fargate, EC2, EFS,
-                  DynamoDB, Step Functions, SNS/SQS, etc), Monitoring, Large
-                  Scale Distributed Systems, System Reliability & Incident
-                  Response
-                </Text>
-              </View>
-
-              <View style={styles.skillCategory}>
-                <Text style={styles.skillCategoryTitle}>UI & UX</Text>
-                <Text style={styles.skillsList}>
-                  High-quality UIs for Technical Users, User-Centered Design,
-                  Prototyping, Internationalization & Accessibility
-                  Considerations, Building UI Libraries
-                </Text>
-              </View>
-            </View>
-          </View>
-
           <View style={styles.experienceContainer}>
-            {mainExperiences.map(renderMainExperience)}
+            {mainExperiences.map(renderExperience)}
 
-            {secondaryExperiences.map(renderCompactExperience)}
+            {secondaryExperiences.map(renderExperience)}
           </View>
         </View>
       </Page>

@@ -11,13 +11,13 @@ export default [
     location: 'New York, NY',
     description: (
       <>
-        Developing AWS Billing console applications, AWS SDK APIs and internal
-        tools serving millions of developers. Building highly available Java and
-        Kotlin microservices, React and TypeScript UIs, and Python automation.
-        Designing and implementing scalable, service-oriented and event-driven
-        architectures for cloud usage metering at planet scale. Currently,
-        focused on developer/financial analyst productivity, platform
-        reliability, and AI Agents for Workflow Automation Systems.
+        Developing AWS Billing console applications, APIs, SDKs, data pipelines
+        and internal tools serving millions of developers. Building highly
+        available Java and Kotlin microservices, React and TypeScript UIs, and
+        Python automation. Designing and implementing scalable, service-oriented
+        and event-driven architectures for cloud usage metering at planet scale.
+        Currently, focused on financial analyst productivity, platform
+        reliability, and AI agents for workflow automation.
       </>
     ),
     technologies: [
