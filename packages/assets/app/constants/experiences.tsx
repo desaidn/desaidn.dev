@@ -11,12 +11,13 @@ export default [
     location: 'New York, NY',
     description: (
       <>
-        Developing APIs, UIs and data pipelines for AWS Billing. Building highly
-        available microservices in Java/Kotlin, React/TypeScript UIs, and Python
-        automation tools. Designing and implementing scalable, service-oriented
-        and event-driven architectures for cloud usage metering at planet scale.
-        Currently focused on systems for ingesting and interpreting contracts
-        for bill computation and augmenting financial analysts with AI agents.
+        Developing APIs, SDKs, UIs and data pipelines for AWS Billing. Building
+        highly available microservices in Java/Kotlin, React/TypeScript UIs, and
+        Python automation tools. Designing and implementing scalable,
+        service-oriented and event-driven architectures for cloud usage metering
+        at planet scale. Currently focused on systems for ingesting and
+        interpreting contracts for bill computation and augmenting financial
+        analysts with AI agents.
       </>
     ),
     technologies: [
