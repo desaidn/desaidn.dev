@@ -232,7 +232,7 @@ export default function ResumePDFDocument({
                   linkedin.com/in/dhairya-n-desai
                 </Text>
               </View>
-              <Text style={styles.location}>New York, NY</Text>
+              <Text style={styles.location}>Brooklyn, New York</Text>
             </View>
             <Text style={styles.summary}>{PROFESSIONAL_SUMMARY}</Text>
           </View>
