@@ -91,11 +91,11 @@ export default [
       'Google Analytics',
     ],
     highlights: [
-      'Designed and shipped real-time POS ingestion service for 10K+ venues worldwide',
-      'Built inventory automation tools to predict stockouts and optimize reordering using usage heuristics',
-      'Owned all aspects of the web platform, from UI to database schema to deployment pipelines',
-      'Contributed to React Native mobile app features supporting live inventory sync and session sharing',
-      'Worked closely with product and participated in support rotation to iterate quickly based on user feedback',
+      'Designed and shipped real-time POS ingestion service for 10K+ venues worldwide.',
+      'Built inventory automation tools to predict stockouts and optimize reordering using usage heuristics.',
+      'Owned all aspects of the web platform, from UI to database schema to deployment pipelines.',
+      'Contributed to React Native mobile app features supporting live inventory sync and session sharing.',
+      'Worked closely with product and participated in support rotation to iterate quickly based on user feedback.',
     ],
   },
   {
@@ -117,10 +117,10 @@ export default [
       'MySQL',
     ],
     highlights: [
-      'Built QR code menu system used by bars and restaurants during the COVID pandemic',
-      'Developed real-time collaboration feature for shared bar inventory sessions',
-      'Created PDF/HTML menu parser for automating digital menu setup',
-      'Implemented FIFO-based cost prediction system for inventory management',
+      'Built QR code menu system used by bars and restaurants during the COVID pandemic.',
+      'Developed real-time collaboration feature for shared bar inventory sessions.',
+      'Created PDF/HTML menu parser for automating digital menu setup.',
+      'Implemented FIFO-based cost prediction system for inventory management.',
     ],
   },
   {
@@ -140,9 +140,9 @@ export default [
       'Supply Chain Analytics',
     ],
     highlights: [
-      'Researched blockchain applications for secure supply chain visibility',
-      'Built prototype integrations using Hyperledger and Ethereum smart contracts',
-      'Explored network data standards for cross-company supply chain data exchange',
+      'Researched blockchain applications for secure supply chain visibility.',
+      'Built prototype integrations using Hyperledger and Ethereum smart contracts.',
+      'Explored network data standards for cross-company supply chain data exchange.',
     ],
   },
   {
@@ -152,9 +152,9 @@ export default [
     role: "Bachelor's Degree, Computer Science",
     dates: 'August 2017 - May 2021',
     highlights: [
-      "Dean's List senior year",
-      'First place among college teams at Blockland Blockchain Hackathon',
-      'Favorite Coursework: Compilers, Systems, Databases Design, Computer Architecture, High Performance Computing',
+      "Dean's List senior year.",
+      'First place among college teams at Blockland Blockchain Hackathon.',
+      'Favorite Coursework: Compilers, Systems, Databases Design, Computer Architecture, High Performance Computing.',
     ],
     location: 'Oxford, OH',
   },
