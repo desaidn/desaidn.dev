@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "pnpm run typecheck && react-router build",
-    "dev": "react-router dev --port 5173 & npx react-scan@latest localhost:5173",
+    "dev": "react-router dev --port 5173",
     "start": "react-router-serve ./build/server/index.js",
     "lint": "eslint . --ext ts,tsx,js,jsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint . --ext ts,tsx,js,jsx --fix",

@@ -86,7 +86,7 @@ export default tseslint.config(
 
   // Configuration files and build tools
   {
-    files: ['**/*.config.{js,ts}', 'vite.config.{js,ts}', '*Plugin.{js,ts}'],
+    files: ['**/*.config.{js,ts}', 'vite.config.{js,ts}', '*plugin.{js,ts}'],
     languageOptions: {
       globals: {
         ...globals.node,
