@@ -77,9 +77,8 @@ export default [
           href="https://public.vtinfo.com/"
           className="text-lg text-link hover:text-link-hover mb-2 underline underline-offset-4"
         >
-          {' '}
-          Vermont Information Processing (VIP){' '}
-        </Link>{' '}
+          Vermont Information Processing (VIP)
+        </Link>
         . Built TypeScript/Vue.js product surfaces, Node.js/MySQL APIs, AWS
         infrastructure with Fargate, Lambda, and S3, Stripe subscription/payment
         workflows, HubSpot integrations, WebSocket-based inventory sessions, POS
