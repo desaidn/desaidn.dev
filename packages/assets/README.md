@@ -54,7 +54,7 @@ pnpm run dev
 
 Your application will be available at `http://localhost:5173`.
 
-For complete development workflows, see [CLAUDE.md](../../CLAUDE.md#common-commands).
+For complete development workflows, see [AGENTS.md](../../AGENTS.md#common-commands).
 
 ## Building for Production
 
@@ -102,7 +102,7 @@ Make sure to deploy the output of `pnpm run build`
 
 ## Documentation
 
-For complete development workflows and commands, see [CLAUDE.md](../../CLAUDE.md#common-commands).
+For complete development workflows and commands, see [AGENTS.md](../../AGENTS.md#common-commands).
 
 ---
 

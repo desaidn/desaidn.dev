@@ -19,7 +19,7 @@ This code is provided for portfolio demonstration. While you may view and fork o
 ├── packages/
 │   ├── assets/     # React app
 │   └── cdk/        # AWS CDK IaC
-├── CLAUDE.md       # Comprehensive development guide
+├── AGENTS.md       # Comprehensive development guide
 └── package.json    # Workspace configuration with pnpm
 ```
 
@@ -47,6 +47,6 @@ pnpm run deploy           # Full deployment to AWS
 
 ## Documentation
 
-- **[CLAUDE.md](./CLAUDE.md)** - Complete development workflows and commands
+- **[AGENTS.md](./AGENTS.md)** - Complete development workflows and commands
 - **[Frontend README](./packages/assets/README.md)** - React application details
 - **[Infrastructure README](./packages/cdk/README.md)** - AWS CDK stack information

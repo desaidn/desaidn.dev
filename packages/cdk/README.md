@@ -39,4 +39,4 @@ packages/cdk/
 
 ## Documentation
 
-For complete deployment workflows and commands, see [CLAUDE.md](../../CLAUDE.md#deployment-workflow).
+For complete deployment workflows and commands, see [AGENTS.md](../../AGENTS.md#deployment-workflow).
