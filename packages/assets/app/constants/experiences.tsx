@@ -11,11 +11,13 @@ export default [
     location: 'New York, NY',
     description: (
       <>
-        Building AWS Billing systems where product surfaces, APIs, data models,
-        and distributed runtimes have to be designed together. I work across
-        public AWS Console experiences, internal expert tools, React/TypeScript
-        interfaces, Kotlin/Java services, event-driven pipelines, and
-        correctness-sensitive bill-computation workflows.
+        Building AWS Billing systems where browser-based product surfaces, APIs,
+        data models, and distributed systems have to be designed together. I
+        work across public AWS Console experiences and internal expert tools,
+        primarily with React/TypeScript, Kotlin/Java services, SDKs, and
+        event-driven data pipelines for correctness-sensitive bill computation
+        at cloud scale. Currently focused on human-in-the-loop AI systems for
+        contract ingestion and analyst tooling.
       </>
     ),
     technologies: [
@@ -53,10 +55,10 @@ export default [
       'Designed real-time invoice lifecycle notification pipelines using DynamoDB Streams, Kinesis, Lambda, and SNS for cross-account delivery monitoring and automated failure routing.',
       'Led an event-driven Request for Payment workflow automating consolidated invoice delivery for enterprise customers including SAP, Goldman Sachs, Accenture, PayPal, and IBM.',
       'Collaborated across 4 teams to define API contracts, data models, and event schemas for enterprise invoice delivery, improving delivery from 5-10 days to same-day processing.',
-      'Designed a composable delivery pipeline with independently testable collection, transformation, dispatch, retry, validation, and status-tracking steps.',
+      'Designed a composable delivery pipeline with independently testable collection, transformation, dispatch, retry, validation, and status-tracking.',
       'Supported large-scale contract auditing and line-item diffing workflows for applied scientists and billing analysts.',
       'Built failure-routing and retry workflows with exponential backoff, known-issue classification, and operator-actionable support notifications.',
-      'Maintained production AWS Billing systems through on-call rotations, CloudWatch dashboards, alarms, SOPs, canaries, and post-launch operational reviews.',
+      'Maintained production AWS Billing systems through on-call rotations, dashboards, alarms, SOPs, canaries, and operational reviews.',
       'Mentored interns and junior engineers; oversaw production projects including legal text classification and API-to-MCP client code generation.',
     ],
   },
@@ -69,18 +71,19 @@ export default [
     location: 'Chicago, IL',
     description: (
       <>
-        Joined as an intern and became one of two developers owning the web
+        Joined as an intern and grew into one of two developers owning the web
         platform end to end through acquisition by{' '}
         <Link
           href="https://public.vtinfo.com/"
           className="text-lg text-link hover:text-link-hover mb-2 underline underline-offset-4"
         >
-          Vermont Information Processing (VIP)
-        </Link>
-        . Built operator-facing product surfaces with TypeScript and Vue.js,
-        Node.js APIs backed by MySQL, AWS services including Fargate, Lambda,
-        and S3, HubSpot integrations, WebSocket-based real-time inventory
-        sessions, and contributed to the React Native iOS/Android app.
+          {' '}
+          Vermont Information Processing (VIP){' '}
+        </Link>{' '}
+        . Built TypeScript/Vue.js product surfaces, Node.js/MySQL APIs, AWS
+        infrastructure with Fargate, Lambda, and S3, Stripe subscription/payment
+        workflows, HubSpot integrations, WebSocket-based inventory sessions, POS
+        integrations supporting 10K+ venues, and React Native mobile features.
       </>
     ),
     technologies: [
@@ -100,6 +103,7 @@ export default [
       'Lambda',
       'SNS/SQS',
       'CloudWatch',
+      'Stripe',
       'HubSpot',
       'Google Analytics',
     ],
