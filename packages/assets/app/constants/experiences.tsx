@@ -11,73 +11,86 @@ export default [
     location: 'New York, NY',
     description: (
       <>
-        Developing APIs, SDKs, UIs and data pipelines for AWS Billing. Building
-        highly available microservices in Java/Kotlin, React/TypeScript UIs, and
-        Python automation tools. Designing and implementing scalable,
-        service-oriented and event-driven architectures for cloud usage metering
-        at planet scale. Currently focused on systems for ingesting and
-        interpreting contracts for bill computation and augmenting financial
-        analysts with AI agents.
+        Building AWS Billing systems where product surfaces, APIs, data models,
+        and distributed runtimes have to be designed together. I work across
+        public AWS Console experiences, internal expert tools, React/TypeScript
+        interfaces, Kotlin/Java services, event-driven pipelines, and
+        correctness-sensitive bill-computation workflows.
       </>
     ),
     technologies: [
       'Java',
       'Kotlin',
+      'JVM',
       'TypeScript',
       'React',
+      'Redux',
       'CloudScape Design System',
+      'Cypress',
       'Python',
+      'SQL',
+      'DuckDB',
+      'Parquet',
       'Lambda',
+      'Step Functions',
       'SNS/SQS',
-      'EC2',
-      'Fargate',
-      'S3',
       'DynamoDB',
       'Kinesis',
+      'S3',
       'Athena',
       'Glue',
       'Bedrock',
       'CloudWatch',
     ],
     highlights: [
-      "Built invoice consolidation workflow to drive E-Invoicing adoption amongst AWS's largest enterprise customers, which was a key contributor to my organization's 3-day reduction in Time-to-Bill and $40MM improvement in Free Cash Flow.",
-      'Built multi-region, fault-tolerant RESTful APIs powering billing data flows, SDKs and console features, optimized for 1K+ TPS/region and sub-second latency.',
-      'Led development of high-availability console features used by millions of developers globally, with 99.99% uptime.',
-      'Designed scalable ingestion pipelines and state machines for accurate real-time usage metering of cloud services for arbitrary pricing models.',
-      "Implemented zero touch region expansion for the team's entire product portfolio. Time to support new entities cut from three weeks to one day.",
-      'Launched service and UI to persist arbitrary query expressions that can reliably map legal text to product SKUs for bill computation, preventing ~$17MM/year in billing failures.',
-      'Developed AI agent with Claude Sonnet 4 in a state machine to optimize product mapping rulesets for 10x faster (<100ms) product SKU resolution.',
-      'Collaborated with UX researchers and PMs to rapidly prototype and iterate on enterprise-facing product surfaces.',
-      'Mentored interns and junior engineers; oversaw projects including legal text variant classifier & API to MCP client code generation.',
-      'Drove operational excellence through on-call rotations, system monitoring, and proactive incident response.',
+      'Owned three major AWS Billing product surfaces and their backing systems: public Billing Console features, an internal contract-to-billing-rule authoring interface, and a real-time invoice delivery operator dashboard.',
+      'Built public AWS Billing Console features in React/TypeScript, Redux, and CloudScape while meeting AWS accessibility, responsive, cross-browser, canary, and high-availability standards.',
+      'Automated Seller of Record launch support in the AWS Billing Console by integrating dynamic entity resolution into the React/Redux frontend, eliminating manual configuration for new region launches.',
+      'Built a DSL-backed structured editor used by sales, legal, billing analysts, and applied scientists to map contract language to executable rules over millions of AWS SKUs.',
+      'Designed graph-based rule editing, low-latency SKU previews, validation flows, a 10-API surface, and a DuckDB/Parquet product cache supporting online APIs and offline billing workflows.',
+      'Implemented the Kotlin/Java/JVM bill-computation runtime behind the authoring interface, using typed functional design for correctness-sensitive rule evaluation.',
+      'Built a React/CloudScape operator dashboard over DynamoDB and Kinesis invoice lifecycle streams, giving operators live visibility into delivery status, portal failures, and workflow progress.',
+      'Designed real-time invoice lifecycle notification pipelines using DynamoDB Streams, Kinesis, Lambda, and SNS for cross-account delivery monitoring and automated failure routing.',
+      'Led an event-driven Request for Payment workflow automating consolidated invoice delivery for enterprise customers including SAP, Goldman Sachs, Accenture, PayPal, and IBM.',
+      'Collaborated across 4 teams to define API contracts, data models, and event schemas for enterprise invoice delivery, improving delivery from 5-10 days to same-day processing.',
+      'Designed a composable delivery pipeline with independently testable collection, transformation, dispatch, retry, validation, and status-tracking steps.',
+      'Supported large-scale contract auditing and line-item diffing workflows for applied scientists and billing analysts.',
+      'Built failure-routing and retry workflows with exponential backoff, known-issue classification, and operator-actionable support notifications.',
+      'Maintained production AWS Billing systems through on-call rotations, CloudWatch dashboards, alarms, SOPs, canaries, and post-launch operational reviews.',
+      'Mentored interns and junior engineers; oversaw production projects including legal text classification and API-to-MCP client code generation.',
     ],
   },
   {
-    id: 'backbar-engineer',
-    company: 'Backbar (Beverage Management Platform - Acquired 2022)',
+    id: 'backbar',
+    company: 'Backbar (Beverage Management Platform, Acquired 2022)',
     link: 'https://www.getbackbar.com/',
     role: 'Full Stack Engineer',
-    dates: 'June 2021 - July 2022',
+    dates: 'May 2020 - July 2022',
     location: 'Chicago, IL',
     description: (
       <>
-        One of two engineers at a beverage tech startup acquired by{' '}
+        Joined as an intern and became one of two developers owning the web
+        platform end to end through acquisition by{' '}
         <Link
           href="https://public.vtinfo.com/"
           className="text-lg text-link hover:text-link-hover mb-2 underline underline-offset-4"
         >
           Vermont Information Processing (VIP)
         </Link>
-        . Owned the web platform, backend services, and ingestion pipelines.
-        Contributed across web, mobile, and operational tooling.
+        . Built operator-facing product surfaces with TypeScript and Vue.js,
+        Node.js APIs backed by MySQL, AWS services including Fargate, Lambda,
+        and S3, HubSpot integrations, WebSocket-based real-time inventory
+        sessions, and contributed to the React Native iOS/Android app.
       </>
     ),
     technologies: [
       'TypeScript',
-      'VueJS',
+      'JavaScript',
+      'Vue.js',
       'React Native',
-      'NodeJS',
+      'Node.js',
       'Express',
+      'WebSockets',
       'Redis',
       'MySQL',
       'Ansible',
@@ -91,36 +104,12 @@ export default [
       'Google Analytics',
     ],
     highlights: [
-      'Designed and shipped real-time POS ingestion service for 10K+ venues worldwide.',
-      'Built inventory automation tools to predict stockouts and optimize reordering using usage heuristics.',
-      'Owned all aspects of the web platform, from UI to database schema to deployment pipelines.',
-      'Contributed to React Native mobile app features supporting live inventory sync and session sharing.',
-      'Worked closely with product and participated in support rotation to iterate quickly based on user feedback.',
-    ],
-  },
-  {
-    id: 'backbar-intern',
-    company: 'Backbar (Beverage Management Platform - Acquired 2022)',
-    role: 'Software Engineering Intern',
-    link: 'https://www.getbackbar.com/',
-    dates: 'May 2020 - May 2021',
-    location: 'Chicago, IL',
-    description:
-      'Developed web application features for internal tools and customer-facing apps. Learned and applied modern frontend/backend patterns primarily using JavaScript, VueJS, HTML/CSS, NodeJS, Express, and MySQL.',
-    technologies: [
-      'JavaScript',
-      'VueJS',
-      'HTML',
-      'CSS',
-      'NodeJS',
-      'Express',
-      'MySQL',
-    ],
-    highlights: [
-      'Built QR code menu system used by bars and restaurants during the COVID pandemic.',
-      'Developed real-time collaboration feature for shared bar inventory sessions.',
-      'Created PDF/HTML menu parser for automating digital menu setup.',
-      'Implemented FIFO-based cost prediction system for inventory management.',
+      'Owned the web platform end to end as one of two developers through acquisition: UI, API layer, database schema, deployment pipelines, and operational tooling.',
+      'Designed and shipped POS ingestion services normalizing transaction data from 10K+ venues worldwide into a unified inventory model.',
+      'Built WebSocket-based real-time inventory sessions where multiple operators could see live stock changes during counting workflows.',
+      'Built inventory automation tools that predicted stockouts and optimized reorder timing using consumption heuristics.',
+      'Shipped a QR code menu system adopted by bars and restaurants during the COVID pandemic.',
+      'Contributed to the React Native iOS/Android app and rotated through customer support to feed operator feedback directly into product decisions.',
     ],
   },
   {
@@ -131,7 +120,7 @@ export default [
     dates: 'June 2019 – August 2019',
     location: 'Atlanta, GA',
     description:
-      'Worked across product and engineering teams to research blockchain-based supply chain visibility and interoperability solutions.',
+      'Worked across product and engineering teams to prototype supply chain integrations using Ethereum and Hyperledger smart contracts for secure cross-company data exchange.',
     technologies: [
       'Java',
       'SQL',
@@ -139,22 +128,16 @@ export default [
       'IBM Hyperledger',
       'Supply Chain Analytics',
     ],
-    highlights: [
-      'Researched blockchain applications for secure supply chain visibility.',
-      'Built prototype integrations using Hyperledger and Ethereum smart contracts.',
-      'Explored network data standards for cross-company supply chain data exchange.',
-    ],
+    highlights: [],
   },
   {
     id: 'miami',
     company: 'Miami University',
     link: 'https://miamioh.edu/',
     role: "Bachelor's Degree, Computer Science",
-    dates: 'August 2017 - May 2021',
     highlights: [
-      "Dean's List senior year.",
       'First place among college teams at Blockland Blockchain Hackathon.',
-      'Favorite Coursework: Compilers, Systems, Databases Design, Computer Architecture, High Performance Computing.',
+      'Relevant Coursework: Compilers, Systems, Database Design, Computer Architecture, High Performance Computing.',
     ],
     location: 'Oxford, OH',
   },

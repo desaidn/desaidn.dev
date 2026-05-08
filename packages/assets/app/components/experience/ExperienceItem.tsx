@@ -70,19 +70,23 @@ const ExperienceItem = memo(
                 </p>
               )}
 
-              <div className="mb-4">
-                <h5 className="text-sm font-semibold text-secondary mb-2">
-                  Key Highlights:
-                </h5>
-                <ul className="text-muted text-sm space-y-1">
-                  {experience.highlights.map((highlight, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <span className="text-secondary mt-1.5 w-1 h-1 bg-secondary rounded-full flex-shrink-0" />
-                      <span>{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {experience.highlights.length > 0 ? (
+                <div className="mb-4">
+                  <h5 className="text-sm font-semibold text-secondary mb-2">
+                    Key Highlights:
+                  </h5>
+                  <ul className="text-muted text-sm space-y-1">
+                    {experience.highlights.map((highlight, index) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <span className="text-secondary mt-1.5 w-1 h-1 bg-secondary rounded-full flex-shrink-0" />
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : (
+                <span />
+              )}
 
               {experience.technologies && (
                 <div>

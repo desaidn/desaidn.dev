@@ -22,15 +22,15 @@
     "clean": "rm -rf node_modules && pnpm run --recursive clean"
   },
   "devDependencies": {
-    "@eslint/js": "^9.37.0",
-    "@types/node": "^22.18.9",
-    "eslint": "^9.37.0",
+    "@eslint/js": "9.39.4",
+    "@types/node": "^25.5.0",
+    "eslint": "9.39.4",
     "eslint-config-prettier": "^10.1.8",
-    "globals": "^16.4.0",
-    "pnpm": "^10.18.2",
-    "prettier": "^3.6.2",
+    "globals": "^17.4.0",
+    "pnpm": "^10.32.1",
+    "prettier": "^3.8.1",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.0"
+    "typescript-eslint": "^8.57.0"
   },
   "engines": {
     "node": ">=18",

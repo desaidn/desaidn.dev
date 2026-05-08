@@ -172,8 +172,7 @@ export default function ResumePDFDocument({
     exp => exp.id === 'aws' || exp.id === 'backbar-engineer'
   );
   const secondaryExperiences = experiences.filter(
-    exp =>
-      exp.id === 'backbar-intern' || exp.id === 'elemica' || exp.id === 'miami'
+    exp => exp.id === 'backbar' || exp.id === 'elemica' || exp.id === 'miami'
   );
 
   const renderExperience = (exp: (typeof experiences)[0]) => (

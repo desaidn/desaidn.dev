@@ -13,6 +13,7 @@ const Whoami = memo(() => {
       <div className="mt-2 space-y-1">
         <Link href="mailto:me@desaidn.dev">me@desaidn.dev</Link>
         <Link href="https://github.com/desaidn">github.com/desaidn</Link>
+        <Link href="https://x.com/writessoftly">x.com/writessoftly</Link>
         <Link href="https://www.linkedin.com/in/dhairya-n-desai">
           linkedin.com/in/dhairya-n-desai
         </Link>

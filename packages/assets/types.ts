@@ -5,9 +5,9 @@ export type Experience = {
   company: string;
   link: string;
   role: string;
-  dates: string;
   location: string;
   highlights: string[];
+  dates?: string;
   description?: ReactNode;
   technologies?: string[];
 };
