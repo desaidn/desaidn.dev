@@ -11,13 +11,17 @@ export default [
     location: 'New York, NY',
     description: (
       <>
-        Building AWS Billing systems where browser-based product surfaces, APIs,
-        data models, and distributed systems have to be designed together. I
-        work across public AWS Console experiences and internal expert tools,
-        primarily with React/TypeScript, Kotlin/Java services, SDKs, and
-        event-driven data pipelines for correctness-sensitive bill computation
-        at cloud scale. Currently focused on human-in-the-loop AI systems for
-        contract ingestion and analyst tooling.
+        Building a core AWS Billing platform that turns contractual language
+        into executable semantics for private-pricing usage determination,
+        global bill computation, and auditing. The platform spans Smithy IDL API
+        modeling, generated TypeScript/Kotlin/Java/Python SDKs and client
+        libraries, Smithy-to-MCP generation, a custom query language for
+        contractual semantics over hundreds of millions of SKUs, low-latency JVM
+        evaluation, offline clients for workflows that cannot tolerate network
+        latency or transient failures, Python CLI tooling, React/TypeScript
+        analyst surfaces, observability, and agentic workflows. Users include
+        billing developers, financial analysts, applied scientists, legal,
+        sales, and enterprise invoicing teams.
       </>
     ),
     technologies: [
@@ -28,9 +32,8 @@ export default [
       'React',
       'Redux',
       'CloudScape Design System',
-      'Cypress',
-      'Python',
-      'SQL',
+      'Smithy',
+      'DSLs',
       'DuckDB',
       'Parquet',
       'Lambda',
@@ -43,23 +46,23 @@ export default [
       'Glue',
       'Bedrock',
       'CloudWatch',
+      'MCP SDK',
+      'Claude API',
+      'Python',
     ],
     highlights: [
-      'Owned three major AWS Billing product surfaces and their backing systems: public Billing Console features, an internal contract-to-billing-rule authoring interface, and a real-time invoice delivery operator dashboard.',
-      'Built public AWS Billing Console features in React/TypeScript, Redux, and CloudScape while meeting AWS accessibility, responsive, cross-browser, canary, and high-availability standards.',
-      'Automated Seller of Record launch support in the AWS Billing Console by integrating dynamic entity resolution into the React/Redux frontend, eliminating manual configuration for new region launches.',
-      'Built a DSL-backed structured editor used by sales, legal, billing analysts, and applied scientists to map contract language to executable rules over millions of AWS SKUs.',
-      'Designed graph-based rule editing, low-latency SKU previews, validation flows, a 10-API surface, and a DuckDB/Parquet product cache supporting online APIs and offline billing workflows.',
-      'Implemented the Kotlin/Java/JVM bill-computation runtime behind the authoring interface, using typed functional design for correctness-sensitive rule evaluation.',
-      'Built a React/CloudScape operator dashboard over DynamoDB and Kinesis invoice lifecycle streams, giving operators live visibility into delivery status, portal failures, and workflow progress.',
-      'Designed real-time invoice lifecycle notification pipelines using DynamoDB Streams, Kinesis, Lambda, and SNS for cross-account delivery monitoring and automated failure routing.',
-      'Led an event-driven Request for Payment workflow automating consolidated invoice delivery for enterprise customers including SAP, Goldman Sachs, Accenture, PayPal, and IBM.',
-      'Collaborated across 4 teams to define API contracts, data models, and event schemas for enterprise invoice delivery, improving delivery from 5-10 days to same-day processing.',
-      'Designed a composable delivery pipeline with independently testable collection, transformation, dispatch, retry, validation, and status-tracking.',
-      'Supported large-scale contract auditing and line-item diffing workflows for applied scientists and billing analysts.',
-      'Built failure-routing and retry workflows with exponential backoff, known-issue classification, and operator-actionable support notifications.',
-      'Maintained production AWS Billing systems through on-call rotations, dashboards, alarms, SOPs, canaries, and operational reviews.',
-      'Mentored interns and junior engineers; oversaw production projects including legal text classification and API-to-MCP client code generation.',
+      'Led a contract-semantics service that persists legal language semantics as custom DSL expressions evaluated at runtime across private-pricing usage determination, global bill computation, and SKU and line-item auditing at 300+ TPS sustained and 1,000+ TPS peaks.',
+      'Designed Smithy IDL API contracts, generated TypeScript/Kotlin/Java/Python SDKs and client libraries, and the versioning / backward-compatibility strategy for a managed contract-semantics platform that replaced an error-prone legacy inline ruleset system and prevented ~$17MM/year in billing failures.',
+      'Built a Smithy-to-MCP generator that creates MCP servers and clients as soon as APIs deploy, eliminating manually maintained MCP surfaces for internal agent workflows.',
+      'Built API, UI, and Python CLI/library surfaces for developers, analysts, and applied scientists; partnered with product/design in twice-weekly feedback loops to improve ruleset management, query evaluation, anomaly-detection modeling, and contract-intelligence workflows.',
+      'Modeled recursive legal language and referential contract expressions with a DynamoDB-backed, low-latency in-memory dependency graph that re-validates changed expressions and their full dependency closure.',
+      'Engineered the query-language runtime, validation flows, low-latency SKU previews, and 10-API surface for inspecting and validating billing-impacting rule changes.',
+      'Designed APIs and tools with both user-based and service-to-service authentication, plus granular resource-based authorization across human and service consumers.',
+      'Implemented the Kotlin/Java/JVM evaluation runtime, DuckDB/Parquet product cache, and offline execution path for sensitive customer workflows that cannot tolerate network latency or transient failures.',
+      "Led the team's Claude Code-based AI-assisted development strategy using architecture docs, type-system constraints, and layered unit, property, integration, canary, and E2E tests; agent workflows now auto-resolve 90% of issues labeled for agent handling.",
+      'Developed a Bedrock and Step Functions AI agent to optimize product mapping rulesets, reducing SKU resolution latency 10x from roughly 800ms to under 100ms.',
+      'Built observable invoice lifecycle dashboards and notification workflows over DynamoDB Streams, Kinesis, Lambda, and SNS, giving operators live status visibility, failure routing, and human-in-the-loop triage for high-velocity billing workflows.',
+      'Led Request for Payment delivery for the largest E-Invoicing cohort, helping launch AWS E-Invoicing GA for customers including SAP, Goldman Sachs, Accenture, PayPal, and IBM; reduced Time-to-Bill by 3 days and contributed to a $40MM Free Cash Flow improvement.',
     ],
   },
   {
@@ -71,23 +74,22 @@ export default [
     location: 'Chicago, IL',
     description: (
       <>
-        Joined as an intern and grew into one of two developers owning the web
-        platform end to end through acquisition by{' '}
+        Joined as an intern and grew into one of two engineers owning the
+        product platform end to end through acquisition by{' '}
         <Link
           href="https://public.vtinfo.com/"
           className="text-lg text-link hover:text-link-hover mb-2 underline underline-offset-4"
         >
           Vermont Information Processing (VIP)
         </Link>
-        . Built TypeScript/Vue.js product surfaces, Node.js/MySQL APIs, AWS
-        infrastructure with Fargate, Lambda, and S3, Stripe subscription/payment
-        workflows, HubSpot integrations, WebSocket-based inventory sessions, POS
-        integrations supporting 10K+ venues, and React Native mobile features.
+        . Shipped APIs, database models, web and mobile interfaces,
+        integrations, infrastructure, and real-time operator workflows for
+        inventory, purchasing, POS ingestion, payments, and distributor
+        operations.
       </>
     ),
     technologies: [
       'TypeScript',
-      'JavaScript',
       'Vue.js',
       'React Native',
       'Node.js',
@@ -95,24 +97,19 @@ export default [
       'WebSockets',
       'Redis',
       'MySQL',
-      'Ansible',
       'Docker',
-      'EC2',
       'Fargate',
       'Lambda',
       'SNS/SQS',
-      'CloudWatch',
       'Stripe',
       'HubSpot',
-      'Google Analytics',
     ],
     highlights: [
-      'Owned the web platform end to end as one of two developers through acquisition: UI, API layer, database schema, deployment pipelines, and operational tooling.',
-      'Designed and shipped POS ingestion services normalizing transaction data from 10K+ venues worldwide into a unified inventory model.',
-      'Built WebSocket-based real-time inventory sessions where multiple operators could see live stock changes during counting workflows.',
-      'Built inventory automation tools that predicted stockouts and optimized reorder timing using consumption heuristics.',
-      'Shipped a QR code menu system adopted by bars and restaurants during the COVID pandemic.',
-      'Contributed to the React Native iOS/Android app and rotated through customer support to feed operator feedback directly into product decisions.',
+      'Owned the product platform end to end as one of two engineers through acquisition: Vue/React Native interfaces, Node/Express APIs, MySQL schema, Redis/WebSocket workflows, deployment pipelines, operational tooling, and customer-facing workflows.',
+      'Designed and shipped POS ingestion APIs normalizing transaction data from 10K+ venues worldwide into a unified inventory model.',
+      'Built WebSocket-based real-time inventory sessions where multiple operators coordinated stock counts with live state updates.',
+      'Built inventory automation tools for stockout prediction, reorder timing, and FIFO cost calculations.',
+      'Shipped Stripe subscription/payment workflows, HubSpot integrations, QR code menus, and React Native mobile features while rotating through customer support to turn operator feedback into product decisions.',
     ],
   },
   {
@@ -138,10 +135,10 @@ export default [
     company: 'Miami University',
     link: 'https://miamioh.edu/',
     role: "Bachelor's Degree, Computer Science",
+    location: 'Oxford, OH',
     highlights: [
       'First place among college teams at Blockland Blockchain Hackathon.',
       'Relevant Coursework: Compilers, Systems, Database Design, Computer Architecture, High Performance Computing.',
     ],
-    location: 'Oxford, OH',
   },
 ] as const satisfies Experience[];

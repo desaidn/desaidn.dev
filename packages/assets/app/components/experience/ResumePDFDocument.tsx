@@ -13,11 +13,11 @@ const ATS_THEME = {
     main: 'Helvetica',
   },
   fontSizes: {
-    body: 9,
-    small: 8,
-    header: 14,
-    subheader: 11,
-    sectionTitle: 12,
+    body: 9.2,
+    small: 8.15,
+    header: 14.55,
+    subheader: 11.3,
+    sectionTitle: 12.2,
   },
   spacing: {
     page: 16,
@@ -29,6 +29,9 @@ const ATS_THEME = {
   },
 };
 
+const CONTACT_LINE =
+  'Brooklyn, NY | www.desaidn.dev | me@desaidn.dev | github.com/desaidn | linkedin.com/in/dhairya-n-desai';
+
 const createStyles = () =>
   StyleSheet.create({
     page: {
@@ -36,7 +39,7 @@ const createStyles = () =>
       backgroundColor: ATS_THEME.colors.primary,
       padding: ATS_THEME.spacing.page,
       fontSize: ATS_THEME.fontSizes.body,
-      lineHeight: 1.2,
+      lineHeight: 1.24,
       fontFamily: ATS_THEME.fonts.main,
       color: ATS_THEME.colors.text,
     },
@@ -97,7 +100,7 @@ const createStyles = () =>
       fontSize: ATS_THEME.fontSizes.body,
       color: ATS_THEME.colors.text,
       marginBottom: ATS_THEME.spacing.small,
-      lineHeight: 1.2,
+      lineHeight: 1.24,
     },
     header: {
       marginBottom: ATS_THEME.spacing.jobSpacing,
@@ -108,31 +111,16 @@ const createStyles = () =>
       color: ATS_THEME.colors.text,
       marginBottom: ATS_THEME.spacing.small,
     },
-    contactInfo: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      marginBottom: ATS_THEME.spacing.small,
-    },
-    contactLeft: {
-      flexDirection: 'row',
-      gap: ATS_THEME.spacing.small,
-    },
     contactItem: {
       fontSize: ATS_THEME.fontSizes.small,
       color: ATS_THEME.colors.text,
       marginTop: ATS_THEME.spacing.small,
-      marginRight: ATS_THEME.spacing.item,
-    },
-    location: {
-      fontSize: ATS_THEME.fontSizes.small,
-      marginTop: ATS_THEME.spacing.small,
-      color: ATS_THEME.colors.textSecondary,
+      marginBottom: ATS_THEME.spacing.small,
     },
     summary: {
       fontSize: ATS_THEME.fontSizes.body,
       color: ATS_THEME.colors.text,
-      lineHeight: 1.2,
+      lineHeight: 1.24,
       marginTop: ATS_THEME.spacing.small,
     },
     highlightsSection: {
@@ -153,10 +141,24 @@ const createStyles = () =>
       gap: ATS_THEME.spacing.small,
       fontSize: ATS_THEME.fontSizes.body,
       color: ATS_THEME.colors.text,
-      lineHeight: 1.2,
+      lineHeight: 1.24,
     },
     bulletText: {
       marginRight: ATS_THEME.spacing.small,
+    },
+    technologiesSection: {
+      marginTop: ATS_THEME.spacing.small,
+    },
+    technologiesTitle: {
+      fontSize: ATS_THEME.fontSizes.body,
+      fontWeight: 'bold',
+      color: ATS_THEME.colors.text,
+      marginBottom: ATS_THEME.spacing.tiny,
+    },
+    technologiesText: {
+      fontSize: ATS_THEME.fontSizes.small,
+      color: ATS_THEME.colors.textSecondary,
+      lineHeight: 1.24,
     },
   });
 
@@ -169,11 +171,9 @@ export default function ResumePDFDocument({
 }: ResumePDFDocumentProps) {
   const styles = createStyles();
   const mainExperiences = experiences.filter(
-    exp => exp.id === 'aws' || exp.id === 'backbar-engineer'
+    exp => exp.id === 'aws' || exp.id === 'backbar'
   );
-  const secondaryExperiences = experiences.filter(
-    exp => exp.id === 'backbar' || exp.id === 'elemica' || exp.id === 'miami'
-  );
+  const secondaryExperiences = experiences.filter(exp => exp.id === 'miami');
 
   const renderExperience = (exp: (typeof experiences)[0]) => (
     <View key={exp.id} style={styles.experienceItem}>
@@ -198,17 +198,28 @@ export default function ResumePDFDocument({
             </Text>
           )}
 
-          {exp.highlights && exp.highlights.length > 0 && (
-            <View style={styles.highlightsSection}>
-              <Text style={styles.highlightsTitle}>Key Highlights:</Text>
-              <View style={styles.highlightsList}>
-                {exp.highlights.map((highlight, index) => (
-                  <View key={index} style={styles.highlight}>
-                    <Text style={styles.bulletText}>-</Text>
-                    <Text style={{ flex: 1 }}>{highlight}</Text>
-                  </View>
-                ))}
+          {exp.id !== 'miami' &&
+            exp.highlights &&
+            exp.highlights.length > 0 && (
+              <View style={styles.highlightsSection}>
+                <Text style={styles.highlightsTitle}>Key Highlights:</Text>
+                <View style={styles.highlightsList}>
+                  {exp.highlights.map((highlight, index) => (
+                    <View key={index} style={styles.highlight}>
+                      <Text style={styles.bulletText}>-</Text>
+                      <Text style={{ flex: 1 }}>{highlight}</Text>
+                    </View>
+                  ))}
+                </View>
               </View>
+            )}
+
+          {exp.technologies && exp.technologies.length > 0 && (
+            <View style={styles.technologiesSection}>
+              <Text style={styles.technologiesTitle}>Technologies:</Text>
+              <Text style={styles.technologiesText}>
+                {exp.technologies.join(', ')}
+              </Text>
             </View>
           )}
         </View>
@@ -222,17 +233,7 @@ export default function ResumePDFDocument({
         <View style={styles.container}>
           <View style={styles.header}>
             <Text style={styles.name}>Dhairya Desai</Text>
-            <View style={styles.contactInfo}>
-              <View style={styles.contactLeft}>
-                <Text style={styles.contactItem}>www.desaidn.dev</Text>
-                <Text style={styles.contactItem}>me@desaidn.dev</Text>
-                <Text style={styles.contactItem}>github.com/desaidn</Text>
-                <Text style={styles.contactItem}>
-                  linkedin.com/in/dhairya-n-desai
-                </Text>
-              </View>
-              <Text style={styles.location}>Brooklyn, NY</Text>
-            </View>
+            <Text style={styles.contactItem}>{CONTACT_LINE}</Text>
             <Text style={styles.summary}>{PROFESSIONAL_SUMMARY}</Text>
           </View>
 
