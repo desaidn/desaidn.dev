@@ -15,7 +15,7 @@ Font.registerHyphenationCallback(word => [word]);
 const THEME = {
   colors: {
     text: '#111111',
-    secondary: '#444444',
+    secondary: '#111111',
     rule: '#777777',
   },
   fontSizes: {
@@ -165,7 +165,12 @@ const styles = StyleSheet.create({
     fontSize: THEME.fontSizes.body,
     fontWeight: 'bold',
   },
-  educationDetails: {
+  educationInstitution: {
+    color: THEME.colors.secondary,
+    fontSize: THEME.fontSizes.body,
+    fontWeight: 'bold',
+  },
+  educationLocation: {
     color: THEME.colors.secondary,
     fontSize: THEME.fontSizes.small,
   },
@@ -277,11 +282,16 @@ export default function ResumePDFDocument() {
         <View wrap={false}>
           <Text style={styles.sectionTitle}>Education</Text>
           <View style={styles.educationRow}>
-            <Text style={styles.educationDegree}>
-              {RESUME.education.degree}
-            </Text>
-            <Text style={styles.educationDetails}>
-              {RESUME.education.institution} | {RESUME.education.location}
+            <View>
+              <Text style={styles.educationDegree}>
+                {RESUME.education.degree}
+              </Text>
+              <Text style={styles.educationInstitution}>
+                {RESUME.education.institution}
+              </Text>
+            </View>
+            <Text style={styles.educationLocation}>
+              {RESUME.education.location}
             </Text>
           </View>
         </View>

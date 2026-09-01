@@ -1,10 +1,9 @@
 import { memo, type ReactElement } from 'react';
-import type { Experience } from 'types';
+import type { ResumeExperience } from 'types';
 import useHeightAnimation from '../../hooks/useHeightAnimation';
-import Link from '../common/Link';
 
 export interface ExperienceItemProps {
-  experience: Experience;
+  experience: ResumeExperience;
   isOpen: boolean;
   onToggle: () => void;
 }
@@ -29,12 +28,9 @@ const ExperienceItem = memo(
                 {experience.role}
               </h3>
               <div className="mb-2">
-                <Link
-                  href={experience.link}
-                  className="text-lg text-link hover:text-link-hover mb-2 underline underline-offset-4"
-                >
+                <p className="text-lg text-link mb-2">
                   {experience.company}
-                </Link>
+                </p>
               </div>
               <p className="text-muted text-sm mb-2">{experience.location}</p>
             </div>
@@ -86,24 +82,6 @@ const ExperienceItem = memo(
                 </div>
               ) : (
                 <span />
-              )}
-
-              {experience.technologies && (
-                <div>
-                  <h5 className="text-sm font-semibold text-secondary mb-2">
-                    Technologies:
-                  </h5>
-                  <div className="flex flex-wrap gap-2">
-                    {experience.technologies?.map(tech => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 bg-primary/50 text-muted text-xs rounded border border-border/50"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
               )}
             </div>
           </div>

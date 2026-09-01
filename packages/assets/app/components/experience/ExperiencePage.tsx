@@ -1,7 +1,6 @@
 import type { ReactElement } from 'react';
 import { useCallback, useState } from 'react';
-import EXPERIENCES from '~/constants/experiences';
-import { PROFESSIONAL_SUMMARY } from '~/constants/summary';
+import { RESUME } from '~/constants/resume';
 import AppLayout from '../common/AppLayout';
 import BackButton from '../common/BackButton';
 import CommandExecution from '../common/CommandExecution';
@@ -48,18 +47,65 @@ export default function ExperiencePage(): ReactElement {
 
         <section className="mb-8">
           <div className="mb-6">
-            <p>{PROFESSIONAL_SUMMARY}</p>
+            <p>{RESUME.summary}</p>
           </div>
 
           <div className="space-y-4">
-            {EXPERIENCES.map(exp => (
-              <ExperienceItem
-                key={exp.id}
-                experience={exp}
-                isOpen={selectedExperience === exp.id}
-                onToggle={() => handleExperienceClick(exp.id)}
-              />
+            {RESUME.experiences.map(exp => {
+              const experienceId = `${exp.company}-${exp.role}`;
+
+              return (
+                <ExperienceItem
+                  key={experienceId}
+                  experience={exp}
+                  isOpen={selectedExperience === experienceId}
+                  onToggle={() => handleExperienceClick(experienceId)}
+                />
+              );
+            })}
+          </div>
+        </section>
+
+        <section className="mb-8" aria-labelledby="skills-heading">
+          <h2
+            id="skills-heading"
+            className="text-xl font-semibold text-secondary mb-4"
+          >
+            Skills
+          </h2>
+          <div className="bg-primary/80 border border-border/50 rounded-lg p-6 space-y-4">
+            {RESUME.skillGroups.map(group => (
+              <div key={group.label}>
+                <h3 className="text-sm font-semibold text-secondary mb-1">
+                  {group.label}
+                </h3>
+                <p className="text-muted text-sm leading-relaxed">
+                  {group.skills.join(', ')}
+                </p>
+              </div>
             ))}
+          </div>
+        </section>
+
+        <section className="mb-8" aria-labelledby="education-heading">
+          <h2
+            id="education-heading"
+            className="text-xl font-semibold text-secondary mb-4"
+          >
+            Education
+          </h2>
+          <div className="bg-primary/80 border border-border/50 rounded-lg p-6">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+              <div>
+                <h3 className="text-lg font-semibold text-secondary">
+                  {RESUME.education.degree}
+                </h3>
+                <p className="text-link">{RESUME.education.institution}</p>
+              </div>
+              <p className="text-muted text-sm sm:text-right">
+                {RESUME.education.location}
+              </p>
+            </div>
           </div>
         </section>
       </div>
