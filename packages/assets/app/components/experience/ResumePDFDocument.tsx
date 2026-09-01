@@ -1,246 +1,288 @@
-import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
-import type { Experience } from 'types';
-import { PROFESSIONAL_SUMMARY } from '~/constants/summary';
-import { extractTextFromReactNode } from '../../utils/textExtraction';
+import {
+  Document,
+  Font,
+  Link,
+  Page,
+  StyleSheet,
+  Text,
+  View,
+} from '@react-pdf/renderer';
+import type { ResumeContact, ResumeExperience, ResumeSkillGroup } from 'types';
+import { RESUME } from '~/constants/resume';
 
-const ATS_THEME = {
+Font.registerHyphenationCallback(word => [word]);
+
+const THEME = {
   colors: {
-    primary: '#FFFFFF',
-    text: '#000000',
-    textSecondary: '#333333',
-  },
-  fonts: {
-    main: 'Helvetica',
+    text: '#111111',
+    secondary: '#444444',
+    rule: '#777777',
   },
   fontSizes: {
-    body: 9.2,
-    small: 8.15,
-    header: 14.55,
-    subheader: 11.3,
-    sectionTitle: 12.2,
+    name: 19.5,
+    headline: 9.5,
+    body: 9.6,
+    bullet: 9.25,
+    small: 8.4,
+    section: 9.8,
+    job: 10.5,
   },
   spacing: {
-    page: 16,
-    section: 12,
-    item: 3,
-    small: 2,
-    tiny: 1,
-    jobSpacing: 8,
+    page: 36,
+    section: 8,
+    item: 7,
+    bullet: 2.4,
   },
-};
+} as const;
 
-const CONTACT_LINE =
-  'Brooklyn, NY | www.desaidn.dev | me@desaidn.dev | github.com/desaidn | linkedin.com/in/dhairya-n-desai';
+const styles = StyleSheet.create({
+  page: {
+    backgroundColor: '#FFFFFF',
+    color: THEME.colors.text,
+    fontFamily: 'Helvetica',
+    fontSize: THEME.fontSizes.body,
+    lineHeight: 1.2,
+    padding: THEME.spacing.page,
+  },
+  header: {
+    alignItems: 'center',
+    marginBottom: 6,
+  },
+  name: {
+    fontSize: THEME.fontSizes.name,
+    fontWeight: 'bold',
+    lineHeight: 1,
+    marginBottom: 3,
+  },
+  headline: {
+    color: THEME.colors.secondary,
+    fontSize: THEME.fontSizes.headline,
+    fontWeight: 'bold',
+    marginBottom: 3,
+  },
+  contactRow: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+  },
+  contactGroup: {
+    flexDirection: 'row',
+  },
+  contact: {
+    color: THEME.colors.secondary,
+    fontSize: THEME.fontSizes.small,
+    textDecoration: 'none',
+  },
+  contactSeparator: {
+    color: THEME.colors.secondary,
+    fontSize: THEME.fontSizes.small,
+    marginLeft: 4,
+    marginRight: 4,
+  },
+  summary: {
+    fontSize: THEME.fontSizes.body,
+    lineHeight: 1.24,
+    marginBottom: THEME.spacing.section,
+  },
+  section: {
+    marginBottom: THEME.spacing.section,
+  },
+  sectionTitle: {
+    borderBottomColor: THEME.colors.rule,
+    borderBottomWidth: 0.6,
+    fontSize: THEME.fontSizes.section,
+    fontWeight: 'bold',
+    letterSpacing: 0.7,
+    marginBottom: 4,
+    paddingBottom: 1.5,
+    textTransform: 'uppercase',
+  },
+  experience: {
+    marginBottom: THEME.spacing.item,
+  },
+  jobHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 1,
+  },
+  jobRole: {
+    fontSize: THEME.fontSizes.job,
+    fontWeight: 'bold',
+  },
+  dates: {
+    color: THEME.colors.secondary,
+    fontSize: THEME.fontSizes.small,
+  },
+  employerRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 2,
+  },
+  employer: {
+    fontSize: THEME.fontSizes.body,
+    fontWeight: 'bold',
+  },
+  location: {
+    color: THEME.colors.secondary,
+    fontSize: THEME.fontSizes.small,
+  },
+  description: {
+    color: THEME.colors.secondary,
+    fontSize: THEME.fontSizes.bullet,
+    lineHeight: 1.18,
+    marginBottom: 2.5,
+  },
+  highlights: {
+    gap: THEME.spacing.bullet,
+  },
+  highlight: {
+    flexDirection: 'row',
+  },
+  bulletMarker: {
+    fontSize: THEME.fontSizes.bullet,
+    marginRight: 4,
+    width: 5,
+  },
+  bulletText: {
+    flex: 1,
+    fontSize: THEME.fontSizes.bullet,
+    lineHeight: 1.2,
+  },
+  skill: {
+    fontSize: THEME.fontSizes.bullet,
+    lineHeight: 1.22,
+    marginBottom: 1,
+  },
+  skillLabel: {
+    fontWeight: 'bold',
+  },
+  educationRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  educationDegree: {
+    fontSize: THEME.fontSizes.body,
+    fontWeight: 'bold',
+  },
+  educationDetails: {
+    color: THEME.colors.secondary,
+    fontSize: THEME.fontSizes.small,
+  },
+});
 
-const createStyles = () =>
-  StyleSheet.create({
-    page: {
-      flexDirection: 'column',
-      backgroundColor: ATS_THEME.colors.primary,
-      padding: ATS_THEME.spacing.page,
-      fontSize: ATS_THEME.fontSizes.body,
-      lineHeight: 1.24,
-      fontFamily: ATS_THEME.fonts.main,
-      color: ATS_THEME.colors.text,
-    },
-    container: {
-      maxWidth: '100%',
-    },
-    experienceContainer: {
-      gap: 0,
-    },
-    experienceItem: {
-      backgroundColor: ATS_THEME.colors.primary,
-      marginBottom: ATS_THEME.spacing.jobSpacing,
-      overflow: 'hidden',
-    },
-    experienceHeader: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'flex-start',
-      gap: ATS_THEME.spacing.small,
-    },
-    leftSection: {
-      flex: 1,
-    },
-    jobTitle: {
-      fontSize: ATS_THEME.fontSizes.subheader,
-      fontWeight: 'bold',
-      color: ATS_THEME.colors.text,
-      marginBottom: ATS_THEME.spacing.small,
-    },
-    companyContainer: {
-      marginBottom: ATS_THEME.spacing.small,
-    },
-    company: {
-      fontSize: ATS_THEME.fontSizes.body,
-      color: ATS_THEME.colors.text,
-    },
-    jobLocation: {
-      fontSize: ATS_THEME.fontSizes.small,
-      color: ATS_THEME.colors.textSecondary,
-      marginBottom: 0,
-    },
-    rightSection: {
-      alignItems: 'flex-end',
-    },
-    dates: {
-      fontSize: ATS_THEME.fontSizes.small,
-      color: ATS_THEME.colors.textSecondary,
-      paddingVertical: 0,
-    },
-    expandedContent: {
-      paddingHorizontal: 0,
-      paddingBottom: ATS_THEME.spacing.tiny,
-    },
-    expandedInner: {
-      paddingTop: ATS_THEME.spacing.tiny,
-    },
-    description: {
-      fontSize: ATS_THEME.fontSizes.body,
-      color: ATS_THEME.colors.text,
-      marginBottom: ATS_THEME.spacing.small,
-      lineHeight: 1.24,
-    },
-    header: {
-      marginBottom: ATS_THEME.spacing.jobSpacing,
-    },
-    name: {
-      fontSize: ATS_THEME.fontSizes.header,
-      fontWeight: 'bold',
-      color: ATS_THEME.colors.text,
-      marginBottom: ATS_THEME.spacing.small,
-    },
-    contactItem: {
-      fontSize: ATS_THEME.fontSizes.small,
-      color: ATS_THEME.colors.text,
-      marginTop: ATS_THEME.spacing.small,
-      marginBottom: ATS_THEME.spacing.small,
-    },
-    summary: {
-      fontSize: ATS_THEME.fontSizes.body,
-      color: ATS_THEME.colors.text,
-      lineHeight: 1.24,
-      marginTop: ATS_THEME.spacing.small,
-    },
-    highlightsSection: {
-      marginBottom: 0,
-    },
-    highlightsTitle: {
-      fontSize: ATS_THEME.fontSizes.body,
-      fontWeight: 'bold',
-      color: ATS_THEME.colors.text,
-      marginBottom: ATS_THEME.spacing.tiny,
-    },
-    highlightsList: {
-      gap: ATS_THEME.spacing.tiny,
-    },
-    highlight: {
-      flexDirection: 'row',
-      alignItems: 'flex-start',
-      gap: ATS_THEME.spacing.small,
-      fontSize: ATS_THEME.fontSizes.body,
-      color: ATS_THEME.colors.text,
-      lineHeight: 1.24,
-    },
-    bulletText: {
-      marginRight: ATS_THEME.spacing.small,
-    },
-    technologiesSection: {
-      marginTop: ATS_THEME.spacing.small,
-    },
-    technologiesTitle: {
-      fontSize: ATS_THEME.fontSizes.body,
-      fontWeight: 'bold',
-      color: ATS_THEME.colors.text,
-      marginBottom: ATS_THEME.spacing.tiny,
-    },
-    technologiesText: {
-      fontSize: ATS_THEME.fontSizes.small,
-      color: ATS_THEME.colors.textSecondary,
-      lineHeight: 1.24,
-    },
-  });
-
-interface ResumePDFDocumentProps {
-  experiences: Experience[];
+function ResumeContactItem({
+  contact,
+  index,
+}: {
+  contact: ResumeContact;
+  index: number;
+}) {
+  return (
+    <View style={styles.contactGroup}>
+      {index > 0 && <Text style={styles.contactSeparator}>|</Text>}
+      {contact.href ? (
+        <Link src={contact.href} style={styles.contact}>
+          {contact.label}
+        </Link>
+      ) : (
+        <Text style={styles.contact}>{contact.label}</Text>
+      )}
+    </View>
+  );
 }
 
-export default function ResumePDFDocument({
-  experiences,
-}: ResumePDFDocumentProps) {
-  const styles = createStyles();
-  const mainExperiences = experiences.filter(
-    exp => exp.id === 'aws' || exp.id === 'backbar'
-  );
-  const secondaryExperiences = experiences.filter(exp => exp.id === 'miami');
-
-  const renderExperience = (exp: (typeof experiences)[0]) => (
-    <View key={exp.id} style={styles.experienceItem}>
-      <View style={styles.experienceHeader}>
-        <View style={styles.leftSection}>
-          <Text style={styles.jobTitle}>{exp.role}</Text>
-          <View style={styles.companyContainer}>
-            <Text style={styles.company}>{exp.company}</Text>
-          </View>
-          <Text style={styles.jobLocation}>{exp.location}</Text>
+function ResumeExperienceItem({
+  experience,
+}: {
+  experience: ResumeExperience;
+}) {
+  return (
+    <View style={styles.experience}>
+      <View wrap={false}>
+        <View style={styles.jobHeader}>
+          <Text style={styles.jobRole}>{experience.role}</Text>
+          <Text style={styles.dates}>{experience.dates}</Text>
         </View>
-        <View style={styles.rightSection}>
-          <Text style={styles.dates}>{exp.dates}</Text>
+        <View style={styles.employerRow}>
+          <Text style={styles.employer}>{experience.company}</Text>
+          <Text style={styles.location}>{experience.location}</Text>
         </View>
+        <Text style={styles.description}>{experience.description}</Text>
       </View>
 
-      <View style={styles.expandedContent}>
-        <View style={styles.expandedInner}>
-          {exp.description && (
-            <Text style={styles.description}>
-              {extractTextFromReactNode(exp.description)}
-            </Text>
-          )}
-
-          {exp.id !== 'miami' &&
-            exp.highlights &&
-            exp.highlights.length > 0 && (
-              <View style={styles.highlightsSection}>
-                <Text style={styles.highlightsTitle}>Key Highlights:</Text>
-                <View style={styles.highlightsList}>
-                  {exp.highlights.map((highlight, index) => (
-                    <View key={index} style={styles.highlight}>
-                      <Text style={styles.bulletText}>-</Text>
-                      <Text style={{ flex: 1 }}>{highlight}</Text>
-                    </View>
-                  ))}
-                </View>
-              </View>
-            )}
-
-          {exp.technologies && exp.technologies.length > 0 && (
-            <View style={styles.technologiesSection}>
-              <Text style={styles.technologiesTitle}>Technologies:</Text>
-              <Text style={styles.technologiesText}>
-                {exp.technologies.join(', ')}
-              </Text>
-            </View>
-          )}
-        </View>
+      <View style={styles.highlights}>
+        {experience.highlights.map(highlight => (
+          <View key={highlight} style={styles.highlight}>
+            <Text style={styles.bulletMarker}>-</Text>
+            <Text style={styles.bulletText}>{highlight}</Text>
+          </View>
+        ))}
       </View>
     </View>
   );
+}
 
+function ResumeSkill({ group }: { group: ResumeSkillGroup }) {
   return (
-    <Document>
-      <Page size="A4" style={styles.page}>
-        <View style={styles.container}>
-          <View style={styles.header}>
-            <Text style={styles.name}>Dhairya Desai</Text>
-            <Text style={styles.contactItem}>{CONTACT_LINE}</Text>
-            <Text style={styles.summary}>{PROFESSIONAL_SUMMARY}</Text>
+    <Text style={styles.skill}>
+      <Text style={styles.skillLabel}>{group.label}: </Text>
+      {group.skills.join(', ')}
+    </Text>
+  );
+}
+
+export default function ResumePDFDocument() {
+  return (
+    <Document
+      author={RESUME.name}
+      keywords="software engineer, distributed systems, developer platforms, query engines, APIs, SDKs"
+      subject="Software engineering resume"
+      title={`${RESUME.name} Resume`}
+    >
+      <Page size="LETTER" style={styles.page}>
+        <View style={styles.header}>
+          <Text style={styles.name}>{RESUME.name}</Text>
+          <Text style={styles.headline}>{RESUME.headline}</Text>
+          <View style={styles.contactRow}>
+            {RESUME.contacts.map((contact, index) => (
+              <ResumeContactItem
+                key={contact.label}
+                contact={contact}
+                index={index}
+              />
+            ))}
           </View>
+        </View>
 
-          <View style={styles.experienceContainer}>
-            {mainExperiences.map(renderExperience)}
+        <Text style={styles.summary}>{RESUME.summary}</Text>
 
-            {secondaryExperiences.map(renderExperience)}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Experience</Text>
+          {RESUME.experiences.map(experience => (
+            <ResumeExperienceItem
+              key={`${experience.company}-${experience.role}`}
+              experience={experience}
+            />
+          ))}
+        </View>
+
+        <View style={styles.section} wrap={false}>
+          <Text style={styles.sectionTitle}>Skills</Text>
+          {RESUME.skillGroups.map(group => (
+            <ResumeSkill key={group.label} group={group} />
+          ))}
+        </View>
+
+        <View wrap={false}>
+          <Text style={styles.sectionTitle}>Education</Text>
+          <View style={styles.educationRow}>
+            <Text style={styles.educationDegree}>
+              {RESUME.education.degree}
+            </Text>
+            <Text style={styles.educationDetails}>
+              {RESUME.education.institution} | {RESUME.education.location}
+            </Text>
           </View>
         </View>
       </Page>

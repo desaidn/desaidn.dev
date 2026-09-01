@@ -13,7 +13,7 @@ export default function ExperiencePage(): ReactElement {
   const [selectedExperience, setSelectedExperience] = useState<string | null>(
     null
   );
-  const { generatePDF, isGenerating, error } = useResumePDF(EXPERIENCES);
+  const { generatePDF, isGenerating, error } = useResumePDF();
 
   const handleExperienceClick = useCallback((experienceId: string): void => {
     setSelectedExperience(prev =>

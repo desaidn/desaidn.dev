@@ -1,6 +1,5 @@
 import { useCallback, useState } from 'react';
 import { pdf } from '@react-pdf/renderer';
-import type { Experience } from 'types';
 import ResumePDFDocument from '../components/experience/ResumePDFDocument';
 
 interface UseResumePDFReturn {
@@ -9,9 +8,7 @@ interface UseResumePDFReturn {
   error: string | null;
 }
 
-export default function useResumePDF(
-  experiences: Experience[]
-): UseResumePDFReturn {
+export default function useResumePDF(): UseResumePDFReturn {
   const [isGenerating, setIsGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -20,9 +17,7 @@ export default function useResumePDF(
     setError(null);
 
     try {
-      const blob = await pdf(
-        <ResumePDFDocument experiences={experiences} />
-      ).toBlob();
+      const blob = await pdf(<ResumePDFDocument />).toBlob();
 
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
@@ -40,7 +35,7 @@ export default function useResumePDF(
     } finally {
       setIsGenerating(false);
     }
-  }, [experiences]);
+  }, []);
 
   return {
     generatePDF,
