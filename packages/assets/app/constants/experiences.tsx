@@ -11,58 +11,51 @@ export default [
     location: 'New York, NY',
     description: (
       <>
-        Building a core AWS Billing platform that turns contractual language
-        into executable semantics for private-pricing usage determination,
-        global bill computation, and auditing. The platform spans Smithy IDL API
-        modeling, generated TypeScript/Kotlin/Java/Python SDKs and client
-        libraries, Smithy-to-MCP generation, a custom query language for
-        contractual semantics over hundreds of millions of SKUs, low-latency JVM
-        evaluation, offline clients for workflows that cannot tolerate network
-        latency or transient failures, Python CLI tooling, React/TypeScript
-        analyst surfaces, observability, and agentic workflows. Users include
-        billing developers, financial analysts, applied scientists, legal,
-        sales, and enterprise invoicing teams.
+        Building a core AWS Billing query engine that evaluates private-pricing
+        rules for usage metering, global bill computation, and audit across
+        billions of line items and SKUs. APIs, typed client libraries, CLIs, and
+        React interfaces serve billing developers, applied scientists, and
+        financial analysts.
       </>
     ),
     technologies: [
+      'Python',
       'Java',
       'Kotlin',
-      'JVM',
       'TypeScript',
       'React',
-      'Redux',
-      'CloudScape Design System',
       'Smithy',
-      'DSLs',
+      'MCP SDK',
       'DuckDB',
       'Parquet',
-      'Lambda',
       'Step Functions',
-      'SNS/SQS',
+      'CI/CD',
+      'Docker',
+      'ECS/Fargate',
       'DynamoDB',
-      'Kinesis',
-      'S3',
-      'Athena',
-      'Glue',
       'Bedrock',
-      'CloudWatch',
-      'MCP SDK',
-      'Claude API',
-      'Python',
     ],
     highlights: [
-      'Led a contract-semantics service that persists legal language semantics as custom DSL expressions evaluated at runtime across private-pricing usage determination, global bill computation, and SKU and line-item auditing at 300+ TPS sustained and 1,000+ TPS peaks.',
-      'Designed Smithy IDL API contracts, generated TypeScript/Kotlin/Java/Python SDKs and client libraries, and the versioning / backward-compatibility strategy for a managed contract-semantics platform that replaced an error-prone legacy inline ruleset system and prevented ~$17MM/year in billing failures.',
-      'Built a Smithy-to-MCP generator that creates MCP servers and clients as soon as APIs deploy, eliminating manually maintained MCP surfaces for internal agent workflows.',
-      'Built API, UI, and Python CLI/library surfaces for developers, analysts, and applied scientists; partnered with product/design in twice-weekly feedback loops to improve ruleset management, query evaluation, anomaly-detection modeling, and contract-intelligence workflows.',
-      'Modeled recursive legal language and referential contract expressions with a DynamoDB-backed, low-latency in-memory dependency graph that re-validates changed expressions and their full dependency closure.',
-      'Engineered the query-language runtime, validation flows, low-latency SKU previews, and 10-API surface for inspecting and validating billing-impacting rule changes.',
-      'Designed APIs and tools with both user-based and service-to-service authentication, plus granular resource-based authorization across human and service consumers.',
-      'Implemented the Kotlin/Java/JVM evaluation runtime, DuckDB/Parquet product cache, and offline execution path for sensitive customer workflows that cannot tolerate network latency or transient failures.',
-      "Led the team's Claude Code-based AI-assisted development strategy using architecture docs, type-system constraints, and layered unit, property, integration, canary, and E2E tests; agent workflows now auto-resolve 90% of issues labeled for agent handling.",
-      'Developed a Bedrock and Step Functions AI agent to optimize product mapping rulesets, reducing SKU resolution latency 10x from roughly 800ms to under 100ms.',
-      'Built observable invoice lifecycle dashboards and notification workflows over DynamoDB Streams, Kinesis, Lambda, and SNS, giving operators live status visibility, failure routing, and human-in-the-loop triage for high-velocity billing workflows.',
-      'Led Request for Payment delivery for the largest E-Invoicing cohort, helping launch AWS E-Invoicing GA for customers including SAP, Goldman Sachs, Accenture, PayPal, and IBM; reduced Time-to-Bill by 3 days and contributed to a $40MM Free Cash Flow improvement.',
+      'Built the shared service agents and developer workflows use to evaluate contract and pricing rules, with generated, backward-compatible TypeScript, Kotlin, Java, and Python clients.',
+      'Deprecated inline rulesets with the platform, preventing ~$17MM/year in billing failures.',
+      'Built an agent in a state machine that interprets contracts and constructs product-mapping query expressions in a custom domain-specific language; automated clause-coverage checks and variant detection surface uncovered clauses for human review, bounding changes and cutting SKU-resolution latency 10x (~800ms to <100ms).',
+      'Set technical direction for a team of two and mentored two interns in 2026.',
+      'Built a contract-semantics DSL and compiler targeting a fast Kotlin/Java runtime with DuckDB/Parquet caching and online/offline execution.',
+      'Engineered a low-latency query engine that evaluates financially material pricing rules across 2 billion SKUs.',
+      'Built a Smithy-to-MCP generator that creates MCP servers and clients automatically as soon as an API deploys, eliminating manual MCP surface maintenance for internal agent workflows.',
+      'Shipped APIs, React/TypeScript UI, and Python CLI/library workflows; prioritized improvements using coverage and adoption metrics alongside twice-weekly feedback sessions with billing developers, applied scientists, and financial analysts.',
+      'Built one-click developer environments for local E2E tests using reproducible data replication from production snapshots.',
+      'Ran a multi-region service on ECS at 300-2,000 TPS.',
+      'Modeled contractual language as a clause dependency graph, revalidating each change across its full dependency closure.',
+      'Built an algorithm for large-scale SKU evaluation that shows how product-catalog changes affect contractual semantics.',
+      'Defined and tracked clause coverage, workflow adoption, and prevented unsafe changes to prioritize developer-tooling and release improvements.',
+      'Designed a change-set mechanism for safe production changes, showing rule-expression, SKU, and affected-contract diffs before approval.',
+      'Built a bill line-item diff test harness for every rule-expression change so developers can safely ship financially material changes.',
+      'Led the organization’s Claude Code development strategy to safely scale agent-authored code across a financially sensitive platform, using architecture guidance, type constraints, human review, and automated unit, property, integration, canary, and E2E test gates; agents resolve 90% of selected issues.',
+      'Built and maintained CI workflows using internal tools and containerized build workflows with Docker, automating test coverage and release-quality checks for package builds and production releases.',
+      'Automated region expansion across the team’s product portfolio, cutting new-region support from three weeks to one day.',
+      'Built invoice-lifecycle observability for live status, failure routing, and human-reviewed triage.',
+      'Led release readiness across the billing pipeline and version-pinned consumers, defining compatibility, regression/smoke-test scope, and dependency-ordered deployments.',
     ],
   },
   {
