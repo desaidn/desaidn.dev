@@ -55,7 +55,7 @@ export const RESUME = {
       skills: ['Java', 'Kotlin', 'Python', 'TypeScript', 'SQL'],
     },
     {
-      label: 'Data systems',
+      label: 'Data infrastructure',
       skills: [
         'DuckDB',
         'Parquet',
@@ -74,7 +74,7 @@ export const RESUME = {
       skills: ['AWS', 'AWS CDK (Infrastructure as Code)', 'Docker'],
     },
     {
-      label: 'Developer and user interfaces',
+      label: 'Developer platforms and technical interfaces',
       skills: ['API and SDK design', 'MCP', 'React', 'CLI tooling'],
     },
   ],
