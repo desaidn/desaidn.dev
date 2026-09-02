@@ -15,7 +15,7 @@ export const RESUME = {
     },
   ],
   summary:
-    'Software engineer with six years of experience building correctness-sensitive distributed platforms and developer tools. Technical lead for an AWS Billing private-pricing platform taken from greenfield design to production, spanning a domain-specific language and query engine, protocol-agnostic APIs and generated SDKs, low-latency online and offline runtimes, reliable agents, and interfaces for technical users.',
+    'Software engineer with 6 years of experience building distributed systems, developer platforms, and technical user interfaces. Technical lead for an AWS Billing private-pricing platform taken from greenfield design to production, spanning a domain-specific language and query engine, protocol-agnostic APIs and generated SDKs, low-latency online and offline runtimes, reliable agents, and interfaces for technical users.',
   experiences: [
     {
       company: 'Amazon Web Services (AWS)',
