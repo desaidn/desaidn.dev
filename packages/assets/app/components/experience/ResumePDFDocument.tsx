@@ -21,17 +21,17 @@ const THEME = {
   fontSizes: {
     name: 19.5,
     headline: 9.5,
-    body: 9.6,
-    bullet: 9.25,
-    small: 8.4,
-    section: 9.8,
+    body: 10,
+    bullet: 10,
+    small: 8.6,
+    section: 10.2,
     job: 10.5,
   },
   spacing: {
     page: 36,
-    section: 8,
-    item: 7,
-    bullet: 2.4,
+    section: 13,
+    item: 11,
+    bullet: 4,
   },
 } as const;
 
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
   header: {
     alignItems: 'center',
-    marginBottom: 6,
+    marginBottom: 9,
   },
   name: {
     fontSize: THEME.fontSizes.name,
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     fontSize: THEME.fontSizes.section,
     fontWeight: 'bold',
     letterSpacing: 0.7,
-    marginBottom: 4,
+    marginBottom: 5,
     paddingBottom: 1.5,
     textTransform: 'uppercase',
   },
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
   description: {
     color: THEME.colors.secondary,
     fontSize: THEME.fontSizes.bullet,
-    lineHeight: 1.18,
+    lineHeight: 1.24,
     marginBottom: 2.5,
   },
   highlights: {
@@ -147,12 +147,12 @@ const styles = StyleSheet.create({
   bulletText: {
     flex: 1,
     fontSize: THEME.fontSizes.bullet,
-    lineHeight: 1.2,
+    lineHeight: 1.24,
   },
   skill: {
     fontSize: THEME.fontSizes.bullet,
-    lineHeight: 1.22,
-    marginBottom: 1,
+    lineHeight: 1.24,
+    marginBottom: 1.75,
   },
   skillLabel: {
     fontWeight: 'bold',

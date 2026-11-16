@@ -28,9 +28,7 @@ const ExperienceItem = memo(
                 {experience.role}
               </h3>
               <div className="mb-2">
-                <p className="text-lg text-link mb-2">
-                  {experience.company}
-                </p>
+                <p className="text-lg text-link mb-2">{experience.company}</p>
               </div>
               <p className="text-muted text-sm mb-2">{experience.location}</p>
             </div>

@@ -10,7 +10,7 @@ export default tseslint.config(
     // Ignore generated files and build artifacts
     ignores: [
       'lib/**/*.js',
-      'lib/**/*.d.ts', 
+      'lib/**/*.d.ts',
       'bin/**/*.js',
       'bin/**/*.d.ts',
       'test/**/*.js',
@@ -24,10 +24,10 @@ export default tseslint.config(
     rules: {
       // Allow console.log in CDK/Node.js code
       'no-console': 'off',
-      
+
       // CDK-specific patterns
       '@typescript-eslint/no-empty-function': 'off', // CDK constructors can be empty
-      
+
       // AWS CDK commonly uses any types for AWS SDK responses
       '@typescript-eslint/no-explicit-any': 'off',
     },

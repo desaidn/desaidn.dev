@@ -7,8 +7,10 @@ const Whoami = memo(() => {
       <div className="text-2xl font-bold">Dhairya Desai</div>
       <div className="text-xl font-semibold">Software Engineer</div>
       <div className="text-md">
-        Distributed Systems, Developer Platforms & Technical User Interfaces
+        Distributed Systems, Programming Systems & Human–Agent–Computer
+        Interaction
       </div>
+      <div className="text-md">Building managed agents at AWS</div>
 
       <div className="mt-2 space-y-1">
         <Link href="mailto:me@desaidn.dev">me@desaidn.dev</Link>
