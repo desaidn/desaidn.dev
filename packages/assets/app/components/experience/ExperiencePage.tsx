@@ -47,7 +47,7 @@ export default function ExperiencePage(): ReactElement {
 
         <section className="mb-8">
           <div className="mb-6">
-            <p>{RESUME.summary}</p>
+            <p className="text-muted">{RESUME.summary}</p>
           </div>
 
           <div className="space-y-4">
